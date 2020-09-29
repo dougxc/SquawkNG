@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Contains classes for the operands of code generation. For each instruction that
+generates a result value, an {@link javac1.backend.items.Item} describing the
+location of that value is produced. The class {@link javac1.backend.items.HintItem}
+specifies for input values what the result should look like.<p>
+
+Note that the class {@link javac1.backend.items.BlockItem} is not derived from
+{@link javac1.backend.items.Item}. Its instances do not represent any value but are
+used to assign registers for caching of local variables in the loop that the
+corresponding block belongs to.
+
+@see  javac1.backend.ValueGen
+@see  javac1.backend.LocalCaching
+</body>
+</html>

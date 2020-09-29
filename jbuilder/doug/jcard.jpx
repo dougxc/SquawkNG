@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="generalFormatting" name="blockIndent" value="4"/>
+  <property category="generalFormatting" name="tabSize" value="4"/>
+  <property category="javaFormatting" name="catchOnNewLine" value="0"/>
+  <property category="javaFormatting" name="closingBraceOwnLine" value="0"/>
+  <property category="javaFormatting" name="elseOnNewLine" value="0"/>
+  <property category="javaFormatting" name="extendsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="finallyOnNewLine" value="0"/>
+  <property category="javaFormatting" name="implementsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="packageThreshold" value="0"/>
+  <property category="javaFormatting" name="spaceAfterTypecast" value="0"/>
+  <property category="javaFormatting" name="spaceBeforeLparen" value="0"/>
+  <property category="runtime" name="DefaultConfiguration" value="-1"/>
+  <property category="runtime" name="ExcludeDefaultForZero" value="1"/>
+  <property category="serverservices" name="single.server.name" value="Tomcat 4.0"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="../bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value="Sun Microsystems, Inc. All Rights Reserved."/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2002"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="../../jcard/src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc;../../jcard/javadoc"/>
+  <property category="sys" name="ExcludeClassEnabled" value="0"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="InstanceVisibility" value="2"/>
+  <property category="sys" name="JDK" value="java version 1.4.1_02-b06"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value=""/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="../../jcard/tmpclasses"/>
+  <property category="sys" name="SourcePath" value="../../jcard/src;../../define/src"/>
+  <property category="sys" name="TestPath" value="../../jcard/src"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="../../"/>
+  <property category="sys" name="enable.auto.packages" value="false"/>
+  <node name="com" type="Folder">
+    <node name="sun" type="Folder">
+      <node name="javacard" type="Folder">
+        <node name="impl" type="Folder">
+          <file path="../../jcard/src/com/sun/javacard/impl/AppletInfo.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/AppletMgr.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/AppTableEntry.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/ComponentInfo.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/Constants.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/Errors.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/GarbageCollector.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/NativeMethods.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/PackageEntry.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/PackageMgr.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/PackedBoolean.java"/>
+          <file path="../../jcard/src/com/sun/javacard/impl/PrivAccess.java"/>
+        </node>
+        <node name="samples" type="Folder">
+          <node name="JavaLoyalty" type="Folder">
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaLoyalty/JavaLoyalty.java"/>
+          </node>
+          <node name="JavaPurse" type="Folder">
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurse/CyclicFile.java"/>
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurse/JavaPurse.java"/>
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurse/ParametersFile.java"/>
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurse/Record.java"/>
+          </node>
+          <node name="JavaPurseCrypto" type="Folder">
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurseCrypto/JavaPurseCrypto.java"/>
+            <file path="../../jcard/src/com/sun/javacard/samples/JavaPurseCrypto/JavaPurseCryptoCheckpoint.java"/>
+          </node>
+          <node name="SampleLibrary" type="Folder">
+            <file path="../../jcard/src/com/sun/javacard/samples/SampleLibrary/JavaLoyaltyInterface.java"/>
+          </node>
+          <node name="wallet" type="Folder">
+            <file path="../../jcard/src/com/sun/javacard/samples/wallet/Wallet.java"/>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node name="java" type="Folder">
+    <node name="io" type="Folder">
+      <file path="../../jcard/src/java/io/IOException.java"/>
+    </node>
+    <node name="lang" type="Folder">
+      <file path="../../jcard/src/java/lang/_boolean_.java"/>
+      <file path="../../jcard/src/java/lang/_byte_.java"/>
+      <file path="../../jcard/src/java/lang/_byte_or_boolean_.java"/>
+      <file path="../../jcard/src/java/lang/_char_.java"/>
+      <file path="../../jcard/src/java/lang/_double2_.java"/>
+      <file path="../../jcard/src/java/lang/_double_.java"/>
+      <file path="../../jcard/src/java/lang/_float_.java"/>
+      <file path="../../jcard/src/java/lang/_int_.java"/>
+      <file path="../../jcard/src/java/lang/_long2_.java"/>
+      <file path="../../jcard/src/java/lang/_long_.java"/>
+      <file path="../../jcard/src/java/lang/_primitive_.java"/>
+      <file path="../../jcard/src/java/lang/_short_.java"/>
+      <file path="../../jcard/src/java/lang/_void_.java"/>
+      <file path="../../jcard/src/java/lang/ArithmeticException.java"/>
+      <file path="../../jcard/src/java/lang/ArrayIndexOutOfBoundsException.java"/>
+      <file path="../../jcard/src/java/lang/ArrayStoreException.java"/>
+      <file path="../../jcard/src/java/lang/Class.java"/>
+      <file path="../../jcard/src/java/lang/ClassCastException.java"/>
+      <file path="../../jcard/src/java/lang/Error.java"/>
+      <file path="../../jcard/src/java/lang/Exception.java"/>
+      <file path="../../jcard/src/java/lang/IllegalAccessException.java"/>
+      <file path="../../jcard/src/java/lang/IndexOutOfBoundsException.java"/>
+      <file path="../../jcard/src/java/lang/InstantiationException.java"/>
+      <file path="../../jcard/src/java/lang/LinkageError.java"/>
+      <file path="../../jcard/src/java/lang/NegativeArraySizeException.java"/>
+      <file path="../../jcard/src/java/lang/NullPointerException.java"/>
+      <file path="../../jcard/src/java/lang/Object.java"/>
+      <file path="../../jcard/src/java/lang/ObjectAssociation.java"/>
+      <file path="../../jcard/src/java/lang/RuntimeException.java"/>
+      <file path="../../jcard/src/java/lang/SecurityException.java"/>
+      <file path="../../jcard/src/java/lang/String.java"/>
+      <file path="../../jcard/src/java/lang/StringBuffer.java"/>
+      <file path="../../jcard/src/java/lang/Suite.java"/>
+      <file path="../../jcard/src/java/lang/System.java"/>
+      <file path="../../jcard/src/java/lang/Thread.java"/>
+      <file path="../../jcard/src/java/lang/Throwable.java"/>
+    </node>
+    <node name="rmi" type="Folder">
+      <file path="../../jcard/src/java/rmi/Remote.java"/>
+      <file path="../../jcard/src/java/rmi/RemoteException.java"/>
+    </node>
+  </node>
+  <node name="javacard" type="Folder">
+    <node name="framework" type="Folder">
+      <file path="../../jcard/src/javacard/framework/AID.java"/>
+      <file path="../../jcard/src/javacard/framework/APDU.java"/>
+      <file path="../../jcard/src/javacard/framework/APDUException.java"/>
+      <file path="../../jcard/src/javacard/framework/Applet.java"/>
+      <file path="../../jcard/src/javacard/framework/CardException.java"/>
+      <file path="../../jcard/src/javacard/framework/CardRuntimeException.java"/>
+      <file path="../../jcard/src/javacard/framework/Dispatcher.java"/>
+      <file path="../../jcard/src/javacard/framework/ISO7816.java"/>
+      <file path="../../jcard/src/javacard/framework/ISOException.java"/>
+      <file path="../../jcard/src/javacard/framework/JCSystem.java"/>
+      <file path="../../jcard/src/javacard/framework/MultiSelectable.java"/>
+      <file path="../../jcard/src/javacard/framework/OwnerPIN.java"/>
+      <file path="../../jcard/src/javacard/framework/PIN.java"/>
+      <file path="../../jcard/src/javacard/framework/PINException.java"/>
+      <file path="../../jcard/src/javacard/framework/Shareable.java"/>
+      <file path="../../jcard/src/javacard/framework/SystemException.java"/>
+      <file path="../../jcard/src/javacard/framework/TransactionException.java"/>
+      <file path="../../jcard/src/javacard/framework/UserException.java"/>
+      <file path="../../jcard/src/javacard/framework/Util.java"/>
+    </node>
+    <node name="security" type="Folder">
+      <file path="../../jcard/src/javacard/security/AESKey.java"/>
+      <file path="../../jcard/src/javacard/security/Checksum.java"/>
+      <file path="../../jcard/src/javacard/security/CryptoException.java"/>
+      <file path="../../jcard/src/javacard/security/DESKey.java"/>
+      <file path="../../jcard/src/javacard/security/DSAKey.java"/>
+      <file path="../../jcard/src/javacard/security/DSAPrivateKey.java"/>
+      <file path="../../jcard/src/javacard/security/DSAPublicKey.java"/>
+      <file path="../../jcard/src/javacard/security/ECKey.java"/>
+      <file path="../../jcard/src/javacard/security/ECPrivateKey.java"/>
+      <file path="../../jcard/src/javacard/security/ECPublicKey.java"/>
+      <file path="../../jcard/src/javacard/security/Key.java"/>
+      <file path="../../jcard/src/javacard/security/KeyAgreement.java"/>
+      <file path="../../jcard/src/javacard/security/KeyBuilder.java"/>
+      <file path="../../jcard/src/javacard/security/KeyPair.java"/>
+      <file path="../../jcard/src/javacard/security/MessageDigest.java"/>
+      <file path="../../jcard/src/javacard/security/PrivateKey.java"/>
+      <file path="../../jcard/src/javacard/security/PublicKey.java"/>
+      <file path="../../jcard/src/javacard/security/RandomData.java"/>
+      <file path="../../jcard/src/javacard/security/RSAPrivateCrtKey.java"/>
+      <file path="../../jcard/src/javacard/security/RSAPrivateKey.java"/>
+      <file path="../../jcard/src/javacard/security/RSAPublicKey.java"/>
+      <file path="../../jcard/src/javacard/security/SecretKey.java"/>
+      <file path="../../jcard/src/javacard/security/Signature.java"/>
+    </node>
+  </node>
+  <node name="javacardx" type="Folder">
+    <node name="crypto" type="Folder">
+      <file path="../../jcard/src/javacardx/crypto/Cipher.java"/>
+      <file path="../../jcard/src/javacardx/crypto/KeyEncryption.java"/>
+    </node>
+  </node>
+  <node name="Standard Doclet" type="Javadoc">
+    <property category="javadoc" name="scope" value="private"/>
+    <property category="nodeJavadoc" name="directory" value="C%|/work/SquawkNG/jcard/javadoc"/>
+    <property category="nodeJavadoc" name="displayAllOutput" value="0"/>
+  </node>
+  <file path="../../jcard/src/jcard.java"/>
+  <file path="../../jcard/src/suite0.java"/>
+  <file path="../../jcard/src/suite1.java"/>
+  <file path="../../jcard/src/suite2.java"/>
+  <file path="../../jcard/src/suite3.java"/>
+  <file path="../../jcard/src/suite4.java"/>
+</project>

@@ -1,0 +1,32 @@
+# These are the commands used to build and load the suites for
+# the numbers for the JCF presentation
+
+# Build the system classes suite
+translate -cp jcard/classes -comments -o temp/jcard.bin         -format bin   -O @suite0
+translate -cp jcard/classes -comments -o temp/jcard.xml         -format xml   -O @suite0
+translate -cp jcard/classes -comments -o temp/jcard_b.xml       -format bin_d -O @suite0
+
+# Build the "SampleLibrary" suite
+translate -cp jcard/classes -comments         -o temp/SampleLibrary.bin -format bin   -O @suite1
+translate -cp jcard/classes -comments         -o temp/SampleLibrary.xml -format xml   -O @suite1
+translate -cp jcard/classes -comments         -o temp/SampleLibrary_b.xml -format bin_d -O @suite1
+
+# Build the "JavaPurse" suite
+translate -cp jcard/classes -comments         -o temp/JavaPurse.bin     -format bin   -O @suite2
+translate -cp jcard/classes -comments         -o temp/JavaPurse.xml     -format xml   -O @suite2
+translate -cp jcard/classes -comments         -o temp/JavaPurse_b.xml   -format bin_d -O @suite2
+
+# Build the "JavaLoyalty" suite
+translate -cp jcard/classes -comments         -o temp/JavaLoyalty.bin   -format bin   -O @suite3
+translate -cp jcard/classes -comments         -o temp/JavaLoyalty.xml   -format xml   -O @suite3
+translate -cp jcard/classes -comments         -o temp/JavaLoyalty_b.xml -format bin_d -O @suite3
+
+# Build the "Wallet" suite
+translate -cp jcard/classes -comments         -o temp/Wallet.bin        -format bin   -O @suite4
+translate -cp jcard/classes -comments         -o temp/Wallet.xml        -format xml   -O @suite4
+translate -cp jcard/classes -comments         -o temp/Wallet_b.xml      -format bin_d -O @suite4
+
+# Run the romizer on "jcf.xml"
+romize -format xml  -image temp/jcard.xml.image  temp/jcard.xml temp/SampleLibrary.xml temp/JavaPurse.xml temp/JavaLoyalty.xml temp/Wallet.xml
+romize -format bin  -image temp/jacrd.bin.image  temp/jcard.bin temp/SampleLibrary.bin temp/JavaPurse.bin temp/JavaLoyalty.bin temp/Wallet.bin
+

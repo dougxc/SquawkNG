@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="debug.0" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.1" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.10" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.11" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.12" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.13" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.14" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.2" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.3" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.4" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.5" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.6" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.7" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.8" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.9" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="generalFormatting" name="blockIndent" value="4"/>
+  <property category="generalFormatting" name="tabSize" value="4"/>
+  <property category="javaFormatting" name="catchOnNewLine" value="0"/>
+  <property category="javaFormatting" name="closingBraceOwnLine" value="0"/>
+  <property category="javaFormatting" name="elseOnNewLine" value="0"/>
+  <property category="javaFormatting" name="extendsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="finallyOnNewLine" value="0"/>
+  <property category="javaFormatting" name="implementsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="packageThreshold" value="0"/>
+  <property category="javaFormatting" name="spaceAfterTypecast" value="0"/>
+  <property category="javaFormatting" name="spaceBeforeLparen" value="0"/>
+  <property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+  <property category="runtime" name="ConfigurationCount" value="14"/>
+  <property category="runtime" name="DefaultConfiguration" value="13"/>
+  <property category="runtime.0" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.0" name="ConfigurationName" value="romize jcf.xml"/>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.0" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.0" name="application.parameters" value="-o jcf.xml.eeprom jcf.xml"/>
+  <property category="runtime.0" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.0" name="appserver.parameters" value=""/>
+  <property category="runtime.0" name="appserver.servername" value=""/>
+  <property category="runtime.0" name="appserver.vmparameters" value=""/>
+  <property category="runtime.0" name="server.arguments" value=""/>
+  <property category="runtime.0" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.0" name="server.instance.name" value=""/>
+  <property category="runtime.0" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.0" name="server.vmparameters" value=""/>
+  <property category="runtime.0" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.1" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.1" name="ConfigurationName" value="romize jcf.bin"/>
+  <property category="runtime.1" name="ExclusionFilter" value="2"/>
+  <property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.1" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.1" name="application.parameters" value="-format bin -growrom -image temp/jcard.image  temp/jcard.bin temp/SampleLibrary.bin temp/JavaPurse.bin"/>
+  <property category="runtime.1" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;vm/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.1" name="appserver.parameters" value=""/>
+  <property category="runtime.1" name="appserver.servername" value=""/>
+  <property category="runtime.1" name="appserver.vmparameters" value=""/>
+  <property category="runtime.1" name="server.arguments" value=""/>
+  <property category="runtime.1" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.1" name="server.instance.name" value=""/>
+  <property category="runtime.1" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.1" name="server.vmparameters" value=""/>
+  <property category="runtime.1" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.10" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.10" name="ConfigurationName" value="romize helloworld"/>
+  <property category="runtime.10" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.10" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.10" name="application.parameters" value="-ram_sz 256K -format bin -m temp/helloworld.map -growrom -image temp/helloworld.image temp/j2me.bin  temp/hw.bin"/>
+  <property category="runtime.10" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.10" name="appserver.parameters" value=""/>
+  <property category="runtime.10" name="appserver.servername" value=""/>
+  <property category="runtime.10" name="appserver.vmparameters" value=""/>
+  <property category="runtime.10" name="server.arguments" value=""/>
+  <property category="runtime.10" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.10" name="server.instance.name" value=""/>
+  <property category="runtime.10" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.10" name="server.vmparameters" value=""/>
+  <property category="runtime.10" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.11" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.11" name="ConfigurationName" value="romize j2me"/>
+  <property category="runtime.11" name="ExclusionFilter" value="2"/>
+  <property category="runtime.11" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.11" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.11" name="application.parameters" value="-traceheap -tracealloc -littleendian -ram_sz 4096K -format bin  -growrom -image temp/j2me.image temp/j2me.bin"/>
+  <property category="runtime.11" name="application.vmparameters" value="-Xbootclasspath/a:j2se\classes;romizer\classes;vm\classes;j2me\classes;translator\classes"/>
+  <property category="runtime.11" name="appserver.parameters" value=""/>
+  <property category="runtime.11" name="appserver.servername" value=""/>
+  <property category="runtime.11" name="appserver.vmparameters" value=""/>
+  <property category="runtime.11" name="server.arguments" value=""/>
+  <property category="runtime.11" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.11" name="server.instance.name" value=""/>
+  <property category="runtime.11" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.11" name="server.vmparameters" value=""/>
+  <property category="runtime.11" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.12" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.12" name="ConfigurationName" value="romize cubes"/>
+  <property category="runtime.12" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.12" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.12" name="application.parameters" value="-ram_sz 4096K -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/cubes.bin temp/hanoi.bin temp/delta.bin temp/mpeg.bin"/>
+  <property category="runtime.12" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.12" name="appserver.parameters" value=""/>
+  <property category="runtime.12" name="appserver.servername" value=""/>
+  <property category="runtime.12" name="appserver.vmparameters" value=""/>
+  <property category="runtime.12" name="server.arguments" value=""/>
+  <property category="runtime.12" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.12" name="server.instance.name" value=""/>
+  <property category="runtime.12" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.12" name="server.vmparameters" value=""/>
+  <property category="runtime.12" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.13" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.13" name="ConfigurationName" value="romize translator"/>
+  <property category="runtime.13" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.13" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.13" name="application.parameters" value="-traceheap -ram_sz 1M -format bin -m temp/translator.map -growrom -image temp/translator.image temp/j2me.bin temp/translator.bin temp/translator_impl.bin temp/translator_main.bin "/>
+  <property category="runtime.13" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;j2me/classes;vm/classes;translator/classes"/>
+  <property category="runtime.13" name="appserver.parameters" value=""/>
+  <property category="runtime.13" name="appserver.servername" value=""/>
+  <property category="runtime.13" name="appserver.vmparameters" value=""/>
+  <property category="runtime.13" name="server.arguments" value=""/>
+  <property category="runtime.13" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.13" name="server.instance.name" value=""/>
+  <property category="runtime.13" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.13" name="server.vmparameters" value=""/>
+  <property category="runtime.13" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.14" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.14" name="ConfigurationName" value="romize translator (xml)"/>
+  <property category="runtime.14" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.14" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.14" name="application.parameters" value="-ram_sz 1M -format xml -m temp/translator.map -growrom -image temp/translator.image temp/j2me.xml temp/translator.xml temp/translator_impl.xml temp/translator_main.xml"/>
+  <property category="runtime.14" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;j2me/classes;vm/classes;translator/classes"/>
+  <property category="runtime.14" name="appserver.parameters" value=""/>
+  <property category="runtime.14" name="appserver.servername" value=""/>
+  <property category="runtime.14" name="appserver.vmparameters" value=""/>
+  <property category="runtime.14" name="server.arguments" value=""/>
+  <property category="runtime.14" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.14" name="server.instance.name" value=""/>
+  <property category="runtime.14" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.14" name="server.vmparameters" value=""/>
+  <property category="runtime.14" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.2" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.2" name="ConfigurationName" value="romize tilepuzzle"/>
+  <property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.2" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.2" name="application.parameters" value="-format xml -o temp/tilepuzzle.eeprom -smallarrays temp/j2me.xml temp/graphics.xml temp/tilepuzzle.xml"/>
+  <property category="runtime.2" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.2" name="appserver.parameters" value=""/>
+  <property category="runtime.2" name="appserver.servername" value=""/>
+  <property category="runtime.2" name="appserver.vmparameters" value=""/>
+  <property category="runtime.2" name="server.arguments" value=""/>
+  <property category="runtime.2" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.2" name="server.instance.name" value=""/>
+  <property category="runtime.2" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.2" name="server.vmparameters" value=""/>
+  <property category="runtime.2" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.3" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.3" name="ConfigurationName" value="romize chess"/>
+  <property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.3" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.3" name="application.parameters" value="-format xml -o temp/chess.eeprom -smallarrays temp/j2me.xml temp/graphics.xml temp/chess.xml"/>
+  <property category="runtime.3" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.3" name="appserver.parameters" value=""/>
+  <property category="runtime.3" name="appserver.servername" value=""/>
+  <property category="runtime.3" name="appserver.vmparameters" value=""/>
+  <property category="runtime.3" name="server.arguments" value=""/>
+  <property category="runtime.3" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.3" name="server.instance.name" value=""/>
+  <property category="runtime.3" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.3" name="server.vmparameters" value=""/>
+  <property category="runtime.3" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.4" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.4" name="ConfigurationName" value="romize jcard3"/>
+  <property category="runtime.4" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.4" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.4" name="application.parameters" value="-format bin -m temp/vmtest.map -growrom -image temp/jcard3_vmtest.image temp/jcard3.bin temp/jcard3_vmtest.bin"/>
+  <property category="runtime.4" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.4" name="appserver.parameters" value=""/>
+  <property category="runtime.4" name="appserver.servername" value=""/>
+  <property category="runtime.4" name="appserver.vmparameters" value=""/>
+  <property category="runtime.4" name="server.arguments" value=""/>
+  <property category="runtime.4" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.4" name="server.instance.name" value=""/>
+  <property category="runtime.4" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.4" name="server.vmparameters" value=""/>
+  <property category="runtime.4" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.5" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.5" name="ConfigurationName" value="romize benchmarks"/>
+  <property category="runtime.5" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.5" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.5" name="application.parameters" value="-ram_sz 4096K -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/cubes.bin temp/hanoi.bin temp/delta.bin temp/mpeg.bin"/>
+  <property category="runtime.5" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.5" name="appserver.parameters" value=""/>
+  <property category="runtime.5" name="appserver.servername" value=""/>
+  <property category="runtime.5" name="appserver.vmparameters" value=""/>
+  <property category="runtime.5" name="server.arguments" value=""/>
+  <property category="runtime.5" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.5" name="server.instance.name" value=""/>
+  <property category="runtime.5" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.5" name="server.vmparameters" value=""/>
+  <property category="runtime.5" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.6" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.6" name="ConfigurationName" value="romize mojo"/>
+  <property category="runtime.6" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.6" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.6" name="application.parameters" value="-littleendian -ram_sz 4096K -format bin  -m demo/mojo.map -growrom -image demo/mojo.image temp/j2me.bin temp/mojo.bin"/>
+  <property category="runtime.6" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.6" name="appserver.parameters" value=""/>
+  <property category="runtime.6" name="appserver.servername" value=""/>
+  <property category="runtime.6" name="appserver.vmparameters" value=""/>
+  <property category="runtime.6" name="server.arguments" value=""/>
+  <property category="runtime.6" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.6" name="server.instance.name" value=""/>
+  <property category="runtime.6" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.6" name="server.vmparameters" value=""/>
+  <property category="runtime.6" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.7" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.7" name="ConfigurationName" value="romize tck tests"/>
+  <property category="runtime.7" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.7" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.7" name="application.parameters" value="-tck -ram_sz 1024K -format bin -growrom -m temp\tcktests_1601_1786.map -image temp\tcktests_1601_1786.image temp/j2me_tck.bin temp/tcktests_common.bin temp\tcktests_1601_1786.bin"/>
+  <property category="runtime.7" name="application.vmparameters" value="-Xbootclasspath/a:j2se/classes;vm/classes;romizer/classes;j2me/classes;translator/classes"/>
+  <property category="runtime.7" name="appserver.parameters" value=""/>
+  <property category="runtime.7" name="appserver.servername" value=""/>
+  <property category="runtime.7" name="appserver.vmparameters" value=""/>
+  <property category="runtime.7" name="server.arguments" value=""/>
+  <property category="runtime.7" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.7" name="server.instance.name" value=""/>
+  <property category="runtime.7" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.7" name="server.vmparameters" value=""/>
+  <property category="runtime.7" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.8" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.8" name="ConfigurationName" value="romize demo (binary"/>
+  <property category="runtime.8" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.8" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.8" name="application.parameters" value="-littleendian -ram_sz 4096K -format bin  -growrom -image demo/squawk.image temp/j2me.bin temp/graphics.bin temp/examples.bin"/>
+  <property category="runtime.8" name="application.vmparameters" value="-Xbootclasspath/a:j2se\classes;romizer\classes;vm\classes;j2me\classes"/>
+  <property category="runtime.8" name="appserver.parameters" value=""/>
+  <property category="runtime.8" name="appserver.servername" value=""/>
+  <property category="runtime.8" name="appserver.vmparameters" value=""/>
+  <property category="runtime.8" name="server.arguments" value=""/>
+  <property category="runtime.8" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.8" name="server.instance.name" value=""/>
+  <property category="runtime.8" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.8" name="server.vmparameters" value=""/>
+  <property category="runtime.8" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.9" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.9" name="ConfigurationName" value="romize demo (binary) (-o eeprom)"/>
+  <property category="runtime.9" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.9" name="application.class" value="java.lang.Romizer"/>
+  <property category="runtime.9" name="application.parameters" value="-o eeprom   -littleendian -ram_sz 4096K -format bin  -growrom -image demo/squawk.image temp/j2me.bin temp/graphics.bin temp/examples.bin"/>
+  <property category="runtime.9" name="application.vmparameters" value="-Xbootclasspath/a:j2se\classes;romizer\classes;vm\classes;j2me\classes"/>
+  <property category="runtime.9" name="appserver.parameters" value=""/>
+  <property category="runtime.9" name="appserver.servername" value=""/>
+  <property category="runtime.9" name="appserver.vmparameters" value=""/>
+  <property category="runtime.9" name="server.arguments" value=""/>
+  <property category="runtime.9" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.9" name="server.instance.name" value=""/>
+  <property category="runtime.9" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.9" name="server.vmparameters" value=""/>
+  <property category="runtime.9" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="serverservices" name="disabled.services" value="connector;jdatastore"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value=""/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="CompileOnDebug" value="0"/>
+  <property category="sys" name="CompileOnRun" value="0"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2002"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="../../romizer/src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="JDK" value="java version 1.4.2_01-b06"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value="j2sdk1.4.1 Runtime Library;j2se;j2me;vm;translator"/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="../../romizer/classes"/>
+  <property category="sys" name="SourcePath" value="../../romizer/src"/>
+  <property category="sys" name="TestPath" value="../../romizer/src"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="../../"/>
+  <property category="sys" name="max.package.levels" value="5"/>
+  <node name="java" type="Folder">
+    <node name="lang" type="Folder">
+      <file path="../../romizer/src/java/lang/Romizer.java"/>
+    </node>
+  </node>
+</project>

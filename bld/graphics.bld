@@ -1,0 +1,16 @@
+#translate -cp j2me/classes:graphics/classes -comments -o temp/j2me.bin     -O -format bin @j2me
+#translate -cp j2me/classes:graphics/classes -comments -o temp/j2me.xml     -O -format xml @j2me
+#translate -cp j2me/classes:graphics/classes -comments         -o temp/graphics.bin -O -format bin @graphics
+#translate -cp j2me/classes:graphics/classes -comments         -o temp/graphics.xml -O -format xml @graphics
+
+#romize -format bin  -image temp/graphics.image -growrom temp/j2me.bin temp/graphics.bin
+
+
+
+
+
+translate -cp j2me/classes          -comments -o temp/j2me.bin        -O -format bin @j2me
+translate -cp j2me/classes          -comments -o temp/j2me.xml        -O -format xml @j2me
+
+translate -cp graphics/classes -libs temp/j2me.bin -comments -o temp/graphics.bin    -O -format bin @graphics
+translate -cp graphics/classes -libs temp/j2me.xml -comments -o temp/graphics.xml    -O -format xml @graphics

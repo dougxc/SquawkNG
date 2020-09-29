@@ -1,0 +1,92 @@
+
+
+1.  Describe your problem
+
+    __________________________________________
+
+
+2.  Now, describe the problem accurately:
+
+    __________________________________________
+
+
+3.  Speculate wildly about the cause of the problem:
+
+    __________________________________________
+
+
+4.  Problem Severity:
+
+        a Minor __
+        b Minor __
+        c Minor __
+        c Trivial __
+
+
+5.  Nature of the problem:
+
+        a Locked up __
+        b Frozen __
+        c Hung __
+        d Shot __
+
+
+6.  Is your computer plugged in? Yes __ No __
+
+
+7.  Is it turned on? Yes __ No __
+
+
+8.  Have you tried to fix it yourself? Yes __ No __
+
+
+9.  Have you made it worse? Yes __
+
+
+10. Have you read the manual? Yes __ No __
+
+
+11. Are you sure you've read the manual? Yes __ No __
+
+
+12. Are you absolutely certain you've read the manual? No __
+
+
+13. Do you think you understood it? Yes __ No __
+
+
+14. If 'Yes' then why can't you fix the problem yourself?
+
+    __________________________________________
+
+
+15. How tall are you? Are you above this line? __________________
+
+
+16. What were you doing with your computer at the time the problem occurred?
+
+    __________________________________________
+
+
+17. If `nothing' explain why you were logged in.
+
+    __________________________________________
+
+
+18. Are you sure you aren't imagining the problem? Yes __ No __
+
+
+19. How does this problem make you feel?
+
+    __________________________________________
+
+
+20. Tell me about your childhood.
+
+    __________________________________________
+
+
+21. Do you have any independent witnesses of the problem? Yes __ No __
+
+
+22. Can't you do something else instead? Yes __

@@ -1,0 +1,12 @@
+#j2me
+#samples
+
+translate -cp j2me/classes                        -comments -o temp/j2me.bin  -O -format bin @j2me
+#translate -cp j2me/classes                        -comments -o temp/j2me.xml -O -format xml @j2me
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hw.bin    -O -format bin @hello
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hw2.bin   -O -format bin @hello
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hw3.bin   -O -format bin @hello
+#translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hw3.xml   -O -format xml @hello
+romize -ram_sz 4096K -format bin -m temp/helloworld.map -growrom -image temp/helloworld.image temp/j2me.bin
+#squawk -Ximage:temp/helloworld.image java.lang.JAM -suite:temp/hw.bin -suite:temp/hw2.bin -suite:temp/hw3.bin -accountMemory HelloWorld
+#squawk -XtraceURL:file://trace -XtraceInstructions -XexcessiveGC -Ximage:temp/helloworld.image java.lang.JAM -suite:temp/hw.bin -suite:temp/hw2.bin -suite:temp/hw3.bin -accountMemory HelloWorld

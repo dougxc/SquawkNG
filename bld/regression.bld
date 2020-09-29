@@ -1,0 +1,81 @@
+# rebuild everything
+all
+
+# translate and romize the TCK
+-verbose -exclude IllegalMonitorStateExceptionsAreFatal romizetck -np 32 -excl @regression.exclude -forcej2me
+
+# translate and romize the benchmark programs
+translate -cp j2me/classes -o temp/j2me.bin -O -format bin @j2me
+translate -cp graphics/classes -libs temp/j2me.bin -o temp/graphics.bin    -O -format bin @graphics
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin -o temp/benchmarks.bin  -O -format bin @benchmarks
+romize -ram_sz 4096K -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/benchmarks.bin
+
+# translate and romize the jcard3 test program
+jcard3
+translate -cp jcard3/classes -comments -o temp/jcard3.bin -O -format bin @jcard3
+translate -cp jcard3/classes -libs temp/jcard3.bin -comments -o temp/jcard3_vmtest.bin -O -format bin @vmtest
+romize -format bin -m temp/vmtest.map -growrom -image temp/jcard3_vmtest.image temp/jcard3.bin temp/jcard3_vmtest.bin
+
+#
+# Build production and non-production versions of the VM with the Lisp2 collector
+# and run the programs
+#
+
+
+# build the production native VM and run the TCK and benchmarks with it
+-exclude CHENEY.COLLECTOR -include LISP2.COLLECTOR -production -o2 vm
+runtck -np 32 -c -p production
+squawkc -Ximage:temp/benchmarks.image    bench.cubes.Main
+squawkc -Ximage:temp/benchmarks.image    bench.hanoi.Main 20
+squawkc -Ximage:temp/benchmarks.image    bench.delta.Main
+squawkc -Ximage:temp/benchmarks.image    bench.mpeg.Main
+squawkc -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest
+
+
+# build the debug native VM and run the TCK and benchmarks with it
+-exclude CHENEY.COLLECTOR -include LISP2.COLLECTOR vm
+runtck -np 32 -c -p debug
+squawkc -Ximage:temp/benchmarks.image bench.cubes.Main
+squawkc -Ximage:temp/benchmarks.image bench.hanoi.Main 20
+squawkc -Ximage:temp/benchmarks.image bench.delta.Main
+squawkc -Ximage:temp/benchmarks.image bench.mpeg.Main
+squawkc -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest
+
+# run the TCK and benchmarks with the interpreter VM
+runtck -np 32 -p interpreted
+squawk -Ximage:temp/benchmarks.image bench.cubes.Main
+squawk -Ximage:temp/benchmarks.image bench.hanoi.Main 20
+squawk -Ximage:temp/benchmarks.image bench.delta.Main
+squawk -Ximage:temp/benchmarks.image bench.mpeg.Main
+squawk -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest
+
+
+#
+# Build production and non-production versions of the VM with the Cheney collector
+# and run the programs (except for the TCK)
+#
+
+
+# build the production native VM and run the TCK and benchmarks with it
+-include CHENEY.COLLECTOR -exclude LISP2.COLLECTOR -production -o2 vm
+squawkc -Ximage:temp/benchmarks.image    bench.cubes.Main
+squawkc -Ximage:temp/benchmarks.image    bench.hanoi.Main 20
+squawkc -Ximage:temp/benchmarks.image    bench.delta.Main
+squawkc -Ximage:temp/benchmarks.image    bench.mpeg.Main
+squawkc -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest
+
+
+# build the debug native VM and run the TCK and benchmarks with it
+-include CHENEY.COLLECTOR -exclude LISP2.COLLECTOR vm
+squawkc -Ximage:temp/benchmarks.image bench.cubes.Main
+squawkc -Ximage:temp/benchmarks.image bench.hanoi.Main 20
+squawkc -Ximage:temp/benchmarks.image bench.delta.Main
+squawkc -Ximage:temp/benchmarks.image bench.mpeg.Main
+squawkc -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest
+
+# run the TCK and benchmarks with the interpreter VM
+squawk -Ximage:temp/benchmarks.image bench.cubes.Main
+squawk -Ximage:temp/benchmarks.image bench.hanoi.Main 20
+squawk -Ximage:temp/benchmarks.image bench.delta.Main
+squawk -Ximage:temp/benchmarks.image bench.mpeg.Main
+squawk -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest

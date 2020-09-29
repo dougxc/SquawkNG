@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <!--JBuilder Library Definition File-->
+  <fullname>jcard</fullname>
+  <class>
+    <path>../../jcard/classes</path>
+  </class>
+  <source>
+    <path>../../jcard/src</path>
+  </source>
+  <lastmodsaved>1096068643531</lastmodsaved>
+</library>

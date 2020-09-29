@@ -1,0 +1,26 @@
+#translate -cp j2me/classes:graphics/classes           -comments -o temp/j2me.bin        -O -format bin @j2me
+#translate -cp j2me/classes:graphics/classes                   -comments -o temp/graphics.bin    -O -format bin @graphics
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/cubes.bin       -O -format bin @examples_cubes
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/chess.bin       -O -format bin @examples_chess
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/kawtdemo.bin    -O -format bin @examples_kawtdemo
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/manyballs.bin   -O -format bin @examples_manyballs
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/mpeg.bin        -O -format bin @examples_mpeg
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/pong.bin        -O -format bin @examples_pong
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/spaceinv.bin    -O -format bin @examples_spaceinv
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/tilepuzzle.bin  -O -format bin @examples_tilepuzzle
+#translate -cp j2me/classes:graphics/classes:samples/classes   -comments -o temp/wormgame.bin    -O -format bin @examples_wormgame
+#romize -format bin  -m temp/samples.map -growrom -image temp/samples.image temp/j2me.bin temp/graphics.bin temp/cubes.bin temp/chess.bin temp/kawtdemo.bin temp/manyballs.bin temp/mpeg.bin temp/pong.bin temp/spaceinv.bin temp/tilepuzzle.bin temp/wormgame.bin
+
+
+translate -cp j2me/classes:graphics/classes          -comments -o temp/j2me.bin        -O -format bin @j2me
+#translate -cp j2me/classes:graphics/classes                  -comments -o temp/graphics.bin    -O -format bin @graphics
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/cubes.bin       -O -format bin @examples_cubes
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/chess.bin       -O -format bin @examples_chess
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/kawtdemo.bin    -O -format bin @examples_kawtdemo
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/manyballs.bin   -O -format bin @examples_manyballs
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/mpeg.bin        -O -format bin @examples_mpeg
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/pong.bin        -O -format bin @examples_pong
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/spaceinv.bin    -O -format bin @examples_spaceinv
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/tilepuzzle.bin  -O -format bin @examples_tilepuzzle
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/wormgame.bin    -O -format bin @examples_wormgame
+romize -format bin  -m temp/samples.map -growrom -image temp/samples.image temp/j2me.bin temp/graphics.bin temp/cubes.bin temp/chess.bin temp/kawtdemo.bin temp/manyballs.bin temp/mpeg.bin temp/pong.bin temp/spaceinv.bin temp/tilepuzzle.bin temp/wormgame.bin

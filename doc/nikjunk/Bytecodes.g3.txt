@@ -1,0 +1,210 @@
+80
+        CONST_0  - 15
+        OBJECT_0 - 15
+        LOAD_0   - 15
+        STORE_0  - 15
+        EXTRA_0  - 15
+4
+        WIDE_0
+        WIDE_1
+        WIDE_HALF
+        WIDE_FULL
+9
+        CONST_BYTE
+        CONST_SHORT
+        CONST_CHAR
+        CONST_INT
+        CONST_LONG
+        CONST_FLOAT
+        CONST_DOUBLE
+        CONST_M1
+        CONST_NULL
+2
+        OBJECT
+        EXTRA
+4
+        LOAD
+        LOAD_I2
+        STORE
+        STORE_I2
+10
+        ALOAD
+        ALOAD_B
+        ALOAD_S
+        ALOAD_C
+        ALOAD_I2
+        ASTORE
+        ASTORE_B
+        ASTORE_S
+        ASTORE_O                *****
+        ASTORE_I2
+32
+        GETSTATIC                               417
+        GETSTATIC_O------------------------     0               xxxxxxxx
+        GETSTATIC_I2                            2
+        CLASS_GETSTATIC                         757
+        CLASS_GETSTATIC_O------------------     0               xxxxxxxx
+        CLASS_GETSTATIC_I2                      5               xxxxxxxx
+        PUTSTATIC                               14
+        PUTSTATIC_O                             6
+        PUTSTATIC_I2                            2
+        CLASS_PUTSTATIC                         108
+        CLASS_PUTSTATIC_O                       294
+        CLASS_PUTSTATIC_I2                      6               xxxxxxxx
+        GETFIELD                                1586
+        GETFIELD_B                              49
+        GETFIELD_S                              21
+        GETFIELD_C                              37
+        GETFIELD_I2                             20
+        THIS_GETFIELD                           5776
+        THIS_GETFIELD_B                         309
+        THIS_GETFIELD_S                         47              xxxxxxxx
+        THIS_GETFIELD_C                         37              xxxxxxxx
+        THIS_GETFIELD_I2                        55              xxxxxxxx
+        PUTFIELD                                490
+        PUTFIELD_B                              47
+        PUTFIELD_S                              24
+        PUTFIELD_O                              160
+        PUTFIELD_I2                             15
+        THIS_PUTFIELD                           959
+        THIS_PUTFIELD_B                         327
+        THIS_PUTFIELD_S                         40              xxxxxxxx
+        THIS_PUTFIELD_O                         731
+        THIS_PUTFIELD_I2                        40              xxxxxxxx
+9
+        INVOKEINIT
+        INVOKEINTERFACE
+        INVOKESTATIC
+        INVOKESUPER
+        INVOKEVIRTUAL
+        INVOKENATIVE
+        RETURN
+        RETURN1
+        RETURN2
+21
+        IADD
+        ISUB
+        IAND
+        IOR
+        IXOR
+        ISHL
+        ISHR
+        IUSHR
+        IMUL
+        IDIV
+        IREM
+        THROW
+        BPT
+        NOP
+        POP
+        NEG
+        I2B
+        I2S
+        I2C
+        INC
+        DEC
+19
+        LOOKUP
+        LOOKUP_B
+        LOOKUP_S
+        LOOKUP_C
+        TABLESWITCH
+        STABLESWITCH
+        IFEQ
+        IFNE
+        IFLT
+        IFLE
+        IFGT
+        IFGE
+        IF_ICMPEQ
+        IF_ICMPNE
+        IF_ICMPLT
+        IF_ICMPLE
+        IF_ICMPGT
+        IF_ICMPGE
+        GOTO
+11
+        MONITORENTER       *****
+        MONITOREXIT        *****
+        ARRAYLENGTH
+        CLINIT             *****
+        CLASS_CLINIT       *****
+        NEWOBJECT
+        NEWARRAY           *****
+        NEWDIMENSION       *****
+        INSTANCEOF         *****
+        CHECKCAST          *****
+        METHODID
+41
+        LADD
+        LSUB
+        LMUL
+        LDIV
+        LREM
+        LAND
+        LOR
+        LXOR
+        LNEG
+        LSHL
+        LSHR
+        LUSHR
+        LCMP
+        L2I
+        I2L
+        FADD
+        FSUB
+        FMUL
+        FDIV
+        FREM
+        FNEG
+        FCMPG
+        FCMPL
+        DADD
+        DSUB
+        DMUL
+        DDIV
+        DREM
+        DNEG
+        DCMPG
+        DCMPL
+        I2F
+        L2F
+        F2I
+        F2L
+        I2D
+        L2D
+        F2D
+        D2I
+        D2L
+        D2F
+
+
+Removed:
+
+        CLASS_MONITORENTER ----------
+        CLASS_MONITOREXIT  ----------
+        EQ
+        LT
+        LE
+        NE
+        GT
+        GE
+
+
+
+
+
+
+
+Suite
+  Klass[] classes;
+  Meta[]  metas;
+
+Klass
+   String name;
+   etc...
+
+KlassMetadata
+   StringOfSymbols symbols;
+   byte[] ipTable;
+   byte[] localTypes;

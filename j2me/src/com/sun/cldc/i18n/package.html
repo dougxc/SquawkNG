@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.1 00/11/28
+
+  Copyright 2001 Sun Microsystems, Inc. 901 San Antonio Road, 
+  Palo Alto, California, 94303, U.S.A.  All Rights Reserved.
+
+  This software is the confidential and proprietary information of Sun
+  Microsystems, Inc. ("Confidential Information").  You shall not
+  disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into
+  with Sun.
+
+-->
+</head>
+<body bgcolor="white">
+Internal code for
+{@link java.io.InputStreamReader#InputStreamReader(InputStream, String)}.
+<h2>
+Adding a character encoding to J2ME.</h2>
+<p>
+To add a supported character encoding for J2ME add a class named
+&lt;internal encoding name&gt;_Reader to the com.sun.cldc.i18n package.</p>
+<p>
+To find out the prefered name for a character encoding see the
+<a href="ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets">
+IANA Charset Registry</a>.</p>
+<p>
+The characters of a standard character encoding name that are specified by
+<a href="http://ietf.org/rfc/rfc2278.txt">IANA</a> and accepted by J2SE
+are "0-9", "a-z", "A-Z", "_", "-", ":". Also encoding names are not case
+sensitive. This is a problem for Java class names, so when creating an internal
+encoding name for a reader class name, convert lower case characters to
+upper case and convert "-" and ":" to "_". For encodings that begin with
+a digit, use any non-conflicting name and add an internal encoding name system
+property to map to the internal name as outlined below.</p>
+<p>
+To allow for multiple names for an character encoding and to allow encoding
+names that cannot be legal Java class names, system properties can be added
+to map an external encoding names to an internal encoding names. To map
+a particular encoding, first normalize the name by converting lower case 
+characters to upper case and converting "-" and ":" to "_". Second create
+a system property name by appending "_InternalEncodingName" to the
+normalized name. Third specify the internal encoding name as the value of
+the property.</p>
+<p>
+For example, say there is a reader for the internal encoding name SJIS, 
+(class name: com.sun.cldc.i18n.SJIS_Reader), but you want to support the
+standard IANA encoding name of Shift_JIS also, you would add the following
+system property.</p>
+<blockquote><p>
+SHIFT_JIS_InternalEncodingName: SJIS</p>
+</blockquote>
+</body>
+</html>

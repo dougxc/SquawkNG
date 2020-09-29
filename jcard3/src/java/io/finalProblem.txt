@@ -1,0 +1,16 @@
+A number of methods are 'final' in DataInputStream and DataOutputStream and these prevent
+ChannelInputStream and ChannelOutputStream from subclassing DIS and DOS.
+
+Temproarly these have been made non-final, but the TCK compatible solition is to make the
+names of the methods in CIS and COS have a different name e.g
+
+    public final int readInt() throws IOException {
+
+would become
+
+    public int REAL_readInt() throws IOException {
+
+The squawk translater would then recoginise these routines and fixup the method tables
+such that they do override the final routines which would otherwize not be legal.
+
+This fudge should not be detectable bt any TCK test.

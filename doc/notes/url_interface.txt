@@ -1,0 +1,77 @@
+File system
+===========
+
+ReadAll
+
+      http://<host>[:<port>]/<path>                                             Regular http
+      http://<fileserver>?path=/<path>                                          Explicit access through file server
+
+e.g:
+      http://www.foo.com/this/that.txt
+      http://www.foo.com/fileserv?path=/this/that.txt
+
+
+ReadPart
+
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=read&off=nnnn&len=mmmm
+
+WriteAll
+
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=write&data=00a09304958609fd0931
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=write                                                   (post data)
+
+WritePart
+
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=write&off=nnnn&len=mmmm&data=00a09304958609fd0931
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=write&off=nnnn&len=mmmm                                 (post data)
+
+Other
+
+      http://<fileserver>?path=/foo/bar&cmd=list
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=delete
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=rename&to=/foo/bar/yy.y
+
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=lock
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=read?lock=098749fac6def
+      http://<fileserver>?path=/foo/bar/xx.x&cmd=unlock?lock=098749fac6def
+
+
+
+VM
+==
+
+Run
+
+      http://<vmserver>?rcode=http://<uri_base_address>?args=foo+bar+whatever
+      http://<vmserver>?rcode=http://<uri_base_address>?term=<terminal_server>
+                                                       &file=<file_server>
+                                                       &args=foo+bar+whatever
+
+
+
+      http://<vmserver>?code=<rcode_server>&
+                       &codepath=/code/path
+                       &args=foo+bar+whatever
+                       &file=<file_server>
+                       &term=<terminal_server>
+
+
+
+Wait
+
+      http://<vmserver>?waitfor=098749fac6def
+
+
+Rcode server
+============
+
+Read
+
+      http://<rcode_server>/<base_image_id>/java/lang/Foobar.rcode
+
+
+
+Fork
+
+      http://<rcode_server>?vmid=<VMID>&classpath=/code/path
+

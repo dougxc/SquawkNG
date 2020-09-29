@@ -1,0 +1,17 @@
+# This is a test to see how much bigger suites get as a result of spilling/filling.
+
+# j2me suite0
+translate -cp j2me/classes  -o temp/j2me.bin.nogcspills   -nogcstackconstraints -format bin -O @j2me
+translate -cp j2me/classes  -o temp/j2me.bin.nospills     -nostackconstraints   -format bin -O @j2me
+translate -cp j2me/classes  -o temp/j2me.bin.spills                             -format bin -O @j2me
+
+# jcard suite0
+translate -cp jcard/classes -o temp/jcard.bin.nogcspills  -nogcstackconstraints -format bin -O @suite0
+translate -cp jcard/classes -o temp/jcard.bin.nospills    -nostackconstraints   -format bin -O @suite0
+translate -cp jcard/classes -o temp/jcard.bin.spills                            -format bin -O @suite0
+
+# JavaPurse
+translate -cp jcard/classes         -o temp/suite2.bin.nogcspills -nogcstackconstraints -format bin -O @suite2
+translate -cp jcard/classes         -o temp/suite2.bin.nospills   -nostackconstraints   -format bin -O @suite2
+translate -cp jcard/classes         -o temp/suite2.bin.spills                           -format bin -O @suite2
+

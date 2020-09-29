@@ -1,0 +1,74 @@
+        VMExtension_vmstart_1
+
+        VMExtension_initializeClass_2
+CLINIT
+
+        VMExtension_arithmeticException_3
+IDIV/REM
+LDIV/REM
+
+        VMExtension_arrayBoundsException_4
+ALOAD/ASTORE
+
+        VMExtension_nullPointerException_5
+OPC_INVOKEVIRTUAL
+OPC_INVOKEINTERFACE
+OPC_THROW
+ALOAD/ASTORE
+OPC_GETFIELD/OPC_PUTFIELD
+OPC_ARRAYLENGTH
+OPC_MONITORENTER/EXIT
+StringAt/length/etc
+
+        VMExtension_checkcast_6
+OPC_CHECKCAST
+
+        VMExtension_instanceof_7
+OPC_INSTANCEOF
+
+        VMExtension_astoreOop_8
+OPC_ASTORE_O
+
+        VMExtension_yield_9
+IF/GOTO
+
+        VMExtension_getStatic_10
+OPC_GETSTATIC
+
+        VMExtension_getStaticLong_11
+OPC_GETSTATIC_I2
+
+        VMExtension_putStatic_12
+OPC_PUTSTATIC
+
+        VMExtension_putStaticLong_13
+OPC_PUTSTATIC_I2
+
+        VMExtension_putStaticObj_14
+OPC_PUTSTATIC_O
+
+        VMExtension_monitorEnter_15
+OPC_MONITORENTER
+
+        VMExtension_monitorExit_16
+OPC_MONITOREXIT
+
+        VMExtension_newArray_17
+OPC_NEWARRAY
+
+        VMExtension_newDimension_18
+OPC_NEWDIMENSION
+
+        VMExtension_breakpoint_19
+
+        VMExtension_callrun_20
+Native_getNewExecutionContext_15
+
+        VMExtension_abstractMethodError_21
+        VMExtension_unsatisfiedLinkError_22
+
+        VMExtension_illegalStoreException_23
+ASTORE/PUTFIELD
+
+        VMExtension_registerForFinalization_24
+OPC_NEWOBJECT

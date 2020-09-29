@@ -1,0 +1,26 @@
+#j2me
+#samples
+translate -cp j2me/classes                             -comments -o temp/j2me.bin       -nometa -O -format bin @j2me
+translate -cp graphics/classes -libs temp/j2me.jar -comments -o temp/graphics.bin   -nometa -O -format bin @graphics
+
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.jar  -comments -o temp/cubes.bin -nometa -O -format bin @cubes
+translate -cp samples/classes -libs temp/j2me.jar:temp/graphics.bin  -comments -o temp/hanoi.bin -nometa -O -format bin @hanoi
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/delta.bin -nometa -O -format bin @delta
+translate -cp samples/classes -libs temp/j2me.jar:temp/graphics.jar  -comments -o temp/mpeg.bin  -nometa -O -format bin @mpeg
+
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/wormgame.bin   -nometa -O -format bin @wormgame
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/tilepuzzle.bin -nometa -O -format bin @tilepuzzle
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/spaceinv.bin   -nometa -O -format bin @spaceinv
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/pong.bin       -nometa -O -format bin @pong
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/manyballs.bin  -nometa -O -format bin @manyballs
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin  -comments -o temp/chess.bin      -nometa -O -format bin @chess
+
+#romize -ram_sz 4096K -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/benchmarks.bin
+romize -ram_sz 4096K -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/cubes.bin temp/hanoi.bin temp/delta.bin temp/mpeg.bin temp/wormgame.bin temp/tilepuzzle.bin temp/spaceinv.bin temp/pong.bin temp/manyballs.bin temp/chess.bin
+
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.cubes.Main
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.hanoi.Main 20
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.delta.Main
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.mpeg.Main
+
+#traceviewer -map temp/benchmarks.map -sp j2me/src:samples/src:vm/src:j2se/src trace

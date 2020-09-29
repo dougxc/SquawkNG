@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Project Group-->
+<projectgroup>
+  <project path="builderNG.jpx"/>
+  <project path="bytecodesNG.jpx"/>
+  <project path="checkpoint.jpx"/>
+  <project path="compiler.jpx"/>
+  <project path="defineNG.jpx"/>
+  <project path="graphics.jpx"/>
+  <project path="j2meNG.jpx"/>
+  <project path="jcard.jpx"/>
+  <project path="jcard3.jpx"/>
+  <project path="loaderNG.jpx"/>
+  <project path="mojo.jpx"/>
+  <project path="refactorNG.jpx"/>
+  <project path="romizerNG.jpx"/>
+  <project path="samplesNG.jpx"/>
+  <project path="tckNG.jpx"/>
+  <project path="translatorNG.jpx"/>
+  <project path="vmNG.jpx"/>
+  <project path="j2seNG.jpx"/>
+</projectgroup>

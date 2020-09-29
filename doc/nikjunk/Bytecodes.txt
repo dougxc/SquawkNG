@@ -1,0 +1,175 @@
+    TYPEt       type
+
+    ALUrrr      reg reg reg
+    ALUrri      reg reg imm
+
+    CVTrr       op reg reg
+    MOVrr       reg reg
+    MVNrr       reg reg
+
+    IOFrr       reg reg                             // Uses type
+    CCASTr      reg                                 // Uses type
+    CSTORErr    reg reg
+
+    GOTOa       addr
+    IFrra       cond reg reg addr
+    IFria       cond reg imm addr
+    TSWITCHr    reg low high [addr]*
+    LSWITCHr    reg [value]* [addr]*
+
+    INVOKTis    nnn slot                            // Uses type
+    PARMr       reg
+    PARMi       imm
+
+    RETURNr     reg
+    RETURNi     imm
+    RESULTr     reg
+
+    THROWr      reg
+    NOP
+    YIELD
+
+    MENTERr     reg                                 // Uses type
+    MEXITr      reg                                 // Uses type
+    NEWr        reg                                 // Uses type
+    NEWrr       reg reg                             // Uses type
+
+    ALTHrr      reg reg
+    LDSTRri     reg index
+
+    LOADrri     size reg reg imm
+    ALOADrri    size reg reg imm
+    ALOADrrr    size reg reg reg
+
+    STORErri    size reg reg imm
+    ASTORErri   size reg reg imm
+    ASTORErrr   size reg reg reg
+
+
+size  = int
+        long
+        byte
+        char
+        short
+        oop
+
+
+
+    case ALUrrr:
+        int rd  = code & 0xF;
+        int rs1 = getBytecode(ip++);
+        int rs2 = rs1 & 0xF;
+        rs1 = (rs1 >> 8) & 0xF;
+        if (rd == REG_ESCAPE) {
+            rd = getBytecode(ip++);
+        }
+        if (rs1 == REG_ESCAPE) {
+            rs1 = getBytecode(ip++);
+        }
+        if (rs2 == REG_ESCAPE) {
+            rs2 = getBytecode(ip++);
+        }
+        rs1 = getWord(ar, rs1);
+        rs2 = getWord(ar, rs2);
+
+        if (shift == 0) {
+            rs1 = rs1 + rs2;
+        } else {
+            switch (shift) {
+                case 1: rs1 = rs1 - rs2; break;
+                case 2: rs1 = rs1 / rs2; break;
+                case 3: rs1 = rs1 * rs2; break;
+                case 4: rs1 = rs1 & rs2; break;
+                case 5: rs1 = rs1 | rs2; break;
+                case 6: rs1 = rs1 ? rs2; break;
+                etc.
+            }
+            shift = 0;
+        }
+
+        setWord(ar, rd, rs1);
+        break;
+
+    case ALUrri:
+        int rd  = code & 0xF;
+        int rs1 = getBytecode(ip++);
+        int imm = rs1 & 0xF;
+        rs1 = (rs1 >> 8) & 0xF;
+        if (rd == REG_ESCAPE) {
+            rd = getBytecode(ip++);
+        }
+        if (rs1 == REG_ESCAPE) {
+            rs1 = getBytecode(ip++);
+        }
+        if      (imm == 12) { imm = getBytecode(ip); ip += 1; }
+        else if (imm == 13) { imm = getHalfcode(ip); ip += 2; }
+        else if (imm == 14) { imm = getWordcode(ip); ip += 4; }
+        else if (imm == 15) { imm = -1; }
+        rs1 = getWord(ar, rs1);
+        switch (shift) {
+            case 0: rs1 = rs1 + imm; break;
+            case 1: rs1 = rs1 - imm; break;
+            case 2: rs1 = rs1 / imm; break;
+            case 3: rs1 = rs1 * imm; break;
+            case 4: rs1 = rs1 & imm; break;
+            case 5: rs1 = rs1 | imm; break;
+            case 6: rs1 = rs1 ? imm; break;
+            etc.
+        }
+        setWord(ar, rd, rs1);
+        shift = 0;
+        break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    loop:
+
+    while(running) {
+
+        restart = ip;
+        code = *ip++
+
+        if (code == type) {
+        }
+
+        if (code == shift) {
+        }
+
+        switch (code) {
+
+            case FOO:
+                if (type != INITIALISED) {
+                    newar = setupoCallToClini();
+                    break;
+                }
+                /* Do something */
+                continue;
+        }
+
+        ar = xxxx;
+        ip = xxxx;
+
+    }
+
+
+
+    const   0-15
+    load    0-15
+    store   0-15
+
+    class   0-15
+    field   mode
+
+
+

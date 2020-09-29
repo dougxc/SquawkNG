@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Contains classes for debug information. The back end generates debug information
+as a side effect of code generation. Debug information includes a mapping of
+program counter offsets to bytecode indices as well as pointer maps, specifying
+the stack location of all pointers for all positions where garbage collection
+can occur.<p>
+
+An instance of the class {@link javac1.backend.debug.OffsetDesc} stores the offsets
+of various entry points in the machine code. The {@link javac1.backend.code.CodeEmitter}
+assigns the correct values to the fields as soon as the corresponding code is
+generated.
+</body>
+</html>

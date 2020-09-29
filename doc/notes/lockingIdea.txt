@@ -1,0 +1,42 @@
+This technique can only ever applied types of object that it is known there
+are no romized instances.
+
+The first, say, 16 entries in the global vector are reserved to be used for holding objects
+that can need to have a monitior allocated.
+
+Each applicable lock/unlock pair is allocated an entry in the reserved area at random.
+If the entry is free then all well and good if it is not then a monitor object is allocated.
+Having 16 (or so) entries lessons the probability of a failure to get a free entry.
+
+EntryPoint:
+    mon = obj->monitor  // comes for free?
+    cls = mon->class    // comes for free?
+    cmp mon, cls
+    bne SlowEntry
+    tst gbl[rnd]        // or better swap
+    bne SlowEntry
+    gbl[rnd] = obj;                     // Cost load/store/2cmp/2branch
+
+    <...body...>
+
+    mon = obj->monitor
+    cls = mon->class
+    cmp mon, cls
+    bne SlowExit
+    gbl[rnd] = 0;                       // Cost 2load/cmp/branch/store
+    return;
+
+If a context switch occurs then a monitor object is allocated, however the presents
+of any such entries should discourage the scheduler from doing unnecessary preemption.
+
+
+
+Total cost -
+
+                        3 loads
+                        2 stores
+                        3 compares
+                        3 branches (predictably not taken)
+
+
+

@@ -1,0 +1,1 @@
+java -jar build.jar traceviewer -map temp/helloworld.map -sourcepath j2me/src:loader/src:vm/src:samples/src trace%1

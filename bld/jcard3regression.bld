@@ -1,0 +1,7 @@
+# translate and romize the jcard3 test program
+jcard3
+translate -cp jcard3/classes -comments -o temp/jcard3.bin -O -format bin @jcard3
+translate -cp jcard3/classes -libs temp/jcard3.bin -comments -o temp/jcard3_vmtest.bin -O -format bin @vmtest
+romize -format bin -m temp/vmtest.map -growrom -image temp/jcard3_vmtest.image temp/jcard3.bin temp/jcard3_vmtest.bin
+
+squawk -Ximage:temp/jcard3_vmtest.image com.sun.squawk.vmtest.VMTest

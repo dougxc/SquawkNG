@@ -1,0 +1,104 @@
+This documents describes the aspects of the Javacard NGVM architecture that
+depart from standard Java semantics.
+
+1, Access to uninitialized local variables.
+
+Normal Java verification checks that local variables are initialized before
+they are used. This is easy for KVM to check because the information is
+present in the stackmaps. We have no way to do this in the NGVM and so the
+proposal is that all local variables will be initialized to zero at the
+start of a method. This will mean that access to pointer variables that
+have not been initialized will result in a null pointer exception at runtime
+rather than a verification exception at load time. Access to uninitialized
+non-pointer variables will simply use the default value of the appropriate
+type (i.e. null or 0). This essentially means that local variables have the
+same default initialization semantics as object fields. Note that these
+semantic differences are only observable at the bytecode level as Javac
+checks use of uninitialized variables.
+
+
+2, Class instance construction
+
+The Java constructor idiom "new Foo()" etc. results in a "new" bytecode
+followed by a call to a constructor method when compiled with javac. This
+causes several major problems in the verifier as the type of the reference
+returned by the new bytecode has to be changed by the verifier after the
+constructor is called and any place it got copied to also needs to be
+changed. Given that we cannot guarantee the code will be contained in a
+basic block (e.g. "new Foo(a?b:c)" will generate two forward branches) the
+correct verification of these initialised reference types is really more
+complex than we want for the NGVM.
+
+The simplest solution to this is for the constructor to allocate the object
+if the first parameter is zero and for it to return the initialised object
+as its result. In order for class initialization to happen in the right
+order we replace the "new" with a "clinit". This is because
+code such as "new Foo(new Bar))" probably should result in the Foo class
+being initialized before the Bar class. (I say probably because it is not
+made explicit in section 12.5 of the JLS, but it is probably in there
+somewhere.)
+
+For example, an expression such as "Foo x = new Foo(1,2,3)" would be
+changed from:
+
+	new Foo
+	dup
+	iconst_1
+	iconst_2
+	iconst_3
+	invokespecial <init>
+	astore x
+
+to:
+
+	clinit Foo
+	aconst_null
+	iconst_1
+	iconst_2
+	iconst_3
+	invokespecial <init>
+	astore x
+
+It is hard for these aletrnative semantics to be detected at the Java language
+level. The edge case where this difference would be noticed is where the
+memory allocation caused by 'new' would fail. In the transformed code,
+the resulting OutOfMemoryError exception could be masked out if the
+evaluation of the parameters to the constructor caused an exception.
+
+3, Constructor transformation issues
+
+The above example is transformed by the translator by
+searching for certain bytecode sequences that are known to be output by
+javac. There are possible sequences that are legal which the transformer
+will not recognise, and in such circumstances the translator will respond by
+aborting the transformation operation.
+
+4, Constant field definitions
+
+The Java idiom to define constants (e.g. "final static int foo = 1;")
+results in the 1.3 and 1.4 javac compilers inlining references to the
+constant. However the 1.4 javac compiler also generates code to initialise
+the field as well (probably in order to support the full reflection model).
+However this will allow another class to be able to bind to the value at
+link time. Our translator will not do this and so all constants must be
+resolved at compile time. It appears that this is precisely the way that
+javac works anyway so it should not change the semantics of programs built
+in the normal way.
+
+
+5, Sizing constraints.
+
+The specification allows for a potentially huge number of variables in an
+object or an activation record, but in order to make the linker simpler the
+following restrictions are proposed for JC3.0:
+
+    - Each method can use no more than 256 local variables.
+    - Arrays can be no larger than 65536 elements long.
+    - Methods can be no larger than 65536 bytes long.
+    - There may be no more than 256 classes in a suite.
+    - There may be no more than 256 suites loaded on a card.
+    - There may be no more than 256 virtual methods in a single class's hierarchy.
+    - There may be no more than 256 static and <init> methods in a single class.
+    - There may be no more than 256 non-static fields in a single class.
+    - There may be no more than 256 static fields in a single class's hierachy.
+    - There may be no more than 256 methods in an interface's hierarchy.

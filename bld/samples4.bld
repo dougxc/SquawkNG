@@ -1,0 +1,4 @@
+translate -cp j2me/classes:graphics/classes          -comments -o temp/j2me.bin        -O -format bin @j2me
+romize               -ram_sz 32K -format bin    -m temp/samples.map -growrom -image temp/samples.image   temp/j2me.bin
+romize -ram_sz 32K -format bin  -m temp/samples.map -growrom -image temp/samples.imageLE temp/j2me.bin
+

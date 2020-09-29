@@ -1,0 +1,81 @@
+----------------------------------------
+Cubes
+
+3D virtual reality program in 1500 LOC
+
+Uses two threads, one to calculate the
+next frame, the other to render the
+current frame.
+
+The calculate thread works out the
+next position the cubes will have.
+
+The rendering thread sorts the polygons
+into depth order and displays them
+according to their distance from the
+point of observation using a polygon
+fill native method.
+
+All done using integer math.
+
+----------------------------------------
+Chess
+
+Chess program in 4500 LOC
+
+Creates a new thread for each move.
+
+Reads GIF file for the pieces and
+draws them to the screen after
+each move.
+
+Extensive use of arrays and timers.
+
+
+
+
+
+
+
+
+----------------------------------------
+MPEG
+
+MPEG-1 video and audio decoder.
+
+5000 LOC
+
+Written using three thread. One decodes
+the MPEG bytestream and feeds it in
+packets to a video decoding thread and
+an audio decoding thread. Lots of
+synchronization.
+
+Images are built up in a virtual frame
+buffer which is then displayed using
+a native method.
+
+Uses lots of very complex math.
+
+
+----------------------------------------
+Space invaders
+
+Java version of the classic game
+
+2500 LOC
+
+Graphical images are constructed
+internally and then displayed through
+a native method.
+
+
+
+
+
+
+
+
+
+
+----------------------------------------

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="debug.0" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.1" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.2" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.3" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.4" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.5" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.6" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.7" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.8" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="generalFormatting" name="blockIndent" value="4"/>
+  <property category="generalFormatting" name="tabSize" value="4"/>
+  <property category="idl" name="ProcessIDL" value="false"/>
+  <property category="javaFormatting" name="catchOnNewLine" value="0"/>
+  <property category="javaFormatting" name="closingBraceOwnLine" value="0"/>
+  <property category="javaFormatting" name="elseOnNewLine" value="0"/>
+  <property category="javaFormatting" name="extendsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="finallyOnNewLine" value="0"/>
+  <property category="javaFormatting" name="implementsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="spaceAfterTypecast" value="0"/>
+  <property category="javaFormatting" name="spaceBeforeLparen" value="0"/>
+  <property category="runtime" name="ConfigurationCount" value="12"/>
+  <property category="runtime" name="DefaultConfiguration" value="12"/>
+  <property category="runtime.0" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.0" name="ConfigurationName" value="Run BrazilHandler with path  j2me/classes;translator/classes"/>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.0" name="application.class" value="sunlabs.brazil.server.Main"/>
+  <property category="runtime.0" name="application.parameters" value="-port 9090 -handler com.sun.squawk.translator.BrazilHandler options -cp+j2me/classes+-traceloading"/>
+  <property category="runtime.0" name="application.vmparameters" value="-Xbootclasspath/p:c:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\j2se\brazil-1.1-min.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.0" name="appserver.parameters" value=""/>
+  <property category="runtime.0" name="appserver.servername" value=""/>
+  <property category="runtime.0" name="appserver.vmparameters" value=""/>
+  <property category="runtime.0" name="server.arguments" value=""/>
+  <property category="runtime.0" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.0" name="server.instance.name" value=""/>
+  <property category="runtime.0" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.0" name="server.vmparameters" value=""/>
+  <property category="runtime.0" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.1" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.1" name="ConfigurationName" value="BCELSuiteEmitter for CLDC"/>
+  <property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.1" name="application.class" value="com.sun.squawk.translator.BCELSuiteEmitter"/>
+  <property category="runtime.1" name="application.parameters" value="-d generated_classes -cp j2me\classes;samples\classes;tck\classes;tck\agent.jar;tck\tck.jar j2me"/>
+  <property category="runtime.1" name="application.vmparameters" value="-Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes;c:\work\SquawkNG\j2se\bcel-5.0.jar"/>
+  <property category="runtime.1" name="appserver.parameters" value=""/>
+  <property category="runtime.1" name="appserver.servername" value=""/>
+  <property category="runtime.1" name="appserver.vmparameters" value=""/>
+  <property category="runtime.1" name="server.arguments" value=""/>
+  <property category="runtime.1" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.1" name="server.instance.name" value=""/>
+  <property category="runtime.1" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.1" name="server.vmparameters" value=""/>
+  <property category="runtime.1" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.10" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.10" name="ConfigurationName" value="verify"/>
+  <property category="runtime.10" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.10" name="application.class" value="verify"/>
+  <property category="runtime.10" name="application.parameters" value="@pos"/>
+  <property category="runtime.10" name="application.vmparameters" value="-cp j2se\classes;tck\classes;tck\tck.jar;j2me\classes"/>
+  <property category="runtime.11" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.11" name="ConfigurationName" value="systemproperties connection test"/>
+  <property category="runtime.11" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.11" name="application.class" value="com.sun.squawk.io.j2se.systemproperties.Protocol"/>
+  <property category="runtime.11" name="application.vmparameters" value="-Xbootclasspath/a:j2se\classes;j2me\classes"/>
+  <property category="runtime.12" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.12" name="ConfigurationName" value="generate OLG.java"/>
+  <property category="runtime.12" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.12" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.12" name="application.parameters" value="-cp j2me/classes -comments -o OLG.java -O -format olg @j2me"/>
+  <property category="runtime.12" name="application.vmparameters" value=" -Xbootclasspath/a:j2se\classes;j2me\classes;translator\classes"/>
+  <property category="runtime.2" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.2" name="ConfigurationName" value="BCELSuiteEmitter for TCK"/>
+  <property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.2" name="application.class" value="com.sun.squawk.translator.BCELSuiteEmitter"/>
+  <property category="runtime.2" name="application.parameters" value="-d generated_classes -traceloading -cp j2me\classes;tck\classes;tck\agent.jar;tck\tck.jar tck"/>
+  <property category="runtime.2" name="application.vmparameters" value="-Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes;c:\work\SquawkNG\j2se\bcel-5.0.jar"/>
+  <property category="runtime.2" name="appserver.parameters" value=""/>
+  <property category="runtime.2" name="appserver.servername" value=""/>
+  <property category="runtime.2" name="appserver.vmparameters" value=""/>
+  <property category="runtime.2" name="server.arguments" value=""/>
+  <property category="runtime.2" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.2" name="server.instance.name" value=""/>
+  <property category="runtime.2" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.2" name="server.vmparameters" value=""/>
+  <property category="runtime.2" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.3" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.3" name="ConfigurationName" value="BCELSuiteEmitter for java.lang.Object"/>
+  <property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.3" name="application.class" value="com.sun.squawk.translator.BCELSuiteEmitter"/>
+  <property category="runtime.3" name="application.parameters" value="-verify -d generated/tmpclasses -cp j2me/classes java.lang.Object"/>
+  <property category="runtime.3" name="application.vmparameters" value="-Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\bcel-5.0.jar"/>
+  <property category="runtime.3" name="appserver.parameters" value=""/>
+  <property category="runtime.3" name="appserver.servername" value=""/>
+  <property category="runtime.3" name="appserver.vmparameters" value=""/>
+  <property category="runtime.3" name="server.arguments" value=""/>
+  <property category="runtime.3" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.3" name="server.instance.name" value=""/>
+  <property category="runtime.3" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.3" name="server.vmparameters" value=""/>
+  <property category="runtime.3" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.4" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.4" name="ConfigurationName" value="BCELVerifier on @classlist"/>
+  <property category="runtime.4" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.4" name="application.class" value="com.sun.squawk.translator.BCELVerifier"/>
+  <property category="runtime.4" name="application.parameters" value="-cp j2me/classes @classlist"/>
+  <property category="runtime.4" name="appserver.parameters" value=""/>
+  <property category="runtime.4" name="appserver.servername" value=""/>
+  <property category="runtime.4" name="appserver.vmparameters" value=""/>
+  <property category="runtime.4" name="server.arguments" value=""/>
+  <property category="runtime.4" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.4" name="server.instance.name" value=""/>
+  <property category="runtime.4" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.4" name="server.vmparameters" value=""/>
+  <property category="runtime.4" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.5" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.5" name="ConfigurationName" value="BCELSuiteEmitter for java.lang.ClassBase"/>
+  <property category="runtime.5" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.5" name="application.class" value="com.sun.squawk.translator.BCELSuiteEmitter"/>
+  <property category="runtime.5" name="application.parameters" value="-verify -d generated/tmpclasses -cp j2me/classes java.lang.ClassBase"/>
+  <property category="runtime.5" name="application.vmparameters" value="-Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\bcel-5.0.jar"/>
+  <property category="runtime.5" name="appserver.parameters" value=""/>
+  <property category="runtime.5" name="appserver.servername" value=""/>
+  <property category="runtime.5" name="appserver.vmparameters" value=""/>
+  <property category="runtime.5" name="server.arguments" value=""/>
+  <property category="runtime.5" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.5" name="server.instance.name" value=""/>
+  <property category="runtime.5" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.5" name="server.vmparameters" value=""/>
+  <property category="runtime.5" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.6" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.6" name="ConfigurationName" value="BCELVerifier on java.lang.Class"/>
+  <property category="runtime.6" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.6" name="application.class" value="com.sun.squawk.translator.BCELVerifier"/>
+  <property category="runtime.6" name="application.parameters" value="-cp generated/tmpclasses java.lang.Class"/>
+  <property category="runtime.6" name="appserver.parameters" value=""/>
+  <property category="runtime.6" name="appserver.servername" value=""/>
+  <property category="runtime.6" name="appserver.vmparameters" value=""/>
+  <property category="runtime.6" name="server.arguments" value=""/>
+  <property category="runtime.6" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.6" name="server.instance.name" value=""/>
+  <property category="runtime.6" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.6" name="server.vmparameters" value=""/>
+  <property category="runtime.6" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.7" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.7" name="ConfigurationName" value="Refactor"/>
+  <property category="runtime.7" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.7" name="application.class" value="com.sun.squawk.refactor.Main"/>
+  <property category="runtime.7" name="application.parameters" value="-d tmp -m assume translator/src/com/sun/squawk/translator/*.java"/>
+  <property category="runtime.7" name="appserver.parameters" value=""/>
+  <property category="runtime.7" name="appserver.servername" value=""/>
+  <property category="runtime.7" name="appserver.vmparameters" value=""/>
+  <property category="runtime.7" name="server.arguments" value=""/>
+  <property category="runtime.7" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.7" name="server.instance.name" value=""/>
+  <property category="runtime.7" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.7" name="server.vmparameters" value=""/>
+  <property category="runtime.7" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.8" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.8" name="ConfigurationName" value="traceviewer"/>
+  <property category="runtime.8" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.8" name="application.class" value="com.sun.squawk.traceviewer.TraceViewer"/>
+  <property category="runtime.8" name="application.parameters" value="-map helloworld.map -sp j2me/src -match *ALLOC* trace"/>
+  <property category="runtime.8" name="appserver.parameters" value=""/>
+  <property category="runtime.8" name="appserver.servername" value=""/>
+  <property category="runtime.8" name="appserver.vmparameters" value=""/>
+  <property category="runtime.8" name="server.arguments" value=""/>
+  <property category="runtime.8" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.8" name="server.instance.name" value=""/>
+  <property category="runtime.8" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.8" name="server.vmparameters" value=""/>
+  <property category="runtime.8" name="test.harness" value="com.borland.jbuilder.unittest.JBTestRunner"/>
+  <property category="runtime.9" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.9" name="ConfigurationName" value="FormatMap"/>
+  <property category="runtime.9" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.9" name="application.class" value="FormatMap"/>
+  <property category="runtime.9" name="application.parameters" value="measurements\vm.map"/>
+  <property category="serverservices" name="disabled.services" value="connector;jdatastore"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value="Sun Microsystems, Inc. All Rights Reserved."/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="CompileOnDebug" value="0"/>
+  <property category="sys" name="CompileOnRun" value="0"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2002"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="../../j2se/src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="ExcludeClassEnabled" value="0"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="JDK" value="java version 1.4.2_01-b06"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value="j2sdk1.4.1 Runtime Library;j2me;brazil;translator"/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="../../j2se/classes"/>
+  <property category="sys" name="SourcePath" value="../../j2se/src;../../define/src;[../../tck/tck.src.jar]"/>
+  <property category="sys" name="SourceVersion" value="1.4"/>
+  <property category="sys" name="TestPath" value="../../j2se/src"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value=""/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="../../"/>
+  <property category="sys" name="max.package.levels" value="5"/>
+  <node name="src" type="NavigationDirectory">
+    <property category="directorynode" name="pattern" value="*.java"/>
+    <property category="directorynode" name="showSubdirectories" value="1"/>
+    <property category="directorynode" name="url" value="C%%|/work/SquawkNG/j2se/src"/>
+    <property category="directorynode" name="usePatternFilter" value="1"/>
+  </node>
+  <node name="com" type="Folder">
+    <node name="sun" type="Folder">
+      <node name="squawk" type="Folder">
+        <node name="io" type="Folder">
+          <node name="j2se" type="Folder">
+            <node name="channel" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/channel/Protocol.java"/>
+            </node>
+            <node name="file" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/file/Protocol.java"/>
+            </node>
+            <node name="http" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/http/Protocol.java"/>
+            </node>
+            <node name="serversocket" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/serversocket/Protocol.java"/>
+            </node>
+            <node name="socket" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/socket/Protocol.java"/>
+            </node>
+            <node name="zip" type="Folder">
+              <file path="../../j2se/src/com/sun/squawk/io/j2se/zip/Protocol.java"/>
+            </node>
+            <file path="../../j2se/src/com/sun/squawk/io/j2se/UniversalFilterInputStream.java"/>
+            <file path="../../j2se/src/com/sun/squawk/io/j2se/UniversalFilterOutputStream.java"/>
+          </node>
+        </node>
+        <node name="traceviewer" type="Folder">
+          <file path="../../j2se/src/com/sun/squawk/traceviewer/TraceViewer.java"/>
+        </node>
+        <node name="translator" type="Folder">
+          <file path="../../j2se/src/com/sun/squawk/translator/BCELSuiteEmitter.java.save"/>
+          <file path="../../j2se/src/com/sun/squawk/translator/BCELVerifier.java.save"/>
+          <file path="../../j2se/src/com/sun/squawk/translator/BrazilHandler.java"/>
+        </node>
+        <node name="util" type="Folder">
+          <file path="../../j2se/src/com/sun/squawk/util/Find.java"/>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node name="com.sun.squawk.translator" type="Package"/>
+  <node name="org.apache.bcel" type="Package"/>
+  <node name="Standard Doclet" type="Javadoc">
+    <property category="nodeJavadoc" name="buildWithProject" value="0"/>
+    <property category="nodeJavadoc" name="directory" value="javadoc"/>
+    <property category="nodeJavadoc" name="displayAllOutput" value="0"/>
+  </node>
+  <file path="../../j2se/src/jvmenv.java"/>
+  <file path="../../j2se/src/verify.java"/>
+</project>

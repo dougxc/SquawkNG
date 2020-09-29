@@ -1,0 +1,7 @@
+translate -cp j2me/classes -comments -o temp/j2me.xml        -O -format xml @j2me
+translate -cp translator/classes -libs temp/j2me.xml -comments -o temp/translator.xml -O -format xml @translator
+translate -cp translator/classes -libs temp/j2me.xml:temp/translator.xml -comments -o temp/translator_impl.xml -O -format xml @translator_impl
+translate -cp translator/classes -libs temp/j2me.xml:temp/translator.xml -comments -o temp/translator_main.xml -O -format xml @translator_main
+romize -ram_sz 1M -format xml -m temp/translator.map -growrom -image temp/translator.image temp/j2me.xml temp/translator.xml temp/translator_impl.xml temp/translator_main.xml
+squawk -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -help
+squawkc -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -traceloading -cp j2me/classes -comments -o temp/j2me.bin -O -format bin @j2me

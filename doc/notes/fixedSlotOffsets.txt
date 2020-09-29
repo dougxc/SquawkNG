@@ -1,0 +1,10 @@
+<clinit> ()V                    = 0
+<init> ()V                      = 1
+finalize ()V                    = 2
+main ([Ljava/lang/String)I      = 3
+
+it might also be worth making
+
+run ()V                         = 4
+
+and to change the run interface method into a virtual method.

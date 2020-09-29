@@ -1,0 +1,40 @@
+1, Pass the Squawk/TCK tests.
+
+2, Remove function calls that are speceifed in a driver file.
+
+   e.g.
+        Assert.assert(boolean b)
+        Assert.assert(boolean b, String msg)
+        Trace.trace(String msg)
+
+   The code to evaluate the parameters should be removed and if the functions
+   are not void then the default value (zero, null, or false) should be returned.
+
+3, Automatically finalizing a set of classes.
+
+    Add the 'final' attribute to leaf classes in a set of classes.
+    Then the methods that are leaf methods are made final in the class hierarchy graph.
+    Should work in one of two modes:
+        1, Mark final only leaf classes that are not public or protected.
+        2, Mark final all leaf classes
+
+4, Inlining virtual methods that are always monomorphic and final.
+
+5, Inlining across classes.
+
+6, Forced inlining of functions specified in a driver file.
+
+   e.g.
+        Lisp2Collector.markObject(int x)
+        etc.
+
+7, Optionally remove unused classes, fields and methods.
+
+    Should work in one of two modes:
+        1, Remove unused members that are not public or protected.
+        2, Remove all unused members.
+
+8, The ability to inline synchronized methods would be nice but is not essential.
+
+It might be a good idea to do the inlining with a seporate program that covered items 3 to 8
+so that BCO can remain a single class at a time application.

@@ -1,0 +1,106 @@
+        count=3 size=16 for java.lang.Thread
+
+            0   SF [0+] java.lang.SchedulerState scheduler static access=0x00001000
+
+        count=6 size=28 for java.lang.VMExtension
+
+            0   SF [0+] java.lang.OutOfMemoryError outOfMemoryError static access=0x00001000
+            1   SF [0] java.lang._boolean_ systemUp static access=0x00001000
+            2   SF [1] java.lang._boolean_ negativeTckTest static access=0x00001000
+            3   SF [2] java.lang._boolean_ tckMode static access=0x00001000
+
+        count=3 size=16 for java.lang.Class
+
+            0   SF [0+] java.lang.KlassInitializationState initqueue static access=0x00001000
+
+        count=4 size=20 for java.lang.System
+
+            1   SF [0+] java.io.PrintStream out static access=0x00001011
+            2   SF [1+] java.io.PrintStream err static access=0x00001011
+
+        count=4 size=20 for java.lang.SuiteManager
+
+            0   SF [0+] [java.lang.Suite suites static access=0x00001000
+            1   SF [1+] [java.lang.Object meta static access=0x00001000
+
+        count=4 size=20 for java.lang.SymbolParser
+
+            0   SF [0+] java.lang.SymbolParser p1 static access=0x00001000
+            1   SF [1+] java.lang.SymbolParser p2 static access=0x00001000
+
+
+        count=3 size=16 for java.lang.Native
+
+            0   SF [0+] java.util.NoSyncHashtable systemProperties static access=0x00001002
+
+        count=4 size=20 for javax.microedition.io.Connector
+
+            0   SF [0+] java.lang.String host static access=0x00001002
+            1   SF [1+] java.lang.String classRoot static access=0x00001002
+
+        count=3 size=16 for com.sun.squawk.loader.SuiteLoader
+
+            1   SF [1+] com.sun.squawk.loader.SuiteLoader theLoader static access=0x00001001
+
+        count=3 size=16 for com.sun.squawk.suite.SuiteParser
+
+            0   SF [0] java.lang._int_ finalizeSlot static access=0x00001000
+
+
+        count=2 size=12 for java.lang.StringOfSymbols
+
+
+        count=2 size=12 for java.lang.StringOfBytes
+
+
+        count=7 size=32 for com.sun.squawk.suite.SuiteClass
+
+*           0   SF [0+] [java.lang._char_ NO_INTERFACE_TYPES static access=0x00001010
+*           1   SF [1+] [java.lang._char_ NO_CLASS_REFERENCES static access=0x00001010
+*           2   SF [2+] [[java.lang._byte_ NO_INTERFACE_SLOT_TABLES static access=0x00001010
+*           3   SF [3+] [java.lang.Object NO_OBJECT_REFERENCES static access=0x00001010
+*           4   SF [4+] [java.lang._int_ NO_OVERRIDDEN_ACCESS static access=0x00001010
+
+        count=3 size=16 for com.sun.squawk.vm.ClassNumbers
+
+            0   SF [0+] [java.lang.String implicitProxyNames static access=0x00001011
+
+
+        count=2 size=12 for com.sun.squawk.loader.ProxyRelocator
+
+        count=3 size=16 for com.sun.squawk.loader.Relocator
+
+            0   SF [0] java.lang._int_ lookupSlot static access=0x00001002
+
+        count=2 size=12 for com.sun.squawk.loader.PrimitiveProxyRelocator
+
+        count=7 size=32 for com.sun.squawk.loader.KlassBuilder
+
+*           0   SF [0+] [[java.lang._char_ NO_INTERFACE_SLOT_TABLES static access=0x00001010
+*           1   SF [1+] [[java.lang._byte_ NO_METHODS static access=0x00001010
+*           2   SF [2+] [java.lang._char_ NO_TYPES static access=0x00001010
+*           3   SF [3+] [java.lang.Object NO_OBJECTS static access=0x00001010
+*           4   SF [4+] [java.lang._int_ NO_INTS static access=0x00001010
+
+        count=3 size=16 for com.sun.squawk.loader.SuiteRelocator
+
+            0   SF [0] java.lang._int_ primitiveStatics static access=0x00001002
+
+
+        count=4 size=20 for com.sun.squawk.loader.Member
+
+*           0   SF [0+] [java.lang._char_ NO_PARMS static access=0x00001001
+            1   SF [1+] com.sun.squawk.loader.Member sharedInstance static access=0x00001002
+
+
+        count=3 size=16 for com.sun.squawk.suite.MethodBody
+
+            0   SF [0+] com.sun.squawk.suite.MethodBody sharedInstance static access=0x00001002
+
+
+        count=6 size=28 for com.sun.squawk.loader.Verifier
+
+            1   SF [0+] [com.sun.squawk.suite.ExceptionHandler NO_HANDLERS static access=0x00001002
+            2   SF [1+] com.sun.squawk.loader.Verifier theVerifier static access=0x00001002
+            3   SF [2+] [[java.lang._int_ getTable static access=0x00001002
+            4   SF [3+] [[java.lang._int_ putTable static access=0x00001002

@@ -1,0 +1,44 @@
+When small enough parameters are passed by placing them in the first 32 words of the global vector.
+When greater than this a word array (int array) must be allocated and used instead.
+
+Which ever is used the entries are never seen as oop pointers by the garbage collector.
+Parameters can only be local variables or nemeric constants. String constants are not allowed, and they are
+always put into entries in the global vector. Thus the oop parameters are always pointed to either by the
+caller's activation record or the global vector.
+
+JIT can optomize the first N parameters by placing them in machine registers.
+
+This means that two things must be:
+
+   1, No context switch can occur between the parameters being placed in the global vector and
+      the callee copying them into it's activation record. (Simple if context switching only
+      ever occurs at backward branch targets.)
+
+   2, All the parameters must be copied into the callee's activation record before it calls
+      something else.
+
+
+
+The calling seqence is:
+
+ 1, Evaluate the parameters and place them in globals 0-N
+ 2, Call the method
+ 3, Save the result.
+
+ The result can be passed back in global 0
+
+ A special machine instruction called "parameters" can load several things into the global vector
+
+    parameters p1 p2 p3 p4 ... pN       // Store the parms
+    invoke &123@45                      // call
+    ld 4 #0                             // Get the result
+
+The parameters instruction can be coded in such a way that each one usually only takes one byte
+
+Single parameter calls would be
+
+    st 3 #0                             // Store the parm
+    invoke &123@45                      // call
+    ld 4 #0                             // Get the result
+
+Entry into an exception handler can use global 0 for the exception object

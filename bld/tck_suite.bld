@@ -1,0 +1,4 @@
+# Builder command line args file for translating TCK into XML suite
+
+
+translate -cp j2me/classes:tck/classes:tck/tck.jar:tck/agent.jar -format bin -O -o temp/tck_vm_overview.bin @tck_vm_overview

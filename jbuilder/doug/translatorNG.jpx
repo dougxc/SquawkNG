@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="debug.0" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.1" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.10" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.11" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.12" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.13" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.14" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.15" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.16" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.17" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.18" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.2" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.3" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.4" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.5" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.6" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.7" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.8" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="debug.9" name="BuildTargetOnDebug" value="&lt;None&gt;"/>
+  <property category="generalFormatting" name="blockIndent" value="4"/>
+  <property category="idl" name="ProcessIDL" value="false"/>
+  <property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+  <property category="optimize.1" name="BuildTargetOnOptimize" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;rebuild"/>
+  <property category="optimize.1" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="optimize.11" name="BuildTargetOnOptimize" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;rebuild"/>
+  <property category="optimize.11" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="optimize.16" name="BuildTargetOnOptimize" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;rebuild"/>
+  <property category="optimize.16" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="optimize.17" name="BuildTargetOnOptimize" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;rebuild"/>
+  <property category="optimize.17" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="optimize.18" name="BuildTargetOnOptimize" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;rebuild"/>
+  <property category="optimize.18" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="runtime" name="ConfigurationCount" value="18"/>
+  <property category="runtime" name="DefaultConfiguration" value="4"/>
+  <property category="runtime.0" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.0" name="ConfigurationName" value="translate graphics"/>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.0" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.0" name="application.parameters" value="-cp translator/classes:graphics/classes:temp -deps j2me -comments -o temp/graphics.xml   -nometa -O -format xml @graphics"/>
+  <property category="runtime.0" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.0" name="appserver.parameters" value=""/>
+  <property category="runtime.0" name="appserver.servername" value=""/>
+  <property category="runtime.0" name="appserver.vmparameters" value=""/>
+  <property category="runtime.0" name="server.arguments" value=""/>
+  <property category="runtime.0" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.0" name="server.instance.name" value=""/>
+  <property category="runtime.0" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.0" name="server.vmparameters" value=""/>
+  <property category="runtime.0" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.1" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.1" name="ConfigurationName" value="translate j2me"/>
+  <property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.1" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.1" name="application.parameters" value="-cp j2me/classes -comments -o temp/j2me.bin        -O -format bin @j2me"/>
+  <property category="runtime.1" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.1" name="appserver.parameters" value=""/>
+  <property category="runtime.1" name="appserver.servername" value=""/>
+  <property category="runtime.1" name="appserver.vmparameters" value=""/>
+  <property category="runtime.1" name="server.arguments" value=""/>
+  <property category="runtime.1" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.1" name="server.instance.name" value=""/>
+  <property category="runtime.1" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.1" name="server.vmparameters" value=""/>
+  <property category="runtime.1" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.10" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.10" name="ConfigurationName" value="translate mojo"/>
+  <property category="runtime.10" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.10" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.10" name="application.parameters" value="-cp translator/classes:j2me/classes:mojo/classes                      -comments -o temp/mojo.bin -O -format bin @mojodriver"/>
+  <property category="runtime.10" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.10" name="appserver.parameters" value=""/>
+  <property category="runtime.10" name="appserver.servername" value=""/>
+  <property category="runtime.10" name="appserver.vmparameters" value=""/>
+  <property category="runtime.10" name="server.arguments" value=""/>
+  <property category="runtime.10" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.10" name="server.instance.name" value=""/>
+  <property category="runtime.10" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.10" name="server.vmparameters" value=""/>
+  <property category="runtime.10" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.11" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.11" name="ConfigurationName" value="translate jcard3"/>
+  <property category="runtime.11" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.11" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.11" name="application.parameters" value="-cp translator/classes:jcard3/classes -suite0  -comments -o temp/jcard3.bin -O -format bin @jcard3"/>
+  <property category="runtime.11" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.11" name="appserver.parameters" value=""/>
+  <property category="runtime.11" name="appserver.servername" value=""/>
+  <property category="runtime.11" name="appserver.vmparameters" value=""/>
+  <property category="runtime.11" name="server.arguments" value=""/>
+  <property category="runtime.11" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.11" name="server.instance.name" value=""/>
+  <property category="runtime.11" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.11" name="server.vmparameters" value=""/>
+  <property category="runtime.11" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.12" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.12" name="ConfigurationName" value="translate cubes"/>
+  <property category="runtime.12" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.12" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.12" name="application.parameters" value="-cp translator/classes:samples/classes -libs temp/j2me.bin:temp/graphics.jar  -comments -o temp/cubes.bin -nometa -O -format bin @cubes"/>
+  <property category="runtime.12" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.12" name="appserver.parameters" value=""/>
+  <property category="runtime.12" name="appserver.servername" value=""/>
+  <property category="runtime.12" name="appserver.vmparameters" value=""/>
+  <property category="runtime.12" name="server.arguments" value=""/>
+  <property category="runtime.12" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.12" name="server.instance.name" value=""/>
+  <property category="runtime.12" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.12" name="server.vmparameters" value=""/>
+  <property category="runtime.12" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.13" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.13" name="ConfigurationName" value="dump temp/j2me.bin"/>
+  <property category="runtime.13" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.13" name="application.class" value="com.sun.squawk.translator.loader.SuiteLoader"/>
+  <property category="runtime.13" name="application.parameters" value="temp/j2me.bin"/>
+  <property category="runtime.13" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.13" name="appserver.parameters" value=""/>
+  <property category="runtime.13" name="appserver.servername" value=""/>
+  <property category="runtime.13" name="appserver.vmparameters" value=""/>
+  <property category="runtime.13" name="server.arguments" value=""/>
+  <property category="runtime.13" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.13" name="server.instance.name" value=""/>
+  <property category="runtime.13" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.13" name="server.vmparameters" value=""/>
+  <property category="runtime.13" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.14" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.14" name="ConfigurationName" value="translate examples"/>
+  <property category="runtime.14" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.14" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.14" name="application.parameters" value="-cp samples/classes -libs temp/j2me.bin:temp/graphics.bin -comments -o temp/examples.bin -O -format bin @examples"/>
+  <property category="runtime.14" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.14" name="appserver.parameters" value=""/>
+  <property category="runtime.14" name="appserver.servername" value=""/>
+  <property category="runtime.14" name="appserver.vmparameters" value=""/>
+  <property category="runtime.14" name="server.arguments" value=""/>
+  <property category="runtime.14" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.14" name="server.instance.name" value=""/>
+  <property category="runtime.14" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.14" name="server.vmparameters" value=""/>
+  <property category="runtime.14" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.15" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.15" name="ConfigurationName" value="translate tck2 to XML"/>
+  <property category="runtime.15" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.15" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.15" name="application.parameters" value="-libs temp/j2me_tck.xml:temp/tcktests_common.xml -cp tck/classes:tck/tck.jar -format xml -O -o temp/tcktests_1153_3708.xml @tcktests_1153_3708"/>
+  <property category="runtime.15" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.15" name="appserver.parameters" value=""/>
+  <property category="runtime.15" name="appserver.servername" value=""/>
+  <property category="runtime.15" name="appserver.vmparameters" value=""/>
+  <property category="runtime.15" name="server.arguments" value=""/>
+  <property category="runtime.15" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.15" name="server.instance.name" value=""/>
+  <property category="runtime.15" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.15" name="server.vmparameters" value=""/>
+  <property category="runtime.15" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.16" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.16" name="ConfigurationName" value="translate translator"/>
+  <property category="runtime.16" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.16" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.16" name="application.parameters" value="-cp translator/classes -libs temp/j2me.bin -comments -o temp/translator.bin -O -format bin @translator"/>
+  <property category="runtime.16" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.16" name="appserver.parameters" value=""/>
+  <property category="runtime.16" name="appserver.servername" value=""/>
+  <property category="runtime.16" name="appserver.vmparameters" value=""/>
+  <property category="runtime.16" name="server.arguments" value=""/>
+  <property category="runtime.16" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.16" name="server.instance.name" value=""/>
+  <property category="runtime.16" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.16" name="server.vmparameters" value=""/>
+  <property category="runtime.16" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.17" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.17" name="ConfigurationName" value="verify j2me"/>
+  <property category="runtime.17" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.17" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.17" name="application.parameters" value="-cp j2me/classes -v @j2me.classlist"/>
+  <property category="runtime.17" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.17" name="appserver.parameters" value=""/>
+  <property category="runtime.17" name="appserver.servername" value=""/>
+  <property category="runtime.17" name="appserver.vmparameters" value=""/>
+  <property category="runtime.17" name="server.arguments" value=""/>
+  <property category="runtime.17" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.17" name="server.instance.name" value=""/>
+  <property category="runtime.17" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.17" name="server.vmparameters" value=""/>
+  <property category="runtime.17" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.18" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.18" name="ConfigurationName" value="translate translator (xml)"/>
+  <property category="runtime.18" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.18" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.18" name="application.parameters" value="-cp translator/classes -libs temp/j2me.xml -comments -o temp/translator.xml -O -format xml @translator"/>
+  <property category="runtime.18" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.18" name="appserver.parameters" value=""/>
+  <property category="runtime.18" name="appserver.servername" value=""/>
+  <property category="runtime.18" name="appserver.vmparameters" value=""/>
+  <property category="runtime.18" name="server.arguments" value=""/>
+  <property category="runtime.18" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.18" name="server.instance.name" value=""/>
+  <property category="runtime.18" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.18" name="server.vmparameters" value=""/>
+  <property category="runtime.18" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.2" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.2" name="ConfigurationName" value="Run translator on samples"/>
+  <property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.2" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.2" name="application.parameters" value="-comments:src -cp translator/classes:j2me\classes:samples\classes -nullemitter samples"/>
+  <property category="runtime.2" name="application.vmparameters" value="-Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.2" name="appserver.parameters" value=""/>
+  <property category="runtime.2" name="appserver.servername" value=""/>
+  <property category="runtime.2" name="appserver.vmparameters" value=""/>
+  <property category="runtime.2" name="server.arguments" value=""/>
+  <property category="runtime.2" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.2" name="server.instance.name" value=""/>
+  <property category="runtime.2" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.2" name="server.vmparameters" value=""/>
+  <property category="runtime.2" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.3" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.3" name="ConfigurationName" value="translate jcard (suite0)"/>
+  <property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.3" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.3" name="application.parameters" value="-cp translator/classes:jcard/classes -comments -suite0 -o temp/jcard.xml         -format xml   -O @suite0"/>
+  <property category="runtime.3" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.3" name="appserver.parameters" value=""/>
+  <property category="runtime.3" name="appserver.servername" value=""/>
+  <property category="runtime.3" name="appserver.vmparameters" value=""/>
+  <property category="runtime.3" name="server.arguments" value=""/>
+  <property category="runtime.3" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.3" name="server.instance.name" value=""/>
+  <property category="runtime.3" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.3" name="server.vmparameters" value=""/>
+  <property category="runtime.3" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.4" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.4" name="ConfigurationName" value="translate tck"/>
+  <property category="runtime.4" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.4" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.4" name="application.parameters" value="-libs temp/j2me_tck.bin:temp/tcktests_common.bin -cp tck/classes:tck/tck.jar -format xml -O -o temp/bad.xml -comments:stack javasoft.sqe.tests.lang.clss027.clss02702.clss02702_a"/>
+  <property category="runtime.4" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.4" name="appserver.parameters" value=""/>
+  <property category="runtime.4" name="appserver.servername" value=""/>
+  <property category="runtime.4" name="appserver.vmparameters" value=""/>
+  <property category="runtime.4" name="server.arguments" value=""/>
+  <property category="runtime.4" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.4" name="server.instance.name" value=""/>
+  <property category="runtime.4" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.4" name="server.vmparameters" value=""/>
+  <property category="runtime.4" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.5" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.5" name="ConfigurationName" value="translate graphics"/>
+  <property category="runtime.5" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.5" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.5" name="application.parameters" value="-cp graphics/classes -libs temp/j2me.bin -o temp/graphics.bin -O -format bin @graphics"/>
+  <property category="runtime.5" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.5" name="appserver.parameters" value=""/>
+  <property category="runtime.5" name="appserver.servername" value=""/>
+  <property category="runtime.5" name="appserver.vmparameters" value=""/>
+  <property category="runtime.5" name="server.arguments" value=""/>
+  <property category="runtime.5" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.5" name="server.instance.name" value=""/>
+  <property category="runtime.5" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.5" name="server.vmparameters" value=""/>
+  <property category="runtime.5" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.6" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.6" name="ConfigurationName" value="translate j2me with annotations"/>
+  <property category="runtime.6" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.6" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.6" name="application.parameters" value="-tracepool -suite0  -comments:src,stack -cp translator/classes:..\CFG\live_ann:j2me\classes -o suite_g.xml j2me"/>
+  <property category="runtime.6" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.6" name="appserver.parameters" value=""/>
+  <property category="runtime.6" name="appserver.servername" value=""/>
+  <property category="runtime.6" name="appserver.vmparameters" value=""/>
+  <property category="runtime.6" name="server.arguments" value=""/>
+  <property category="runtime.6" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.6" name="server.instance.name" value=""/>
+  <property category="runtime.6" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.6" name="server.vmparameters" value=""/>
+  <property category="runtime.6" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.7" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.7" name="ConfigurationName" value="translate base"/>
+  <property category="runtime.7" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.7" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.7" name="application.parameters" value="  -comments:src,stack  -cp translator/classes:j2me\classes -o suite_g.xml base"/>
+  <property category="runtime.7" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\rt_g.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.7" name="appserver.parameters" value=""/>
+  <property category="runtime.7" name="appserver.servername" value=""/>
+  <property category="runtime.7" name="appserver.vmparameters" value=""/>
+  <property category="runtime.7" name="server.arguments" value=""/>
+  <property category="runtime.7" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.7" name="server.instance.name" value=""/>
+  <property category="runtime.7" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.7" name="server.vmparameters" value=""/>
+  <property category="runtime.7" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.8" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.8" name="ConfigurationName" value="translate benchmarks"/>
+  <property category="runtime.8" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.8" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.8" name="application.parameters" value="-cp samples/classes -libs temp/j2me.bin:temp/graphics.bin -o temp/benchmarks.bin  -O -format bin @benchmarks"/>
+  <property category="runtime.8" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.8" name="appserver.parameters" value=""/>
+  <property category="runtime.8" name="appserver.servername" value=""/>
+  <property category="runtime.8" name="appserver.vmparameters" value=""/>
+  <property category="runtime.8" name="server.arguments" value=""/>
+  <property category="runtime.8" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.8" name="server.instance.name" value=""/>
+  <property category="runtime.8" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.8" name="server.vmparameters" value=""/>
+  <property category="runtime.8" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="runtime.9" name="BuildTargetOnRun" value="&lt;None&gt;"/>
+  <property category="runtime.9" name="ConfigurationName" value="translate gtest to xml"/>
+  <property category="runtime.9" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.9" name="application.class" value="com.sun.squawk.translator.main.Main"/>
+  <property category="runtime.9" name="application.parameters" value="-cp translator/classes:j2me/classes:graphics/classes -comments -o temp/gtest.xml -O -format xml @gtest"/>
+  <property category="runtime.9" name="application.vmparameters" value="-da -Xbootclasspath/p:C:\j2sdk1.4.1\jre\lib\rt.jar;c:\work\SquawkNG\translator\classes;c:\work\SquawkNG\j2se\classes;c:\work\SquawkNG\j2me\classes"/>
+  <property category="runtime.9" name="appserver.parameters" value=""/>
+  <property category="runtime.9" name="appserver.servername" value=""/>
+  <property category="runtime.9" name="appserver.vmparameters" value=""/>
+  <property category="runtime.9" name="server.arguments" value=""/>
+  <property category="runtime.9" name="server.disableServerClassTracing" value="0"/>
+  <property category="runtime.9" name="server.instance.name" value=""/>
+  <property category="runtime.9" name="server.name" value="Tomcat 3.3"/>
+  <property category="runtime.9" name="server.vmparameters" value=""/>
+  <property category="runtime.9" name="test.harness" value="junit.textui.TestRunner"/>
+  <property category="serverservices" name="disabled.services" value="connector;jdatastore"/>
+  <property category="serverservices" name="ejb.service.server" value="Borland Enterprise Server AppServer Edition 5.0.2+"/>
+  <property category="serverservices" name="is.single.server" value="0"/>
+  <property category="serverservices" name="jsp.service.server" value="Tomcat 3.3"/>
+  <property category="serverservices" name="single.server.name" value=""/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="BeansInstantiate" value="false"/>
+  <property category="sys" name="BraceStyle" value="0"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value=""/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="CompileOnDebug" value="0"/>
+  <property category="sys" name="CompileOnRun" value="0"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2002"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="../../translator/src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="EventMatch" value="false"/>
+  <property category="sys" name="EventStyle" value="1"/>
+  <property category="sys" name="ExcludeClass" value="com.sun.squawk.util.Find"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="InstanceVisibility" value="0"/>
+  <property category="sys" name="JDK" value="java version 1.4.2_01-b06"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value="j2sdk1.4.1 Runtime Library;j2se;j2me;brazil;translator;bco"/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="../../translator/tmpclasses"/>
+  <property category="sys" name="SourcePath" value="../../translator/src;../../define/src;../../loader/src"/>
+  <property category="sys" name="SourceVersion" value="1.4"/>
+  <property category="sys" name="TestPath" value="../../translator/src"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="../../"/>
+  <property category="sys" name="max.package.levels" value="5"/>
+  <node name="com.sun.squawk.vm" type="Package"/>
+  <node name="Standard Doclet" type="Javadoc">
+    <property category="javadoc" name="packages.1" value="com.sun.squawk.translator"/>
+    <property category="javadoc" name="packages.2" value="com.sun.squawk.translator.ir"/>
+    <property category="javadoc" name="packages.3" value="com.sun.squawk.translator.loader"/>
+    <property category="javadoc" name="packages.4" value="com.sun.squawk.translator.util"/>
+    <property category="javadoc" name="packages.5" value="com.sun.squawk.translator.xml"/>
+    <property category="javadoc" name="packages.6" value="com.sun.squawk.util"/>
+    <property category="javadoc" name="packages.7" value="com.sun.squawk.vm"/>
+    <property category="nodeJavadoc" name="buildWithProject" value="0"/>
+    <property category="nodeJavadoc" name="directory" value="doc"/>
+    <property category="nodeJavadoc" name="displayAllOutput" value="0"/>
+  </node>
+  <file path="../../j2se/src/com/sun/squawk/translator/suite/impl/GeneratedObjectLayoutEmitter.java"/>
+  <file path="../../translator/src/com/sun/squawk/translator/suite/SuiteAttribute.java"/>
+  <file path="../../translator/src/translator.java"/>
+  <file path="../../translator/src/translator_impl.java"/>
+  <file path="../../translator/src/translator_main.java"/>
+</project>

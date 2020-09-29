@@ -1,0 +1,6 @@
+j2me
+samples
+translate -cp j2me/classes          -comments -o temp/j2me.bin -O -format bin @j2me
+translate -cp j2me/classes:samples/classes -comments -o temp/nop.bin  -O -format bin Nop @j2me
+romize -format bin -m temp/nop.map -growrom -image temp/nop.image temp/j2me.bin temp/nop.bin
+squawkc -Ximage:temp/nop.image Nop

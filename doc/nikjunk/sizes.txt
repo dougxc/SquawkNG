@@ -1,0 +1,58 @@
+Squawk compression evaluation
+=============================
+
+
+Example 1
+=========
+
+117 Classes made up of the CLDC classes plus the squawk suite loader
+
+
+
+                                    Class sizes
+                                    ===========
+
+
+                    No options                      -g:none
+                    ----------                      -------
+
+
+
+Normal classes      426302                          300810
+
+
+
+Classes with        472291                          347057 (200448 zipped)
+stackmaps
+
+
+
+
+                                    Suite sizes
+                                    ===========
+
+
+                    Not final                       Final
+                    ---------                       -----
+
+Suite size          154905 (66999 zipped)           137119 (60091 zipped)
+
+
+EEPROM size         151032                          134724
+
+
+
+
+
+
+                Suite ratio to classes -g:none with stackmaps
+                =============================================
+
+
+                    Not final                       Final
+                    ---------                       -----
+
+Not zipped          44.6%                           39.5%
+
+
+Zipped              33.4%                           29.9%

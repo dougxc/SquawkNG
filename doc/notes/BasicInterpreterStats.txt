@@ -1,0 +1,14 @@
+Useful for the VM to be able to record and output on exit:
+
+Number of:
+
+        Instructions
+        Branches
+        Allocations
+        GCs
+        Calls
+        Activation Record allocations
+        Context switch tests
+        Context switches
+
+        number of global slots used (by type?)

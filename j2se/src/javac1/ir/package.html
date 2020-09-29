@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for the intermediate representation. The classes and interfaces
+of this package are used for building the control flow graph as well as for
+register allocation and code generation.
+
+The {@link javac1.ir.InstructionVisitor} interface provides type-based dispatch for
+instructions. Functionality that needs to be implemented for all classes is
+factored out into a specialised visitor instead of being added to the
+instruction classes itself.
+
+Classes that need to iterate over all basic blocks of the control flow graph
+simply implement the interface {@link javac1.ir.BlockClosure}. The interface
+{@link javac1.ir.ValueClosure} serves for handling or changing the input or stack
+values of an instruction.
+
+The {@link javac1.ir.ValueStack} class keeps track both of the most recent
+assignment to each local variable and of the values on the expression stack.
+</body>
+</html>

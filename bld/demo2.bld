@@ -1,0 +1,9 @@
+j2me
+graphics
+samples
+translate -cp j2me/classes          -comments -o temp/j2me.bin        -O -format bin @j2me
+translate -cp graphics/classes -libs temp/j2me.bin -comments -o temp/graphics.bin    -O -format bin @graphics
+translate -cp samples/classes -libs temp/j2me.bin:temp/graphics.bin -comments -o temp/examples.bin    -O -format bin @examples
+
+romize -ram_sz 4096K -format bin  -m demo/squawk.map -growrom -image demo/squawk.image temp/j2me.bin
+#squawk -XexcessiveGC -Ximage:demo/squawk.image "-Xcp:vm\classes;j2me\classes;j2se\classes" java.lang.JAM -suite:temp/graphics.bin -suite:temp/examples.bin example.cubes.Main

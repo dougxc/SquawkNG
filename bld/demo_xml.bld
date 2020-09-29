@@ -1,0 +1,5 @@
+#translate -cp j2me/classes                                           -comments -o temp/j2me.xml        -O -format xml @j2me
+translate -cp graphics/classes -libs temp/j2me.xml                   -comments -o temp/graphics.xml    -O -format xml @graphics
+translate -cp samples/classes  -libs temp/j2me.xml:temp/graphics.xml -comments -o temp/examples.xml    -O -format xml @examples
+
+#romize -ram_sz 4096K -format xml -m demo/squawk.map -growrom -image demo/squawk.image temp/j2me.xml temp/graphics.xml temp/examples.xml

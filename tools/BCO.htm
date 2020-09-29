@@ -1,0 +1,240 @@
+<html>
+	<head>
+		<title>BCO documentation</title>
+		<meta http-equiv="Content-Type" content="text/html">
+	</head>
+	<body>
+		<h2 align="center">BCO Documentation</h2>
+		<p>BCO (ByteCode Optimizer) is a tool developed for Java byte code optimization.</p>
+		<p><font face="Courier">BCO</font> performs general optimizations, intended for 
+			performance increase. Such optimizations are used, first of all, when Java Byte 
+			Code (*.class files) are supposed to be executed by direct-execution Java 
+			microprocessors (like aJile chips or picoJava-II microprocessors, for example 
+			Fujitsu MB86799) or on interpreting JVMs (non-JIT JVMs, especially for j2me).</p>
+		<p>All optimizations are platform-independent and output class-files are valid 
+			class-files and can be executed on any JVM that complies with the JVM 
+			Specification.</p>
+		<p><font face="Courier">BCO</font> is a class-file =&gt; class-file optimizer. Here 
+			below is the instruction manual for using <font face="Courier">BCO</font>:</p>
+		<p>Usage: <font face="Courier">java BCO [&lt;global_options&gt;] 
+				[&lt;classfile_name&gt; &lt;classfile_options&gt;] ...</font></p>
+		<p><font face="Courier">&lt;global_options&gt;</font> - options for all classes<br>
+			<font face="Courier">&lt;classfile_name&gt;</font> - the name of class file 
+			(extension ".class" could be omitted) or name of jar file (all classes in jar 
+			file will be processed).<br>
+			<font face="Courier">&lt;class_options&gt;</font> - options for the specified 
+			class (overwrites global options)</p>
+		<p><font face="Courier">&lt;global_options&gt;</font>:<br>
+			<font face="Courier">-O:&lt;optimizations_list&gt;</font> - sets the 
+			optimizations list. Names of optimizations should be divided by a colon. For a 
+			full list of available optimizations see the section below.<br>
+			<font face="Courier">-On</font> where n={<font face="Courier">0,1,2,3,4</font>} 
+			- aliases for optimizations list:<br>
+			0 - No optimizations are performed.<br>
+			1 - <font face="Courier">INL:CF:CNPfast:COPfast</font><br>
+			2 - <font face="Courier">INL:CF:CNPfast:COPfast:PH:CSEfast</font><br>
+			3 - <font face="Courier">INL:CF:CNP:COP:PH:CSE:DC:RS:LA</font><br>
+			4 - <font face="Courier">INL:CF:CNP:COP:PH:CSE:DC:RS:LI:SR:RTL:LA</font> - it 
+			corresponds to the maximum level of optimization.<br>
+			<font face="Courier">-save &lt;path_for_old_files&gt;</font> - defines the path 
+			for old class-files. By default, <font face="Courier">BCO</font> renames old 
+			*.class files to *.class.old and stores them into the same location. This 
+			option defines the path for saving old files. If &lt;classfile_name&gt; 
+			contains absolute path to the classfile, corresponding .class.old file will be 
+			saved directly into the <font face="Courier">&lt;path_for_old_files&gt;</font>. 
+			If <font face="Courier">&lt;classfile_name&gt;</font> contains relative path to 
+			the classfile, corresponding .class.old file will be saved in <font face="Courier">&lt;path_for_old_files&gt;</font>
+			+ relative path. All necessary folders will be created. For more clarifications 
+			see examples.<br>
+			<font face="Courier">-verbose</font> - Causes <font face="Courier">BCO</font> to 
+			print extended information about optimization process to stdout.<br>
+			<font face="Courier">-version</font> - Prints product version.
+		</p>
+		<p><font face="Courier">&lt;classfile_options&gt;</font>: <font face="Courier">-O:&lt;optimizations_list&gt;</font>
+			and <font face="Courier">-On</font> - it can be used in the same way as the 
+			global option. In this case it will affect all methods in the class-file. This 
+			option OVERWRITES global option <font face="Courier">-O</font>.<br>
+			<font face="Courier">-O&lt;method&gt;:&lt;optimizations_list&gt;</font> - sets 
+			the optimizations list for the method. If there are several methods with the 
+			same name, but different parameters, all methods will be affected. Names of 
+			optimizations should be divided by a colon. This option DO NOT OVERWRITES 
+			global and local option <font face="Courier">-O</font>, it just adds specified 
+			optimizations for the particular method. For full list of available 
+			optimizations see the section below.</p>
+		<p>Implemented optimization:
+			<ul>
+				<li>
+					<font face="Courier">CF</font>
+				- Constant Folding.
+				<li>
+					<font face="Courier">CNP</font>
+				- Constant propagation between basic blocks.
+				<li>
+					<font face="Courier">CNPfast</font> - Constant propagation only within basic 
+					blocks. Works faster than <font face="Courier">CNP</font>, but performance 
+				of output class-file is worse.
+				<li>
+					<font face="Courier">COP</font>
+				- Global copy propagation.
+				<li>
+					<font face="Courier">COPfast</font> - Copy propagation only within basic 
+					blocks. Works faster than <font face="Courier">COP</font>, but performance 
+				of output class-file is worse.
+				<li>
+					<font face="Courier">CSE</font>
+				- Common SubExpressions elimination between basic blocks.
+				<li>
+					<font face="Courier">CSEfast</font> - Common SubExpressions elimination only 
+					within basic blocks. Works faster than <font face="Courier">CSE</font>, but 
+				performance of output class-file is worse.
+				<li>
+					<font face="Courier">DC</font>
+				- Dead code elimination.
+				<li>
+					<font face="Courier">INL&lt;n&gt;</font>
+				- Inlining of static or final methods inside one class. n - maximum length of 
+				methods to be inlined. By default n = 32.
+				<li>
+					<font face="Courier">LA</font>
+				- Local variables reallocation.
+				<li>
+					<font face="Courier">LI</font>
+				- Loop invariants motion.
+				<li>
+					<font face="Courier">OBF</font>
+				- Limited obfuscation (reusage of private symbol information in the constant 
+				pool).
+				<li>
+					<font face="Courier">PH</font>
+				- Peephole optimizations.
+				<li>
+					<font face="Courier">RS</font>
+				- Redundant stores elimination.
+				<li>
+					<font face="Courier">RTL</font>
+				- Recurse to loop changing.
+				<li>
+					<font face="Courier">SR</font> - Strength reduction.</li>
+			</ul>
+		<p>
+			<font face="Courier">LA0</font> - Limited version of local variables 
+			reallocation optimization. It does not reallocate variable number 0 in instance 
+			methods. This is because some JVM implementations require to have <font face="Courier">
+				this</font> pointer to be stored in local variable number 0. If this is a 
+			case, use <font face="Courier">LA0</font> option instead of <font face="Courier">LA</font>.
+		</p>
+		<p><font face="Courier">OBF</font> option should be switched on explicitly, it is 
+			not included into O1 - O4 optimization lists. It's due to potential danger of 
+			this optimization - <font face="Courier">OBF</font> reuses constant pool items 
+			and it might cause compile-time problems if the optimized classfile is imported 
+			by source Java code.
+		</p>
+		<p><font face="Courier">RTsafe</font> - special option that should be specified in <font face="Courier">
+				&lt;optimizations_list&gt;</font>. It improves savety of all other 
+			specified optimizations. By default, it is assumed that sources of input 
+			class-files complies with the Java Language Specification recommendations. In 
+			very few cases it's not true (for example, RuntimeException is caught) and 
+			there is a need to perform optimizations on a safer level. This option 
+			decreases quality of optimizations. We do not recommend using this option until 
+			there is a special need.
+		</p>
+		<p>Example of possible usage of <font face="Courier">RTsafe</font> option:</p>
+		<pre>
+<font face="Courier">      public class RTsafeExample {
+         public static void main(String[] args) {
+            try {
+              Foo();
+            } catch (RuntimeException e) {
+            System.out.println("Exception caught");
+            }
+            System.out.println("Continue execution");
+         }      
+         public static int Foo(){
+            int a[]={1,2,3};      // Dead code,
+            a[5]=5;               // which throws RuntimeException
+            return 0;
+         }
+      }</font></pre>
+		<p>Without <font face="Courier">RTsafe</font> option dead code will be eliminated 
+			and RuntimeException wouldn't be thrown.</p>
+		<p>Examples:
+			<ol>
+				<li>
+					Executing <font face="Courier">BCO</font> for classes A and B with default 
+					optimization level (<font face="Courier">-O1</font>)<br>
+					<br>
+					<font face="Courier">java BCO -O A B</font><br>
+				<li>
+					Executing BCO for classes A and B with different levels of optimization:<br>
+					- for class A - Common Subexpression Elimination.<br>
+					- for class B - Constant Folding.<br>
+					<br>
+					<font face="Courier">java BCO A -O:CSE B -O:CF</font><br>
+				<li>
+					Executing <font face="Courier">BCO</font> for classes A, B and C with different 
+					levels of optimization:<br>
+					-for classes A and C - optimization level 4.<br>
+					-for class B - only Dead Code elimination.<br>
+					<br>
+					<font face="Courier">java BCO -O4 A.class B.class -O:DC C.class</font><br>
+				<li>
+					Executing<font face="Courier"> BCO</font> for classes A, B and C with different 
+					levels of optimization:<br>
+					-for classes A and C - level 4 of optimization.<br>
+					-for class B - level 4 of optimization plus <font face="Courier">RTsafe</font> option 
+					for method "main" in B.class.<br>
+					<br>
+					<font face="Courier">java BCO -O4 A.class B.class -Omain:RTsafe C.class</font><br>
+				<li>
+					Executing <font face="Courier">BCO</font> for classes A, B and C with maximum 
+					level of optimization. Old files will be saved into 'old' folder, which will be 
+					created in the current dir. Relative folder structure will be saved into the 
+					'old' folder.<br>
+					<br>
+					Before execution we have A.class in current folder, B.class in 'dir1' folder 
+					and C.class in 'dir2' folder:<br>
+					./A.class<br>
+					./dir1/B.class<br>
+					./dir2/C.class<br>
+					<br>
+					After execution we'll have new folder 'old' in the current dir and 3 .class.old 
+					files according to their previous hierarchy within it:<br>
+					./old/A.class.old<br>
+					./old/dir1/B.class.old<br>
+					./old/dir2/C.class.old<br>
+					<br>
+					<font face="Courier">java BCO -O4 -save ./old A dir1/B dir2/C</font><br>
+				<li>
+					Executing <font face="Courier">BCO</font> for classes A, B and C with maximum 
+					level of optimization. Old files will be stored to 'old' folder. Previous 
+					hierarchy won't be saved because of absolute path of class-files. Current dir 
+					in this example is /home/user.<br>
+					<br>
+					Before execution we have A.class in current folder, B.class in 'dir1' folder 
+					and C.class in 'dir2' folder:<br>
+					/home/user/A.class<br>
+					/home/user/dir1/B.class<br>
+					/home/user/dir2/C.class<br>
+					<br>
+					After execution we will have 3 .class.old files into '/home/user/old' folder. 
+					Paths to old files would be:<br>
+					/home/user/old/A.class.old<br>
+					/home/user/old/B.class.old<br>
+					/home/user/old/C.class.old<br>
+					<br>
+					<font face="Courier">java BCO -O4 -save ./old /home/user/A /home/user/dir1/B 
+						/home/user/dir2/C</font><br>
+				<li>
+					We can use also aliases to define class-files to handle.<br>
+					<br>
+					<font face="Courier">java BCO -O4 -save old *.class package1/*.class 
+						package2/*.class</font><br>
+				<li>
+					Verbose option enables us to get more information about the optimization 
+					process:<br>
+					<br>
+					<font face="Courier">java BCO -O4 -verbose A.class package1/*.class</font></li>
+			</ol>
+		<p>Please, send all problems to <A HREF="mailto:bco-bugs@mcst.ru">bco-bugs@mcst.ru</A></p>
+	</body>
+</html>

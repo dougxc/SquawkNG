@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for code stubs. If an operation's implementation can be split
+into a common and an uncommon case, the focus is on the common case. Since the
+common case will be executed more frequently, it should be the fast path for
+performance reasons even at the cost of a more complicated slow path.<p>
+
+Therefore the machine instructions for the common case are directly inlined into
+the generated code. If the uncommon case arises sometime, a branch leads to the
+slow case, which calls the runtime for example. Its code should be outside the
+method's regular code to improve instruction cache usage for the common case.<p>
+
+Code stubs are little out-of-line pieces of code that handle the slow cases of
+operations. The code emitter collects all code stubs in a list at first. Only at
+the end of the method this list is traversed and the instructions for the stubs
+are emitted into the code buffer.
+
+@see  javac1.backend.code.CodeEmitter#emitCallStubs()
+@see  javac1.backend.code.CodeEmitter#emitSlowCaseStubs()
+</body>
+</html>

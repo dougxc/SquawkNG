@@ -1,0 +1,169 @@
+<!-- comment -->
+
+<suite xmlns="http://www.sun.com/squawk/version/1.1">
+
+  <!-- comment --><!-- comment --><!-- comment --><!-- comment -->
+
+  <!-- comment -->
+
+  <!-- comment --><name>foo</name><!-- comment -->
+
+  <!-- comment -->
+
+  <access><final/></access>
+
+  <bind>
+    <name>lib1</name>
+    <name>lib2</name>
+  </bind>
+
+  <classes>
+    <class>
+      <name>java.lang.Foo1</name>
+      <access><public/><interface foo="bar"/></access>
+      <extends>
+        <type>1</type>
+      </extends>
+
+      <implements>
+        <interface>
+          <type>11</type>
+          <slots>
+            <slot>5</slot>
+            <slot>6</slot>
+          </slots>
+        </interface>
+        <interface>
+          <type>12</type>
+          <slots>
+            <slot>15</slot>
+            <slot>16</slot>
+          </slots>
+        </interface>
+        <interface>
+          <type>13</type>
+          <slots>
+            <slot>25</slot>
+            <slot>26</slot>
+          </slots>
+        </interface>
+      </implements>
+
+
+      <static_fields>
+        <field>
+          <type>6</type>
+          <name>staticfoo</name>
+          <access><public/></access>
+        </field>
+      </static_fields>
+
+      <virtual_fields>
+        <field>
+          <type>6</type>
+          <name>vertbar</name>
+          <access><private/><final/></access>
+        </field>
+      </virtual_fields>
+
+      <static_methods>
+        <method>
+          <type>6</type>
+          <parameters>
+            <type>11</type>
+            <type>12</type>
+            <type>13</type>
+          </parameters>
+          <name>staticToString</name>
+          <access><protected/></access>
+        </method>
+      </static_methods>
+
+      <virtual_methods>
+        <method>
+          <type>6</type>
+          <parameters>
+            <type>11</type>
+            <type>12</type>
+            <type>13</type>
+          </parameters>
+          <name>virtToString</name>
+        </method>
+        <method>
+          <type>6</type>
+          <parameters>
+            <type>5</type>
+            <type>6</type>
+            <type>7</type>
+          </parameters>
+          <name>virtfoobar</name>
+        </method>
+      </virtual_methods>
+
+      <overridden_access>
+        <method>
+          <slot>6</slot>
+          <access><protected/></access>
+        </method>
+      </overridden_access>
+
+      <class_references>
+        <type>1</type><type>2</type><type>3</type>
+      </class_references>
+
+      <object_references>
+        <string>foobar</string>
+        <int_array>
+          <int>1</int>
+          <int>2</int>
+          <int>3</int>
+        </int_array>
+      </object_references>
+
+    </class>
+
+  </classes>
+
+  <methods>
+
+    <method_body>
+
+      <type>0</type>
+      <entry>12</entry>
+      <access><static/></access>
+
+      <locals>
+        <type>6</type>
+        <type>7</type>
+        <type>8</type>
+      </locals>
+
+      <stack>2</stack>
+
+      <handlers>
+        <handler>
+          <from>4</from>
+          <to>12</to>
+          <entrypoint>22</entrypoint>
+          <type>6</type>
+        </handler>
+      </handlers>
+
+      <code>
+        <load/>
+        <byte>4</byte>
+        <wide_half/>
+        <store/>
+        <short>4</short>
+        <const_3/>
+        <iadd/>
+        <floatOp/>
+        <fadd/>
+        <return/>
+      </code>
+
+    </method_body>
+
+  </methods>
+
+</suite>

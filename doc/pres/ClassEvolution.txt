@@ -1,0 +1,76 @@
+
+
+
+public class Account {
+
+    String name;
+    int    amount;
+    
+    transient int transactionId;
+    transient String transactionDesc;
+    
+    ...
+}
+
+
+
+becomes ===>
+
+
+public class Account {
+
+    String name;
+    int    amount;
+    
+    ...
+}
+
+
+class Account$transients {
+    int transactionId;
+    String transactionDesc;
+}
+
+
+At the bytecode level, need to introduce a new bytecode "transients".
+Consider the Java bytecode sequence for reading and writing the transient
+fields of Account:
+
+
+    load_0          // load receiver
+    getfield 3      // get the "transactionId" value
+    ...
+    load_0          // load receiver
+    aconst_null     // push null
+    putfield 4      // store null to the "transactionDesc" field
+    
+    
+To implement this in Squawk with the new "transients" bytecode:
+
+
+    load_0
+    transients
+    getfield 0
+    ...
+    load_0
+    transients
+    const_null
+    putfield 1
+    
+    
+The semantics of "transients" is to replace the object on top of the stack
+with the associated object containing the transients of the original
+object. The association is implemented via a system wide hash table. In the
+above example, the instance of "Account" would be replaced with the associated
+instance of "Account$transients".
+
+To ensure that the above code can be verified, the Squawk spec would have to
+be augmented not only with the "transients" bytecode but with rules specifying
+the relationship between a class and its associated transient class (t-class).
+For example, the rule could state that any t-class must have same name as
+its original class with a well known suffix e.g. "$transients. Even better,
+the suffix can contain illegal class name characters in it. That is, the
+suffix could simply be "~". Also, the class number of a t-class must be one
+greater than its original class. The original class could also have one
+extra access flag (i.e. ACC_TRANSIENT) stating that the subsequent class
+in the suite is its associated class of transients.

@@ -1,0 +1,4 @@
+translate -cp j2me/classes                           -comments -o temp/j2me.bin -O -format bin @j2me
+translate -cp j2me/classes:mojo/classes                      -comments -o temp/mojo.bin -O -format bin @mojodriver
+
+romize -ram_sz 4096K -format bin -m temp/squawk.map -growrom -image demo/squawk.image temp/j2me.bin temp/mojo.bin

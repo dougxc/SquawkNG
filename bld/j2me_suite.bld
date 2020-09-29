@@ -1,0 +1,2 @@
+translate -cp j2me/classes:graphics/classes          -comments -o temp/j2me.xml        -O -format xml @j2me
+romize -ram_sz 1024K -format xml  -m temp/j2me.map -growrom -image temp/j2me.image temp/j2me.xml

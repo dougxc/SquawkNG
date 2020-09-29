@@ -1,0 +1,109 @@
+
+String are implemented as special cases of either a char[] or byte[] array
+
+Object
+   StringOfBytes                byte[]
+       String                   char[]
+
+So the basic overhead for a string is 8 bytes instead of 20
+(because 3 word String object and 2 word array object) a saving
+of 12 bytes and 1 object per string.
+
+#bytes  KVM    Squawk
+0       20      8
+1       24      12
+2       24      12
+3       24      12
+4       24      12
+5       28      16
+6       28      16
+7       28      16
+8       28      16
+
+substring() has to copy the sub section of the data to the new string so
+is slower
+
+charAt is logically:
+
+    charAt(int i) {
+        if (i < 0 || i > primLength()) {
+           throw new IndexOutOfBoundsException();
+        }
+        if (this instanceOf StringOfBytes) {
+            return primByteAt(i);
+        } else {
+            return primCharAt(i);
+        }
+    }
+
+
+but is it implemeted as a single special type of load halfcode:
+
+    loadByteOrChar receiver, index, result
+
+JIT sequence would be:
+
+      mov lengthOf[r0], r2
+      cmp r1, r2
+      bhis failure
+
+      mov classOf[r0], r2
+      mov selfOf[r2], r2
+      cmp r2, #String
+      bne x
+      loadUHalf r0, r1, r2
+      br y:
+x:    loadUByte r0, r1, r2
+y:
+
+
+On arm:
+
+jit sequence would be:
+
+      mov lengthOf[r0], r2
+      cmp r1, r2
+      bhis failure
+
+      mov classOf[r0], r2
+      mov selfOf[r2], r2   // incase monitor/lock
+      cmp r2, #String
+      lduhne r0, r1, r2
+      ldubeq r0, r1, r2
+
+
+so the sequence is eight instruction instead of four
+
+
+
+StringBuffer has method pointer and ip offset that is filled in with
+address of the instrction that was use to create it. There are two special
+intructions that do this createByteStringBuffer and createCharStringBuffer
+
+StringBuffer builds data into an array of the type it was started with. If it
+is a byte[] and a char > 0x7F turns up it is converted to the char[] type and
+the inststrion that created is changed to createCharStringBuffer.
+
+When toString() is called then the char[] or byte[] is converted into a
+String or StringOfBytes and a little bit of garbage is left over.
+
+The StringBuffer has to have a seporate array because it can be reused after
+toString() is called.
+
+
+
+
+
+
+However a GC with a "becomes" operation could be made
+to aviod this problem. Then StringBuffer would be
+
+        length
+        Meta
+------->Method
+        Ip offset
+        type
+        length usef
+        <data>
+
+But perhaps this is too ugly...

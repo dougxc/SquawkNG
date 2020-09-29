@@ -1,0 +1,170 @@
+package com.sun.squawk.translator;
+
+import java.util.*;
+import java.io.*;
+
+import org.apache.bcel.Repository;
+import org.apache.bcel.classfile.JavaClass;
+import org.apache.bcel.util.ClassPath;
+import org.apache.bcel.verifier.*;
+
+/**
+ * Command line interface to the BCEL verifier "JustICE".
+ */
+
+public class BCELVerifier {
+
+    private Vector classesToVerify;
+    private boolean keepgoing;
+
+    /**
+     * Print the usage message.
+     * @param errMsg An optional error message.
+     */
+    static void usage(String errMsg) {
+        PrintStream out = System.out;
+        if (errMsg != null) {
+            out.println(errMsg);
+        }
+        out.println("Usage: BCELVerifier [-options] [ class_name | @classlist ]* ");
+        out.println("where options include:");
+        out.println("    -cp                 the classpath where the classes can be found");
+        out.println("    -k                  keep verifying succesive classes even after one class fails to verify");
+        out.println("    -V                  verbose mode");
+        out.println();
+    }
+
+    public static void main(String[] args) throws Exception {
+        boolean verbose        = false;
+        String  cp             = ".";
+        boolean keepgoing      = false;
+        Vector classesToVerify = new Vector();
+        for (int i = 0; i != args.length; i++) {
+            if (args[i].charAt(0) == '-') {
+                if (args[i].equals("-cp")) {
+                    cp = com.sun.squawk.translator.Main.getOptArg(args, ++i, "-cp");
+                }
+                else if (args[i].equals("-V")) {
+                    verbose = true;
+                }
+                else if (args[i].equals("-k")) {
+                    keepgoing = true;
+                }
+                else {
+                    usage("Unknown option: " + args[i]);
+                    return;
+                }
+            }
+            else {
+                if (args[i].charAt(0) == '@') {
+                    String fileName = args[i].substring(1);
+                    BufferedReader br = new BufferedReader(new FileReader(fileName));
+                    String line = br.readLine();
+                    while (line != null) {
+                        if (!line.startsWith("#")) {
+                            int space = line.indexOf(' ');
+                            if (space == -1) {
+                                classesToVerify.addElement(line);
+                            }
+                            else {
+                                classesToVerify.addElement(line.substring(0, space));
+                            }
+                        }
+                        line = br.readLine();
+                    }
+                    br.close();
+                }
+                else {
+                    classesToVerify.addElement(args[i]);
+                }
+            }
+        }
+
+        if (classesToVerify.isEmpty()) {
+            usage("Missing class list");
+            return;
+        }
+
+        BCELVerifier verifier = new BCELVerifier(classesToVerify, cp, keepgoing);
+        verifier.run(verbose);
+    }
+
+    public BCELVerifier(Vector classesToVerify, String classpath, boolean keepgoing) {
+        this.classesToVerify = classesToVerify;
+        this.keepgoing       = keepgoing;
+
+        // Reset the classpath used by the BCEL Repository class to find classes so
+        // that it looks *first* in the specified classpath
+        ClassPath cp = new ClassPath(classpath + File.pathSeparator + ClassPath.getClassPath());
+        Repository.clearCache(cp);
+    }
+
+    /**
+     * Do the verification.
+     */
+    public void run(boolean verbose){
+        for (Enumeration e = classesToVerify.elements(); e.hasMoreElements(); ) {
+            String name = (String)e.nextElement();
+            if (!verify(name, verbose) && !keepgoing) {
+                // Quit verifying after the first verification failure
+                break;
+            }
+        }
+    }
+
+    /**
+     * Verifies a class files using the BCEL's
+     * class file verifier, "JustIce".
+     * @param className
+     * @return the verification success status
+     */
+    static boolean verify(String className, boolean verbose){
+        boolean success = true;
+        System.out.println("Verifying " + className + " ...");
+        Verifier v = VerifierFactory.getVerifier(className);
+        v.setRecursive(false);
+        v.setKVMCompliant(true);
+        VerificationResult vr;
+
+        vr = v.doPass1();
+        success = (vr == VerificationResult.VR_OK);
+        boolean errorDisplayed = false;
+        if (success) {
+            vr = v.doPass2();
+            success = (vr == VerificationResult.VR_OK);
+            if (success) {
+                JavaClass jc = Repository.lookupClass(className);
+                for (int i=0; i<jc.getMethods().length; i++){
+                    vr = v.doPass3a(i);
+                    if (vr != VerificationResult.VR_OK) {
+                        success = false;
+                        System.out.println("Pass 3a, method "+i+" ['"+jc.getMethods()[i]+"']:\n"+vr);
+                        errorDisplayed = true;
+                        break;
+                    }
+                    vr = v.doPass3b(i);
+                    if (vr != VerificationResult.VR_OK) {
+                        success = false;
+                        System.out.println("Pass 3b, method number "+i+" ['"+jc.getMethods()[i]+"']:\n"+vr);
+                        errorDisplayed = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (vr != VerificationResult.VR_OK && !errorDisplayed) {
+            System.out.println("Pass 1 or 2:\n"+vr);
+        }
+
+        String[] warnings = v.getMessages();
+        if (warnings.length != 0 && verbose) {
+            System.out.println("Warnings:");
+            for (int j=0; j<warnings.length; j++){
+                System.out.println(warnings[j]);
+            }
+        }
+
+        v.flush();
+        return success;
+    }
+}

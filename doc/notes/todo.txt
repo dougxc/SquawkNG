@@ -1,0 +1,57 @@
+1, Temporary locals can be reused better as in the following where t2# and t3# could be collapsed into one variable
+
+
+        ++IR1 trace for Lcom/sun/squawk/runtime/loader/GraphPrinter;::doThrow
+            ...
+            t1#         = invoke append(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/ StringBuffer;  t1# const("    throw ")
+            t3#         = invoke value(Ljava/lang/Object;)Lcom/sun/squawk/runtime/ir/Instruction;  l1#
+            t2#         = invoke prtLocal(Ljava/lang/Object;Lcom/sun/squawk/runtime/ir/I nstruction;)Ljava/lang/String;  l0# t3#
+            t1#         = invoke append(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/ StringBuffer;  t1# t2#
+            t1#         = invoke toString(Ljava/lang/Object;)Ljava/lang/String;  t1#
+            invoke println(Ljava/lang/Object;Ljava/lang/String;)V  t0# t1#
+            return
+
+        This proably requres putting back Instruction.isUsedBy() so the last use of a variable can be known.
+
+
+
+2, Standard Load/Store optimization. Can probably be done in the halfcode generator.
+
+
+        ++IR1 trace for Ljava/lang/System;::<clinit>
+            locals t0#
+            t0#         = invoke getOutput(Ljava/lang/Object;)Ljava/io/PrintStream;
+            Ljava/lang/System; [out Ljava/io/PrintStream;]      = t0#
+            t0#         = Ljava/lang/System; [out Ljava/io/PrintStream;]   <<<<<<<<<<<<<<<<< REDUNDANT
+            Ljava/lang/System; [err Ljava/io/PrintStream;]      = t0#
+            return
+
+
+3, Standard peephole optimization
+
+        jump to jump etc.
+
+        ++IR1 trace for Lcom/sun/squawk/runtime/util/QuickSorter;::partition
+        1           locals t3# t0# *l0# t1 *l1 l3# *l2 l4#
+        1           t0#         = l0# [elementData [Ljava/lang/Object;]
+        1           l3#         = t0#[l1]
+        1           goto 13
+        10      10:
+        10          l2          = l2 + const(-1)
+        100     13:
+        100         t0#         = l0# [comparer Lcom/sun/squawk/runtime/util/Comparer;]
+        100         t3#         = l0# [elementData [Ljava/lang/Object;]
+        100         t3#         = t3#[l2]
+        100         t1          = invoke compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)I  t0# t3# l3#
+ >      100         if t1 < const(0) goto 43
+ >      10          if l1 < l2 goto 10
+ >      10          goto 43
+ >      100     40:
+ >      100         l1          = l1 + const(1)
+ >      100     43:
+        100         t0#         = l0# [comparer Lcom/sun/squawk/runtime/util/Comparer;]
+
+
+        Cound this be improved?
+
+4,

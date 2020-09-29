@@ -1,0 +1,53 @@
+These are the coding convetions used in the SquawkNG code base.
+
+1, Surround statement blocks (apart from the top level) by
+   braces and put 'else' on a new line. Eg:
+
+    if (a == b) {
+        ...
+    }
+    else {
+        ...
+    }
+
+   A common exception to this is for switch statements where the cases
+   are laid out in a table-like format for easier readability. Eg:
+
+    switch (code) {
+        case opc_nop:         op_nop();                                   break;
+        case opc_aconst_null: op_constant(LoadConstant.createNull(vm));   break;
+        case opc_iconst_m1:   op_constant(LoadConstant.create(vm, -1));   break;
+        case opc_iconst_0:    op_constant(LoadConstant.create(vm, 0));    break;
+        case opc_iconst_1:    op_constant(LoadConstant.create(vm, 1));    break;
+        case opc_iconst_2:    op_constant(LoadConstant.create(vm, 2));    break;
+        case opc_iconst_3:    op_constant(LoadConstant.create(vm, 3));    break;
+        case opc_iconst_4:    op_constant(LoadConstant.create(vm, 4));    break;
+        ...
+    }
+
+2, The tab size is 4 and only spaces should be used (not tab characters).
+
+3, If a field or method declaration is to be commented, try to follow javadoc
+   standards. Eg:
+
+    /**
+     * This is the methods primary semantics. Here are some extra details.
+     * @param name This is the semantics of the first parameter.
+     * @param second This is the semantics of the second parameter.
+     * @return the is the semantics of the returned value.
+     * @exception IOException this described when IOException is thrown.
+     */
+    public int foo() throws IOException {
+        ...
+    }
+
+4, Use spaces (except maybe for arithmetic expressions). Eg:
+
+    if (a <= b || c+d+e) {
+    }
+
+  as opposed to:
+
+    if(a<=b || c+d+e){
+        ...
+    }

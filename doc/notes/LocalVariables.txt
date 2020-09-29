@@ -1,0 +1,998 @@
+Example of how a method with 82 local variables get the most used selected to be first in the activation record
+
+
+
+     public void invers_dct(int ai[]) {
+         int i19 = 0;
+         int j19 = 0;
+         int k19 = 0;
+         int l19 = 0;
+         int l21;
+         int i22 = l21 = 0;
+         for(; l21 < 64; l21 += 8) {
+             matr1[i22++] = ai[l21];
+             matr1[i22++] = ai[l21 + 4];
+             int i8;
+             int l11;
+             matr1[i22++] = (i8 = ai[l21 + 2]) - (l11 = ai[l21 + 6]);
+             matr1[i22++] = i8 + l11;
+             int j9;
+             int k10;
+             matr1[i22++] = -(j9 = ai[l21 + 3]) + (k10 = ai[l21 + 5]);
+             int l6;
+             int i13;
+             int j14;
+             int k15;
+             matr1[i22++] = (k15 = l6 = ai[l21 + 1] + (i13 = ai[l21 + 7])) - (j14 = j9 + k10);
+             matr1[i22++] = l6 - i13;
+             matr1[i22++] = k15 + j14;
+         }
+
+         int i21;
+         i22 = i21 = 0;
+         for(; i21 < 8; i21++)
+             switch(i21) {
+             case 0: // '\0'
+             case 1: // '\001'
+             case 3: // '\003'
+             case 7: // '\007'
+                 int k9;
+                 int l10;
+                 int k1 = (k9 = matr1[24 + i21]) - (l10 = matr1[40 + i21]);
+                 int i7;
+                 int j13;
+                 int j3 = (i7 = matr1[8 + i21]) - (j13 = matr1[56 + i21]);
+                 int j18 = 1567 * (j3 - k1);
+                 matr2[i22++] = matr1[i21] << 11;
+                 matr2[i22++] = matr1[32 + i21] << 11;
+                 int j8;
+                 int i12;
+                 matr2[i22++] = ((j8 = matr1[16 + i21]) - (i12 = matr1[48 + i21])) * 2896;
+                 matr2[i22++] = j8 + i12 << 11;
+                 matr2[i22++] = 2217 * k1 - j18;
+                 int k14;
+                 int l15;
+                 matr2[i22++] = ((l15 = i7 + j13) - (k14 = k9 + l10)) * 2896;
+                 matr2[i22++] = 5352 * j3 - j18;
+                 matr2[i22++] = l15 + k14 << 11;
+                 break;
+
+             case 2: // '\002'
+             case 5: // '\005'
+                 int l9;
+                 int i11;
+                 int l1 = (l9 = matr1[24 + i21]) - (i11 = matr1[40 + i21]);
+                 int j7;
+                 int k13;
+                 int k3 = (j7 = matr1[8 + i21]) - (k13 = matr1[56 + i21]);
+                 int k18 = 2217 * (k3 - l1);
+                 matr2[i22++] = 2896 * matr1[i21];
+                 matr2[i22++] = 2896 * matr1[i21 + 32];
+                 int k8;
+                 int j12;
+                 matr2[i22++] = (k8 = matr1[16 + i21]) - (j12 = matr1[48 + i21]) << 12;
+                 matr2[i22++] = 2896 * (k8 + j12);
+                 matr2[i22++] = 3135 * l1 - k18;
+                 int l14;
+                 int i16;
+                 matr2[i22++] = (i16 = j7 + k13) - (l14 = l9 + i11) << 12;
+                 matr2[i22++] = 7568 * k3 - k18;
+                 matr2[i22++] = 2896 * (i16 + l14);
+                 break;
+
+             case 4: // '\004'
+                 matr2[i22++] = matr1[i21];
+                 matr2[i22++] = matr1[32 + i21];
+                 int l8;
+                 int k12;
+                 matr2[i22++] = (l8 = matr1[16 + i21]) - (k12 = matr1[48 + i21]);
+                 matr2[i22] = l8 + k12;
+                 int i10;
+                 int j11;
+                 i19 = k19 = -(i10 = matr1[24 + i21]) + (j11 = matr1[40 + i21]);
+                 i22 += 2;
+                 int k7;
+                 int l13;
+                 int i15;
+                 int j16;
+                 matr2[i22] = (j16 = (k7 = matr1[8 + i21]) + (l13 = matr1[56 + i21])) - (i15 = i10 + j11);
+                 l19 = -(j19 = k7 - l13);
+                 i22 += 2;
+                 matr2[i22++] = j16 + i15;
+                 break;
+
+             case 6: // '\006'
+                 matr2[i22++] = matr1[i21];
+                 matr2[i22++] = matr1[32 + i21];
+                 int i9;
+                 int l12;
+                 matr2[i22++] = (i9 = matr1[16 + i21]) - (l12 = matr1[48 + i21]);
+                 matr2[i22] = i9 + l12;
+                 int i2;
+                 int j10;
+                 int k11;
+                 j19 += i2 = -(j10 = matr1[24 + i21]) + (k11 = matr1[40 + i21]);
+                 l19 += i2;
+                 i22 += 2;
+                 int l7;
+                 int i14;
+                 int j15;
+                 int k16;
+                 matr2[i22] = (k16 = (l7 = matr1[8 + i21]) + (i14 = matr1[56 + i21])) - (j15 = j10 + k11);
+                 int l3;
+                 k19 += l3 = l7 - i14;
+                 i19 -= l3;
+                 i22 += 2;
+                 matr2[i22++] = k16 + j15;
+                 break;
+             }
+
+         int i20 = 2896 * (i19 + j19);
+         int j20 = 2896 * (i19 - j19);
+         int k20 = k19 << 12;
+         int l20 = l19 << 12;
+         matr2[36] = i20 + k20;
+         matr2[38] = j20 + l20;
+         matr2[52] = j20 - l20;
+         matr2[54] = k20 - i20;
+         int l18 = 1567 * (matr2[32] + matr2[48]);
+         matr2[32] = -2217 * matr2[32] - l18;
+         matr2[48] = 5352 * matr2[48] - l18;
+         l18 = 1567 * (matr2[33] + matr2[49]);
+         matr2[33] = -2217 * matr2[33] - l18;
+         matr2[49] = 5352 * matr2[49] - l18;
+         l18 = 2217 * (matr2[34] + matr2[50]);
+         matr2[34] = -3135 * matr2[34] - l18;
+         matr2[50] = 7568 * matr2[50] - l18;
+         l18 = 1567 * (matr2[35] + matr2[51]);
+         matr2[35] = -2217 * matr2[35] - l18;
+         matr2[51] = 5352 * matr2[51] - l18;
+         l18 = 2217 * (matr2[37] + matr2[53]);
+         matr2[37] = -3135 * matr2[37] - l18;
+         matr2[53] = 7568 * matr2[53] - l18;
+         l18 = 1567 * (matr2[39] + matr2[55]);
+         matr2[39] = -2217 * matr2[39] - l18;
+         matr2[55] = 5352 * matr2[55] - l18;
+         int j21;
+         for(int j22 = j21 = 0; j21 < 8; j22 += 8) {
+             int j2;
+             int l17;
+             matr1[j22] = (j2 = (l17 = matr2[j22] + matr2[j22 + 1]) + matr2[j22 + 3]) + matr2[j22 + 7];
+             int i;
+             int k;
+             int i4;
+             int k4;
+             matr1[j22 + 3] = (i4 = l17 - matr2[j22 + 3]) - (k4 = matr2[j22 + 4] - (i = (k = matr2[j22 + 6] - matr2[j22 + 7]) - matr2[j22 + 5]));
+             matr1[j22 + 4] = i4 + k4;
+             int i1;
+             int l16;
+             int j17;
+             matr1[j22 + 1] = (i1 = (l16 = matr2[j22] - matr2[j22 + 1]) + (j17 = matr2[j22 + 2] - matr2[j22 + 3])) + k;
+             int l2;
+             matr1[j22 + 2] = (l2 = l16 - j17) - i;
+             matr1[j22 + 5] = l2 + i;
+             matr1[j22 + 6] = i1 - k;
+             matr1[j22 + 7] = j2 - matr2[j22 + 7];
+             j21++;
+         }
+
+         int i5 = 8;
+         int j5 = 16;
+         int k5 = 24;
+         int l5 = 32;
+         int i6 = 40;
+         int j6 = 48;
+         int k6 = 56;
+         int k21;
+         for(int k22 = k21 = 0; k22 < 64; k22 += 8) {
+             int k2;
+             int i18;
+             ai[k22] = (k2 = (i18 = matr1[k21] + matr1[i5]) + matr1[k5]) + matr1[k6] >> 22;
+             int j;
+             int l;
+             int j4;
+             int l4;
+             ai[k22 + 3] = (j4 = i18 - matr1[k5]) - (l4 = matr1[l5++] - (j = (l = matr1[j6++] - matr1[k6]) - matr1[i6++])) >> 22;
+             ai[k22 + 4] = j4 + l4 >> 22;
+             int j1;
+             int i17;
+             int k17;
+             ai[k22 + 1] = (j1 = (i17 = matr1[k21++] - matr1[i5++]) + (k17 = matr1[j5++] - matr1[k5++])) + l >> 22;
+             int i3;
+             ai[k22 + 2] = (i3 = i17 - k17) - j >> 22;
+             ai[k22 + 5] = i3 + j >> 22;
+             ai[k22 + 6] = j1 - l >> 22;
+             ai[k22 + 7] = k2 - matr1[k6++] >> 22;
+         }
+
+    }
+
+
+++IR1 trace for Lexample/mpeg/IDCT;::invers_dct
+0:      1           Instructions = 691 Locals = t2 t3 t1# l7 *l0# t4# t0 l8 l55
+t5 *l1# l63 t6 l6 l60 l64 l59 l62 l57 l56 l58 l61 l14 l15 l11 l13 l12 l10 l65 l9
+ l2 l3 l4 l5 l22 l69 l25 l26 l68 l54 l34 l19 l41 l71 l38 l74 l16 l28 l32 l37 l44
+ l72 l35 l46 l21 l67 l30 l29 l66 l73 l45 l17 l18 l33 l42 l47 l40 l27 l23 l31 l20
+ l24 l39 l48 l43 l70 l36 l53 l50 l52 l51 l49
+1:      1           l2          = const(0)
+2:      1           l3          = const(0)
+3:      1           l4          = const(0)
+4:      1           l5          = const(0)
+5:      1           t0          = const(0)
+6:      1           l6          = t0
+7:      1           l7          = t0
+8:      1           goto 67
+9:      10      9:
+10:     10          t1#         = [matr1 [I (fslot 4)] l0#
+11:     10          l7          = l7 + const(1)
+12:     10          t2          = l1#[l6]
+13:     10          t1#[l7]     = t2
+14:     10          t1#         = [matr1 [I (fslot 4)] l0#
+15:     10          l7          = l7 + const(1)
+16:     10          t2          = l6 + const(4)
+17:     10          t2          = l1#[t2]
+18:     10          t1#[l7]     = t2
+19:     10          t1#         = [matr1 [I (fslot 4)] l0#
+20:     10          l7          = l7 + const(1)
+21:     10          t2          = l6 + const(2)
+22:     10          t2          = l1#[t2]
+23:     10          l8          = t2
+24:     10          t3          = l6 + const(6)
+25:     10          t3          = l1#[t3]
+26:     10          l9          = t3
+27:     10          t2          = t2 - t3
+28:     10          t1#[l7]     = t2
+29:     10          t1#         = [matr1 [I (fslot 4)] l0#
+30:     10          l7          = l7 + const(1)
+31:     10          t2          = l8 + l9
+32:     10          t1#[l7]     = t2
+33:     10          t1#         = [matr1 [I (fslot 4)] l0#
+34:     10          l7          = l7 + const(1)
+35:     10          t2          = l6 + const(3)
+36:     10          t2          = l1#[t2]
+37:     10          l10         = t2
+38:     10          t2          = ! t2
+39:     10          t3          = l6 + const(5)
+40:     10          t3          = l1#[t3]
+41:     10          l11         = t3
+42:     10          t2          = t2 + t3
+43:     10          t1#[l7]     = t2
+44:     10          t1#         = [matr1 [I (fslot 4)] l0#
+45:     10          l7          = l7 + const(1)
+46:     10          t2          = l6 + const(1)
+47:     10          t2          = l1#[t2]
+48:     10          t3          = l6 + const(7)
+49:     10          t3          = l1#[t3]
+50:     10          l12         = t3
+51:     10          t2          = t2 + t3
+52:     10          l13         = t2
+53:     10          l14         = t2
+54:     10          t3          = l10 + l11
+55:     10          l15         = t3
+56:     10          t2          = t2 - t3
+57:     10          t1#[l7]     = t2
+58:     10          t1#         = [matr1 [I (fslot 4)] l0#
+59:     10          l7          = l7 + const(1)
+60:     10          t2          = l13 - l12
+61:     10          t1#[l7]     = t2
+62:     10          t1#         = [matr1 [I (fslot 4)] l0#
+63:     10          l7          = l7 + const(1)
+64:     10          t2          = l14 + l15
+65:     10          t1#[l7]     = t2
+66:     10          l6          = l6 + const(8)
+67:     10      67:
+68:     1           if l6 < const(64) goto 9
+69:     1           t0          = const(0)
+70:     1           l8          = t0
+71:     1           l7          = t0
+72:     1           goto 360
+73:     10      73:
+74:     10          tableswitch l8  (00=75) (01=75) (02=152) (03=75) (04=229) (0
+5=152) (06=293) (07=75) (default=358)
+75:     10      75:
+76:     10          t1#         = [matr1 [I (fslot 4)] l0#
+77:     10          t0          = const(24) + l8
+78:     10          t0          = t1#[t0]
+79:     10          l9          = t0
+80:     10          t1#         = [matr1 [I (fslot 4)] l0#
+81:     10          t2          = const(40) + l8
+82:     10          t2          = t1#[t2]
+83:     10          l10         = t2
+84:     10          l11         = t0 - t2
+85:     10          t1#         = [matr1 [I (fslot 4)] l0#
+86:     10          t0          = const(8) + l8
+87:     10          t0          = t1#[t0]
+88:     10          l13         = t0
+89:     10          t1#         = [matr1 [I (fslot 4)] l0#
+90:     10          t2          = const(56) + l8
+91:     10          t2          = t1#[t2]
+92:     10          l12         = t2
+93:     10          l15         = t0 - t2
+94:     10          t2          = l15 - l11
+95:     10          l14         = const(1567) * t2
+96:     10          t1#         = [matr2 [I (fslot 5)] l0#
+97:     10          l7          = l7 + const(1)
+98:     10          t4#         = [matr1 [I (fslot 4)] l0#
+99:     10          t2          = t4#[l8]
+100:    10          t2          = t2 << const(11)
+101:    10          t1#[l7]     = t2
+102:    10          t1#         = [matr2 [I (fslot 5)] l0#
+103:    10          l7          = l7 + const(1)
+104:    10          t4#         = [matr1 [I (fslot 4)] l0#
+105:    10          t2          = const(32) + l8
+106:    10          t2          = t4#[t2]
+107:    10          t2          = t2 << const(11)
+108:    10          t1#[l7]     = t2
+109:    10          t1#         = [matr2 [I (fslot 5)] l0#
+110:    10          l7          = l7 + const(1)
+111:    10          t4#         = [matr1 [I (fslot 4)] l0#
+112:    10          t2          = const(16) + l8
+113:    10          t2          = t4#[t2]
+114:    10          l16         = t2
+115:    10          t4#         = [matr1 [I (fslot 4)] l0#
+116:    10          t3          = const(48) + l8
+117:    10          t3          = t4#[t3]
+118:    10          l17         = t3
+119:    10          t2          = t2 - t3
+120:    10          t2          = t2 * const(2896)
+121:    10          t1#[l7]     = t2
+122:    10          t1#         = [matr2 [I (fslot 5)] l0#
+123:    10          l7          = l7 + const(1)
+124:    10          t2          = l16 + l17
+125:    10          t2          = t2 << const(11)
+126:    10          t1#[l7]     = t2
+127:    10          t1#         = [matr2 [I (fslot 5)] l0#
+128:    10          l7          = l7 + const(1)
+129:    10          t2          = const(2217) * l11
+130:    10          t2          = t2 - l14
+131:    10          t1#[l7]     = t2
+132:    10          t1#         = [matr2 [I (fslot 5)] l0#
+133:    10          l7          = l7 + const(1)
+134:    10          t2          = l13 + l12
+135:    10          l18         = t2
+136:    10          t3          = l9 + l10
+137:    10          l19         = t3
+138:    10          t2          = t2 - t3
+139:    10          t2          = t2 * const(2896)
+140:    10          t1#[l7]     = t2
+141:    10          t1#         = [matr2 [I (fslot 5)] l0#
+142:    10          l7          = l7 + const(1)
+143:    10          t2          = const(5352) * l15
+144:    10          t2          = t2 - l14
+145:    10          t1#[l7]     = t2
+146:    10          t1#         = [matr2 [I (fslot 5)] l0#
+147:    10          l7          = l7 + const(1)
+148:    10          t2          = l18 + l19
+149:    10          t2          = t2 << const(11)
+150:    10          t1#[l7]     = t2
+151:    10          goto 358
+152:    10      152:
+153:    10          t1#         = [matr1 [I (fslot 4)] l0#
+154:    10          t0          = const(24) + l8
+155:    10          t0          = t1#[t0]
+156:    10          l20         = t0
+157:    10          t1#         = [matr1 [I (fslot 4)] l0#
+158:    10          t2          = const(40) + l8
+159:    10          t2          = t1#[t2]
+160:    10          l21         = t2
+161:    10          l22         = t0 - t2
+162:    10          t1#         = [matr1 [I (fslot 4)] l0#
+163:    10          t0          = const(8) + l8
+164:    10          t0          = t1#[t0]
+165:    10          l23         = t0
+166:    10          t1#         = [matr1 [I (fslot 4)] l0#
+167:    10          t2          = const(56) + l8
+168:    10          t2          = t1#[t2]
+169:    10          l24         = t2
+170:    10          l25         = t0 - t2
+171:    10          t2          = l25 - l22
+172:    10          l26         = const(2217) * t2
+173:    10          t1#         = [matr2 [I (fslot 5)] l0#
+174:    10          l7          = l7 + const(1)
+175:    10          t4#         = [matr1 [I (fslot 4)] l0#
+176:    10          t3          = t4#[l8]
+177:    10          t2          = const(2896) * t3
+178:    10          t1#[l7]     = t2
+179:    10          t1#         = [matr2 [I (fslot 5)] l0#
+180:    10          l7          = l7 + const(1)
+181:    10          t4#         = [matr1 [I (fslot 4)] l0#
+182:    10          t3          = l8 + const(32)
+183:    10          t3          = t4#[t3]
+184:    10          t2          = const(2896) * t3
+185:    10          t1#[l7]     = t2
+186:    10          t1#         = [matr2 [I (fslot 5)] l0#
+187:    10          l7          = l7 + const(1)
+188:    10          t4#         = [matr1 [I (fslot 4)] l0#
+189:    10          t2          = const(16) + l8
+190:    10          t2          = t4#[t2]
+191:    10          l27         = t2
+192:    10          t4#         = [matr1 [I (fslot 4)] l0#
+193:    10          t3          = const(48) + l8
+194:    10          t3          = t4#[t3]
+195:    10          l28         = t3
+196:    10          t2          = t2 - t3
+197:    10          t2          = t2 << const(12)
+198:    10          t1#[l7]     = t2
+199:    10          t1#         = [matr2 [I (fslot 5)] l0#
+200:    10          l7          = l7 + const(1)
+201:    10          t3          = l27 + l28
+202:    10          t2          = const(2896) * t3
+203:    10          t1#[l7]     = t2
+204:    10          t1#         = [matr2 [I (fslot 5)] l0#
+205:    10          l7          = l7 + const(1)
+206:    10          t2          = const(3135) * l22
+207:    10          t2          = t2 - l26
+208:    10          t1#[l7]     = t2
+209:    10          t1#         = [matr2 [I (fslot 5)] l0#
+210:    10          l7          = l7 + const(1)
+211:    10          t2          = l23 + l24
+212:    10          l29         = t2
+213:    10          t3          = l20 + l21
+214:    10          l30         = t3
+215:    10          t2          = t2 - t3
+216:    10          t2          = t2 << const(12)
+217:    10          t1#[l7]     = t2
+218:    10          t1#         = [matr2 [I (fslot 5)] l0#
+219:    10          l7          = l7 + const(1)
+220:    10          t2          = const(7568) * l25
+221:    10          t2          = t2 - l26
+222:    10          t1#[l7]     = t2
+223:    10          t1#         = [matr2 [I (fslot 5)] l0#
+224:    10          l7          = l7 + const(1)
+225:    10          t3          = l29 + l30
+226:    10          t2          = const(2896) * t3
+227:    10          t1#[l7]     = t2
+228:    10          goto 358
+229:    10      229:
+230:    10          t1#         = [matr2 [I (fslot 5)] l0#
+231:    10          l7          = l7 + const(1)
+232:    10          t4#         = [matr1 [I (fslot 4)] l0#
+233:    10          t2          = t4#[l8]
+234:    10          t1#[l7]     = t2
+235:    10          t1#         = [matr2 [I (fslot 5)] l0#
+236:    10          l7          = l7 + const(1)
+237:    10          t4#         = [matr1 [I (fslot 4)] l0#
+238:    10          t2          = const(32) + l8
+239:    10          t2          = t4#[t2]
+240:    10          t1#[l7]     = t2
+241:    10          t1#         = [matr2 [I (fslot 5)] l0#
+242:    10          l7          = l7 + const(1)
+243:    10          t4#         = [matr1 [I (fslot 4)] l0#
+244:    10          t2          = const(16) + l8
+245:    10          t2          = t4#[t2]
+246:    10          l31         = t2
+247:    10          t4#         = [matr1 [I (fslot 4)] l0#
+248:    10          t3          = const(48) + l8
+249:    10          t3          = t4#[t3]
+250:    10          l32         = t3
+251:    10          t2          = t2 - t3
+252:    10          t1#[l7]     = t2
+253:    10          t1#         = [matr2 [I (fslot 5)] l0#
+254:    10          t2          = l31 + l32
+255:    10          t1#[l7]     = t2
+256:    10          t1#         = [matr1 [I (fslot 4)] l0#
+257:    10          t0          = const(24) + l8
+258:    10          t0          = t1#[t0]
+259:    10          l33         = t0
+260:    10          t0          = ! t0
+261:    10          t1#         = [matr1 [I (fslot 4)] l0#
+262:    10          t2          = const(40) + l8
+263:    10          t2          = t1#[t2]
+264:    10          l34         = t2
+265:    10          t0          = t0 + t2
+266:    10          l4          = t0
+267:    10          l2          = t0
+268:    10          l7          = l7 + const(2)
+269:    10          t1#         = [matr2 [I (fslot 5)] l0#
+270:    10          t4#         = [matr1 [I (fslot 4)] l0#
+271:    10          t2          = const(8) + l8
+272:    10          t2          = t4#[t2]
+273:    10          l35         = t2
+274:    10          t4#         = [matr1 [I (fslot 4)] l0#
+275:    10          t3          = const(56) + l8
+276:    10          t3          = t4#[t3]
+277:    10          l36         = t3
+278:    10          t2          = t2 + t3
+279:    10          l37         = t2
+280:    10          t3          = l33 + l34
+281:    10          l38         = t3
+282:    10          t2          = t2 - t3
+283:    10          t1#[l7]     = t2
+284:    10          t0          = l35 - l36
+285:    10          l3          = t0
+286:    10          l5          = ! t0
+287:    10          l7          = l7 + const(2)
+288:    10          t1#         = [matr2 [I (fslot 5)] l0#
+289:    10          l7          = l7 + const(1)
+290:    10          t2          = l37 + l38
+291:    10          t1#[l7]     = t2
+292:    10          goto 358
+293:    10      293:
+294:    10          t1#         = [matr2 [I (fslot 5)] l0#
+295:    10          l7          = l7 + const(1)
+296:    10          t4#         = [matr1 [I (fslot 4)] l0#
+297:    10          t2          = t4#[l8]
+298:    10          t1#[l7]     = t2
+299:    10          t1#         = [matr2 [I (fslot 5)] l0#
+300:    10          l7          = l7 + const(1)
+301:    10          t4#         = [matr1 [I (fslot 4)] l0#
+302:    10          t2          = const(32) + l8
+303:    10          t2          = t4#[t2]
+304:    10          t1#[l7]     = t2
+305:    10          t1#         = [matr2 [I (fslot 5)] l0#
+306:    10          l7          = l7 + const(1)
+307:    10          t4#         = [matr1 [I (fslot 4)] l0#
+308:    10          t2          = const(16) + l8
+309:    10          t2          = t4#[t2]
+310:    10          l39         = t2
+311:    10          t4#         = [matr1 [I (fslot 4)] l0#
+312:    10          t3          = const(48) + l8
+313:    10          t3          = t4#[t3]
+314:    10          l40         = t3
+315:    10          t2          = t2 - t3
+316:    10          t1#[l7]     = t2
+317:    10          t1#         = [matr2 [I (fslot 5)] l0#
+318:    10          t2          = l39 + l40
+319:    10          t1#[l7]     = t2
+320:    10          t1#         = [matr1 [I (fslot 4)] l0#
+321:    10          t2          = const(24) + l8
+322:    10          t2          = t1#[t2]
+323:    10          l41         = t2
+324:    10          t2          = ! t2
+325:    10          t1#         = [matr1 [I (fslot 4)] l0#
+326:    10          t3          = const(40) + l8
+327:    10          t3          = t1#[t3]
+328:    10          l42         = t3
+329:    10          t2          = t2 + t3
+330:    10          l43         = t2
+331:    10          l3          = l3 + t2
+332:    10          l5          = l5 + l43
+333:    10          l7          = l7 + const(2)
+334:    10          t1#         = [matr2 [I (fslot 5)] l0#
+335:    10          t4#         = [matr1 [I (fslot 4)] l0#
+336:    10          t2          = const(8) + l8
+337:    10          t2          = t4#[t2]
+338:    10          l44         = t2
+339:    10          t4#         = [matr1 [I (fslot 4)] l0#
+340:    10          t3          = const(56) + l8
+341:    10          t3          = t4#[t3]
+342:    10          l45         = t3
+343:    10          t2          = t2 + t3
+344:    10          l46         = t2
+345:    10          t3          = l41 + l42
+346:    10          l47         = t3
+347:    10          t2          = t2 - t3
+348:    10          t1#[l7]     = t2
+349:    10          t2          = l44 - l45
+350:    10          l48         = t2
+351:    10          l4          = l4 + t2
+352:    10          l2          = l2 - l48
+353:    10          l7          = l7 + const(2)
+354:    10          t1#         = [matr2 [I (fslot 5)] l0#
+355:    10          l7          = l7 + const(1)
+356:    10          t2          = l46 + l47
+357:    10          t1#[l7]     = t2
+358:    10      358:
+359:    10          l8          = l8 + const(1)
+360:    10      360:
+361:    1           if l8 < const(8) goto 73
+362:    1           t2          = l2 + l3
+363:    1           l49         = const(2896) * t2
+364:    1           t2          = l2 - l3
+365:    1           l50         = const(2896) * t2
+366:    1           l51         = l4 << const(12)
+367:    1           l52         = l5 << const(12)
+368:    1           t1#         = [matr2 [I (fslot 5)] l0#
+369:    1           t2          = l49 + l51
+370:    1           t1#[const(36)]      = t2
+371:    1           t1#         = [matr2 [I (fslot 5)] l0#
+372:    1           t2          = l50 + l52
+373:    1           t1#[const(38)]      = t2
+374:    1           t1#         = [matr2 [I (fslot 5)] l0#
+375:    1           t2          = l50 - l52
+376:    1           t1#[const(52)]      = t2
+377:    1           t1#         = [matr2 [I (fslot 5)] l0#
+378:    1           t2          = l51 - l49
+379:    1           t1#[const(54)]      = t2
+380:    1           t1#         = [matr2 [I (fslot 5)] l0#
+381:    1           t2          = t1#[const(32)]
+382:    1           t1#         = [matr2 [I (fslot 5)] l0#
+383:    1           t3          = t1#[const(48)]
+384:    1           t2          = t2 + t3
+385:    1           l53         = const(1567) * t2
+386:    1           t1#         = [matr2 [I (fslot 5)] l0#
+387:    1           t4#         = [matr2 [I (fslot 5)] l0#
+388:    1           t3          = t4#[const(32)]
+389:    1           t2          = const(63319) * t3
+390:    1           t2          = t2 - l53
+391:    1           t1#[const(32)]      = t2
+392:    1           t1#         = [matr2 [I (fslot 5)] l0#
+393:    1           t4#         = [matr2 [I (fslot 5)] l0#
+394:    1           t3          = t4#[const(48)]
+395:    1           t2          = const(5352) * t3
+396:    1           t2          = t2 - l53
+397:    1           t1#[const(48)]      = t2
+398:    1           t1#         = [matr2 [I (fslot 5)] l0#
+399:    1           t2          = t1#[const(33)]
+400:    1           t1#         = [matr2 [I (fslot 5)] l0#
+401:    1           t3          = t1#[const(49)]
+402:    1           t2          = t2 + t3
+403:    1           l53         = const(1567) * t2
+404:    1           t1#         = [matr2 [I (fslot 5)] l0#
+405:    1           t4#         = [matr2 [I (fslot 5)] l0#
+406:    1           t3          = t4#[const(33)]
+407:    1           t2          = const(63319) * t3
+408:    1           t2          = t2 - l53
+409:    1           t1#[const(33)]      = t2
+410:    1           t1#         = [matr2 [I (fslot 5)] l0#
+411:    1           t4#         = [matr2 [I (fslot 5)] l0#
+412:    1           t3          = t4#[const(49)]
+413:    1           t2          = const(5352) * t3
+414:    1           t2          = t2 - l53
+415:    1           t1#[const(49)]      = t2
+416:    1           t1#         = [matr2 [I (fslot 5)] l0#
+417:    1           t2          = t1#[const(34)]
+418:    1           t1#         = [matr2 [I (fslot 5)] l0#
+419:    1           t3          = t1#[const(50)]
+420:    1           t2          = t2 + t3
+421:    1           l53         = const(2217) * t2
+422:    1           t1#         = [matr2 [I (fslot 5)] l0#
+423:    1           t4#         = [matr2 [I (fslot 5)] l0#
+424:    1           t3          = t4#[const(34)]
+425:    1           t2          = const(62401) * t3
+426:    1           t2          = t2 - l53
+427:    1           t1#[const(34)]      = t2
+428:    1           t1#         = [matr2 [I (fslot 5)] l0#
+429:    1           t4#         = [matr2 [I (fslot 5)] l0#
+430:    1           t3          = t4#[const(50)]
+431:    1           t2          = const(7568) * t3
+432:    1           t2          = t2 - l53
+433:    1           t1#[const(50)]      = t2
+434:    1           t1#         = [matr2 [I (fslot 5)] l0#
+435:    1           t2          = t1#[const(35)]
+436:    1           t1#         = [matr2 [I (fslot 5)] l0#
+437:    1           t3          = t1#[const(51)]
+438:    1           t2          = t2 + t3
+439:    1           l53         = const(1567) * t2
+440:    1           t1#         = [matr2 [I (fslot 5)] l0#
+441:    1           t4#         = [matr2 [I (fslot 5)] l0#
+442:    1           t3          = t4#[const(35)]
+443:    1           t2          = const(63319) * t3
+444:    1           t2          = t2 - l53
+445:    1           t1#[const(35)]      = t2
+446:    1           t1#         = [matr2 [I (fslot 5)] l0#
+447:    1           t4#         = [matr2 [I (fslot 5)] l0#
+448:    1           t3          = t4#[const(51)]
+449:    1           t2          = const(5352) * t3
+450:    1           t2          = t2 - l53
+451:    1           t1#[const(51)]      = t2
+452:    1           t1#         = [matr2 [I (fslot 5)] l0#
+453:    1           t2          = t1#[const(37)]
+454:    1           t1#         = [matr2 [I (fslot 5)] l0#
+455:    1           t3          = t1#[const(53)]
+456:    1           t2          = t2 + t3
+457:    1           l53         = const(2217) * t2
+458:    1           t1#         = [matr2 [I (fslot 5)] l0#
+459:    1           t4#         = [matr2 [I (fslot 5)] l0#
+460:    1           t3          = t4#[const(37)]
+461:    1           t2          = const(62401) * t3
+462:    1           t2          = t2 - l53
+463:    1           t1#[const(37)]      = t2
+464:    1           t1#         = [matr2 [I (fslot 5)] l0#
+465:    1           t4#         = [matr2 [I (fslot 5)] l0#
+466:    1           t3          = t4#[const(53)]
+467:    1           t2          = const(7568) * t3
+468:    1           t2          = t2 - l53
+469:    1           t1#[const(53)]      = t2
+470:    1           t1#         = [matr2 [I (fslot 5)] l0#
+471:    1           t2          = t1#[const(39)]
+472:    1           t1#         = [matr2 [I (fslot 5)] l0#
+473:    1           t3          = t1#[const(55)]
+474:    1           t2          = t2 + t3
+475:    1           l53         = const(1567) * t2
+476:    1           t1#         = [matr2 [I (fslot 5)] l0#
+477:    1           t4#         = [matr2 [I (fslot 5)] l0#
+478:    1           t3          = t4#[const(39)]
+479:    1           t2          = const(63319) * t3
+480:    1           t2          = t2 - l53
+481:    1           t1#[const(39)]      = t2
+482:    1           t1#         = [matr2 [I (fslot 5)] l0#
+483:    1           t4#         = [matr2 [I (fslot 5)] l0#
+484:    1           t3          = t4#[const(55)]
+485:    1           t2          = const(5352) * t3
+486:    1           t2          = t2 - l53
+487:    1           t1#[const(55)]      = t2
+488:    1           t0          = const(0)
+489:    1           l54         = t0
+490:    1           l55         = t0
+491:    1           goto 586
+492:    10      492:
+493:    10          t1#         = [matr1 [I (fslot 4)] l0#
+494:    10          t4#         = [matr2 [I (fslot 5)] l0#
+495:    10          t2          = t4#[l55]
+496:    10          t4#         = [matr2 [I (fslot 5)] l0#
+497:    10          t3          = l55 + const(1)
+498:    10          t3          = t4#[t3]
+499:    10          t2          = t2 + t3
+500:    10          l56         = t2
+501:    10          t4#         = [matr2 [I (fslot 5)] l0#
+502:    10          t3          = l55 + const(3)
+503:    10          t3          = t4#[t3]
+504:    10          t2          = t2 + t3
+505:    10          l57         = t2
+506:    10          t4#         = [matr2 [I (fslot 5)] l0#
+507:    10          t3          = l55 + const(7)
+508:    10          t3          = t4#[t3]
+509:    10          t2          = t2 + t3
+510:    10          t1#[l55]    = t2
+511:    10          t1#         = [matr1 [I (fslot 4)] l0#
+512:    10          t0          = l55 + const(3)
+513:    10          t4#         = [matr2 [I (fslot 5)] l0#
+514:    10          t3          = l55 + const(3)
+515:    10          t3          = t4#[t3]
+516:    10          t2          = l56 - t3
+517:    10          l58         = t2
+518:    10          t4#         = [matr2 [I (fslot 5)] l0#
+519:    10          t3          = l55 + const(4)
+520:    10          t3          = t4#[t3]
+521:    10          t4#         = [matr2 [I (fslot 5)] l0#
+522:    10          t5          = l55 + const(6)
+523:    10          t5          = t4#[t5]
+524:    10          t4#         = [matr2 [I (fslot 5)] l0#
+525:    10          t6          = l55 + const(7)
+526:    10          t6          = t4#[t6]
+527:    10          t5          = t5 - t6
+528:    10          l59         = t5
+529:    10          t4#         = [matr2 [I (fslot 5)] l0#
+530:    10          t6          = l55 + const(5)
+531:    10          t6          = t4#[t6]
+532:    10          t5          = t5 - t6
+533:    10          l60         = t5
+534:    10          t3          = t3 - t5
+535:    10          l61         = t3
+536:    10          t2          = t2 - t3
+537:    10          t1#[t0]     = t2
+538:    10          t1#         = [matr1 [I (fslot 4)] l0#
+539:    10          t0          = l55 + const(4)
+540:    10          t2          = l58 + l61
+541:    10          t1#[t0]     = t2
+542:    10          t1#         = [matr1 [I (fslot 4)] l0#
+543:    10          t0          = l55 + const(1)
+544:    10          t4#         = [matr2 [I (fslot 5)] l0#
+545:    10          t2          = t4#[l55]
+546:    10          t4#         = [matr2 [I (fslot 5)] l0#
+547:    10          t3          = l55 + const(1)
+548:    10          t3          = t4#[t3]
+549:    10          t2          = t2 - t3
+550:    10          l62         = t2
+551:    10          t4#         = [matr2 [I (fslot 5)] l0#
+552:    10          t3          = l55 + const(2)
+553:    10          t3          = t4#[t3]
+554:    10          t4#         = [matr2 [I (fslot 5)] l0#
+555:    10          t5          = l55 + const(3)
+556:    10          t5          = t4#[t5]
+557:    10          t3          = t3 - t5
+558:    10          l63         = t3
+559:    10          t2          = t2 + t3
+560:    10          l64         = t2
+561:    10          t2          = t2 + l59
+562:    10          t1#[t0]     = t2
+563:    10          t1#         = [matr1 [I (fslot 4)] l0#
+564:    10          t0          = l55 + const(2)
+565:    10          t2          = l62 - l63
+566:    10          l65         = t2
+567:    10          t2          = t2 - l60
+568:    10          t1#[t0]     = t2
+569:    10          t1#         = [matr1 [I (fslot 4)] l0#
+570:    10          t0          = l55 + const(5)
+571:    10          t2          = l65 + l60
+572:    10          t1#[t0]     = t2
+573:    10          t1#         = [matr1 [I (fslot 4)] l0#
+574:    10          t0          = l55 + const(6)
+575:    10          t2          = l64 - l59
+576:    10          t1#[t0]     = t2
+577:    10          t1#         = [matr1 [I (fslot 4)] l0#
+578:    10          t0          = l55 + const(7)
+579:    10          t4#         = [matr2 [I (fslot 5)] l0#
+580:    10          t3          = l55 + const(7)
+581:    10          t3          = t4#[t3]
+582:    10          t2          = l57 - t3
+583:    10          t1#[t0]     = t2
+584:    10          l54         = l54 + const(1)
+585:    10          l55         = l55 + const(8)
+586:    10      586:
+587:    1           if l54 < const(8) goto 492
+588:    1           l57         = const(8)
+589:    1           l56         = const(16)
+590:    1           l60         = const(24)
+591:    1           l59         = const(32)
+592:    1           l58         = const(40)
+593:    1           l61         = const(48)
+594:    1           l64         = const(56)
+595:    1           t0          = const(0)
+596:    1           l62         = t0
+597:    1           l63         = t0
+598:    1           goto 688
+599:    10      599:
+600:    10          t4#         = [matr1 [I (fslot 4)] l0#
+601:    10          t2          = t4#[l62]
+602:    10          t4#         = [matr1 [I (fslot 4)] l0#
+603:    10          t3          = t4#[l57]
+604:    10          t2          = t2 + t3
+605:    10          l66         = t2
+606:    10          t4#         = [matr1 [I (fslot 4)] l0#
+607:    10          t3          = t4#[l60]
+608:    10          t2          = t2 + t3
+609:    10          l65         = t2
+610:    10          t4#         = [matr1 [I (fslot 4)] l0#
+611:    10          t3          = t4#[l64]
+612:    10          t2          = t2 + t3
+613:    10          t2          = t2 >> const(22)
+614:    10          l1#[l63]    = t2
+615:    10          t0          = l63 + const(3)
+616:    10          t4#         = [matr1 [I (fslot 4)] l0#
+617:    10          t3          = t4#[l60]
+618:    10          t2          = l66 - t3
+619:    10          l67         = t2
+620:    10          t4#         = [matr1 [I (fslot 4)] l0#
+621:    10          l59         = l59 + const(1)
+622:    10          t3          = t4#[l59]
+623:    10          t4#         = [matr1 [I (fslot 4)] l0#
+624:    10          l61         = l61 + const(1)
+625:    10          t5          = t4#[l61]
+626:    10          t4#         = [matr1 [I (fslot 4)] l0#
+627:    10          t6          = t4#[l64]
+628:    10          t5          = t5 - t6
+629:    10          l68         = t5
+630:    10          t4#         = [matr1 [I (fslot 4)] l0#
+631:    10          l58         = l58 + const(1)
+632:    10          t6          = t4#[l58]
+633:    10          t5          = t5 - t6
+634:    10          l69         = t5
+635:    10          t3          = t3 - t5
+636:    10          l70         = t3
+637:    10          t2          = t2 - t3
+638:    10          t2          = t2 >> const(22)
+639:    10          l1#[t0]     = t2
+640:    10          t0          = l63 + const(4)
+641:    10          t2          = l67 + l70
+642:    10          t2          = t2 >> const(22)
+643:    10          l1#[t0]     = t2
+644:    10          t0          = l63 + const(1)
+645:    10          t4#         = [matr1 [I (fslot 4)] l0#
+646:    10          l62         = l62 + const(1)
+647:    10          t2          = t4#[l62]
+648:    10          t4#         = [matr1 [I (fslot 4)] l0#
+649:    10          l57         = l57 + const(1)
+650:    10          t3          = t4#[l57]
+651:    10          t2          = t2 - t3
+652:    10          l71         = t2
+653:    10          t4#         = [matr1 [I (fslot 4)] l0#
+654:    10          l56         = l56 + const(1)
+655:    10          t3          = t4#[l56]
+656:    10          t4#         = [matr1 [I (fslot 4)] l0#
+657:    10          l60         = l60 + const(1)
+658:    10          t5          = t4#[l60]
+659:    10          t3          = t3 - t5
+660:    10          l72         = t3
+661:    10          t2          = t2 + t3
+662:    10          l73         = t2
+663:    10          t2          = t2 + l68
+664:    10          t2          = t2 >> const(22)
+665:    10          l1#[t0]     = t2
+666:    10          t0          = l63 + const(2)
+667:    10          t2          = l71 - l72
+668:    10          l74         = t2
+669:    10          t2          = t2 - l69
+670:    10          t2          = t2 >> const(22)
+671:    10          l1#[t0]     = t2
+672:    10          t0          = l63 + const(5)
+673:    10          t2          = l74 + l69
+674:    10          t2          = t2 >> const(22)
+675:    10          l1#[t0]     = t2
+676:    10          t0          = l63 + const(6)
+677:    10          t2          = l73 - l68
+678:    10          t2          = t2 >> const(22)
+679:    10          l1#[t0]     = t2
+680:    10          t0          = l63 + const(7)
+681:    10          t4#         = [matr1 [I (fslot 4)] l0#
+682:    10          l64         = l64 + const(1)
+683:    10          t3          = t4#[l64]
+684:    10          t2          = l65 - t3
+685:    10          t2          = t2 >> const(22)
+686:    10          l1#[t0]     = t2
+687:    10          l63         = l63 + const(8)
+688:    10      688:
+689:    1           if l63 < const(64) goto 599
+690:    1           return
+
+--IR1 trace for Lexample/mpeg/IDCT;::invers_dct
+
+
+Locals used in Lexample/mpeg/IDCT;::invers_dct
+        t2      used 3084
+        t3      used 1386
+        t1#     used 1176
+        l7      used 1082
+        l0#     used 1080        arg 0
+        t4#     used 984
+        t0      used 622
+        l8      used 372
+        l55     used 241
+        t5      used 240
+        l1#     used 160         arg 1
+        l63     used 122
+        t6      used 120
+        l6      used 102
+        l60     used 81
+        l64     used 71
+        l59     used 61
+        l62     used 61
+        l57     used 61
+        l56     used 51
+        l58     used 51
+        l61     used 51
+        l14     used 50
+        l15     used 50
+        l11     used 50
+        l13     used 40
+        l12     used 40
+        l10     used 40
+        l65     used 40
+        l9      used 40
+        l2      used 33
+        l3      used 33
+        l4      used 32
+        l5      used 32
+        l22     used 30
+        l69     used 30
+        l25     used 30
+        l26     used 30
+        l68     used 30
+        l54     used 22
+        l34     used 20
+        l19     used 20
+        l41     used 20
+        l71     used 20
+        l38     used 20
+        l74     used 20
+        l16     used 20
+        l28     used 20
+        l32     used 20
+        l37     used 20
+        l44     used 20
+        l72     used 20
+        l35     used 20
+        l46     used 20
+        l21     used 20
+        l67     used 20
+        l30     used 20
+        l29     used 20
+        l66     used 20
+        l73     used 20
+        l45     used 20
+        l17     used 20
+        l18     used 20
+        l33     used 20
+        l42     used 20
+        l47     used 20
+        l40     used 20
+        l27     used 20
+        l23     used 20
+        l31     used 20
+        l20     used 20
+        l24     used 20
+        l39     used 20
+        l48     used 20
+        l43     used 20
+        l70     used 20
+        l36     used 20
+        l53     used 18
+        l50     used 3
+        l52     used 3
+        l51     used 3
+        l49     used 3
+Uncaught exception Ljava/lang/ArrayIndexOutOfBoundsException;
+Ljava/lang/ArrayIndexOutOfBoundsException;
+
+C:\w\work\squawk\compiler>

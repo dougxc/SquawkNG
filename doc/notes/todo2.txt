@@ -1,0 +1,17 @@
+1, The Phi merging is wrong. Firstly it only allows a delta of one element to be on the stack
+   when the between the start of a BB and the Phi. Also it only works when the Phi is at an
+   address higher than all the branches. The solution is for the Phi to contain a two dimensional array
+   of instruction predecessor pointers so that every stack element from ereny brack point is known, and
+   then have all subsequent branches rename their instructions to use the type of the first branch.
+
+   Actually even easier, just remember the virtual register numbers on the stack of the first
+   branch and set all subsequent branches to use those registers.
+
+
+2, Have one invoke type not two
+
+3, Unload <clinit> after execution, then this is a good place to build tables e.g.
+       static int[] foo = {1,2,3,4};
+   is better than
+       int[] foo = {1,2,3,4};
+

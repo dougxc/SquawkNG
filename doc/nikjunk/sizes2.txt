@@ -1,0 +1,18 @@
+Class file size comparison
+==========================
+
+117 CLDC classes plus Squawk loader
+
+
+                                    No options                      -g:none
+
+
+
+Normal classes                      426302                          300810
+
+
+
+Classes with stackmaps              472291                          347057
+
+
+

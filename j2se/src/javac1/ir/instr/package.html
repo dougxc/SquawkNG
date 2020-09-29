@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for the instructions of the intermediate representation. All
+instruction nodes are subclasses of the {@link javac1.ir.instr.Instruction} class.
+Except for the leaves of the hierarchy, all classes are abstract and serve for
+factoring. Some of the instructions, such as {@link javac1.ir.instr.IfOp},
+{@link javac1.ir.instr.Intrinsic}, {@link javac1.ir.instr.LoopEnter} and
+{@link javac1.ir.instr.LoopExit}, appear only after optimizations.<p>
+
+Each basic block body of the control flow graph is represented by a sequential
+single-linked list of instructions. Those lists are always started by an
+instance of the class {@link javac1.ir.instr.BlockBegin} and terminated by a
+{@link javac1.ir.instr.BlockEnd} instruction, which in turn contains a possibly
+empty list of succeeding basic blocks. The root of the control flow graph is an
+empty basic block that ends with a {@link javac1.ir.instr.Base} node.<p>
+
+The class {@link javac1.ir.instr.HiWord} is used to fill the second word slot of
+long and double values on the operand stack. None of the instructions of one
+basic block may refer directly to values in another one, but only to
+{@link javac1.ir.instr.Phi} instructions representing them. The purpose of the
+remaining classes corresponds directly to the bytecodes with related names.
+
+@see  javac1.Bytecodes
+@see  javac1.frontend.GraphBuilder
+@see  javac1.ir.IR
+@see  javac1.ir.types
+</body>
+</html>

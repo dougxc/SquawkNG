@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for building and optimizing the control flow graph of a method.
+For this purpose the front end iterates over the bytecodes twice. First the
+{@link javac1.frontend.BlockListBuilder} only determines the starts of all basic
+blocks by examining the destinations of jumps and the successors of conditional
+jump instructions. Afterwards the {@link javac1.frontend.GraphBuilder} fills the
+gaps between the basic blocks with instructions.<p>
+
+Overlapping with the construction of the intermediate representation, some
+inexpensive high-impact optimizations are applied. Each generated instruction is
+transformed into its canonical form by the {@link javac1.frontend.Canonicalizer}.
+In addition a simple form of value numbering is used, short static or final
+methods are inlined, and innermost loops are determined for better register
+allocation.<p>
+
+For the sake of debugging, the classes {@link javac1.frontend.BytecodeTracer},
+{@link javac1.frontend.BlockPrinter} and {@link javac1.frontend.InstructionPrinter}
+can be used to print the initial bytecodes together with their attributes, the
+exception table, the resulting control flow graph and the instructions of the
+intermediate representation.
+
+@see  javac1.Bytecodes
+@see  javac1.ir.IR
+@see  javac1.ir.instr
+</body>
+</html>

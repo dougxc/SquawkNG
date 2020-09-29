@@ -1,0 +1,46 @@
+In Interp
+
+                case OPC_NEWARRAY: {
+                    int cls = pop();
+                    int siz = pop();
+                    int res;
+
+                    if (siz < 0) {
+                        fn = VMExtension_negativeArraySizeException_25;
+                        break;
+                    }
+
+                    if (Class_getElementType(cls) == 0) {
+                        fn = VMExtension_instantiationException_26;
+                        break;
+                    }
+
+                    res = newArray(cls, siz);
+                    if (res == 0) {
+                        push(siz);
+                        push(cls);
+                        fn = VMExtension_newArray_17;
+                        break;
+                    }
+
+                    push(res);
+                    continue;
+                }
+
+
+
+In VMExtension
+
+>     /*
+>      * negativeArraySizeException_25
+>      */
+>     static void negativeArraySizeException_25() {
+>        throw new NegativeArraySizeException();
+>     }
+>
+>     /*
+>      * instantiationException_26
+>      */
+>     static void instantiationException_26() throws InstantiationException {
+>        throw new InstantiationException();
+>     }

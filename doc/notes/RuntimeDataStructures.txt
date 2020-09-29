@@ -1,0 +1,38 @@
+
+Class static fields and initialization state
+======================================================
+
+These must be created and maintained on a per-isolate basis for each class.
+The design goal here is to minimise the space overhead for these items
+without complicating the design of the VM & garbage collector too much.
+As such, a layout similiar to that used for activation records is used.
+That is, everything is packed into an array and the VM knows the
+internal structure of the array. Also, the array's header is mangled to
+pointer to an internal, implementation only class that is known by the
+garbage collector. The C-like struct definition of the array's contents is:
+
+
+    struct {
+        half   type;               // suite id + cno of owning class (used for hash table key)
+        half   ptrFieldCount;
+        int    initializingThread;
+        int    ptrFields[ptrFieldCount]; 
+        int    nonPtrFields[];
+    }
+
+Monitors
+========
+
+For a first cut, monitors are implemented as a per-isolate linked list of monitor
+objects. Each monitor object points to its owning thread and the object it monitors.
+The linked list is self prioritising. That is, each time a search is performed on
+the list and a monitor object is found, it is moved to the front of the list.
+
+    Monitor
+    =======
+
+    Object  ownerThread;
+    Object  object;
+    Monitor next;
+    
+

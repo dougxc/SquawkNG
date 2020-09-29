@@ -1,0 +1,11 @@
+#translate -cp jcard3/classes  -comments -o temp/jcard3.bin -O -format bin @jcard3
+#translate -cp jcard3/classes -comments -o temp/oursuite.bin -O -format bin @vmtest
+
+#romize -ram_sz 4096K -format bin -o temp/jcard3.trace -m temp/jcard3.map -growrom -image temp/jcard3.image temp/jcard3.bin
+#romize -format bin -growrom -image temp/vmtest.image temp/jcard3.bin temp/oursuite.bin
+jcard3
+translate -cp jcard3/classes -comments -o temp/jcard3.bin -O -format bin @jcard3
+translate -cp jcard3/classes -libs temp/jcard3.bin -comments -o temp/jcard3_vmtest.bin -O -format bin @vmtest
+romize -format bin -m temp/vmtest.map -growrom -ram_sz 8K -image temp/vmtest.image temp/jcard3.bin temp/jcard3_vmtest.bin
+#squawk -Ximage:temp/vmtest.image -Xstats java.lang.JAM -suite:temp/jcard3_vmtest.bin -accountMemory com.sun.squawk.vmtest.VMTest
+squawk -Ximage:temp/vmtest.image -Xstats com.sun.squawk.vmtest.VMTest

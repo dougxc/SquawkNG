@@ -1,0 +1,43 @@
+1, Works as a normal J2ME system reading classfiles from the classpath.
+
+2, Dynamically translates classfiles into internal bytecodes prior to execution.
+
+3, Tbe internal format is such that:
+
+    a, Stack is empty at basic block boundries.
+
+    b, All locals that are undefined at invoking instructuctions are zeroed at the start of a method.
+
+    c, Invokes with unused oops on the stack are followed by an "oopmap" instruction that tells the GC whats doing on.
+
+    d, It uses clinit instructions and changes constructors like SquawkNG.
+
+    e, Quickens field and method instruction.
+
+    f, Identifies backward branch targets for JIT.
+
+4, Places internal class format into NVR.
+
+5, Optionally writes class metadata into NVR which can be used to:
+
+    a, Verify the internal class files (reverification).
+
+    b, Allow the internal class file format to be converted back to a valid class file.
+
+    c, Provide debugging information for backtrace and tracing.
+
+    d, Reflection.
+
+6, Classes placed in NVR are done so in the context of a code cache.
+
+7, The code cache acts like a SquawkNG suite and can be:
+
+   a, Automatically loaded with a set of classes (i.e. a whole JAR file).
+
+   b, Deleted.
+
+8, The JAM writes apps into a code cache with the same name as the JAR file and then deletes the JAR file.
+
+9, RTSJ memory subsystem with a preemptable garbage collector.
+
+10, Eprom zapping feature (perhaps good for jc2.3).

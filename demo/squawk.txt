@@ -1,0 +1,72 @@
+The Squawk Demo package
+=======================
+
+
+Step 1 - Install the 1.3 or later JVM from Sun
+----------------------------------------------
+
+This is available for download from http://java.sun.com/j2se/
+
+
+
+Step 2 - Set up the environment for the embedded JVM
+----------------------------------------------------
+
+
+The environment must be configured appropriately for the C version of Squawk
+to work. (This is because the C version uses an embedded JVM for its graphical
+output.)
+
+A program is available that should tell you what command to enter. To run
+this program enter the following command:
+
+    java -cp squawk.jar jvmenv
+
+The output of this tool will either be a command which you should be able to
+simply cut and paste onto the command line or a description of the steps you
+need to take manually to configure the environment.
+
+
+Step 3 - Run a demo program
+---------------------------
+
+Squawk can be run as a Java application running under another JVM, or as a
+standalone application.
+
+The Java Squawk can be run:
+
+    java -jar squawk.jar -Ximage:squawk.image <Name of class>
+
+The C Squawk can be run:
+
+    squawk -Xcp:squawk.jar -Ximage:squawk.image <Name of class>
+
+
+The Java version is only really of interest if the supplied x86 executable
+is not applicatable for your computer. The Java version was made to debug
+the VM and is many times slower than the production C code.
+
+The following programs are in the demo image:
+
+
+    example.cubes.Main              - A rotating cubes virtual reality program
+                                        (use arrow keys).
+
+    example.spaceinv.Main           - Space invaders
+                                        (use arrow keys and enter).
+
+    example.pushpuzzle.Main         - Push things around the screen
+                                        (use arrow keys).
+
+    example.pong.Main               - The game of Pong
+                                        (use arrow keys).
+
+
+Combine one of these class names with one of the execution commands above
+
+e.g:
+    java -jar squawk.jar -Ximage:squawk.image example.cubes.Main
+or:
+    squawk -Xcp:squawk.jar -Ximage:squawk.image example.pong.Main
+
+

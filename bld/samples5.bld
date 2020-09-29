@@ -1,0 +1,7 @@
+translate -cp j2me/classes:graphics/classes          -comments -o temp/j2me.bin        -O -format bin @j2me
+translate -cp j2me/classes:graphics/classes                  -comments -o temp/graphics.bin    -O -format bin @graphics
+translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/examples.bin    -O -format bin @examples
+#translate -cp j2me/classes:graphics/classes:samples/classes  -comments -o temp/benchmarks.bin  -O -format bin @benchmarks
+
+romize -ram_sz 4096K -format bin -o temp/samples.eeprom -m temp/samples.map -growrom -image temp/samples.image temp/j2me.bin temp/graphics.bin temp/examples.bin
+#romize -ram_sz 1024K -format xml -o temp/samples.eeprom -m temp/samples.map -growrom -image temp/samples.image temp/j2me.xml temp/graphics.xml temp/benchmarks.xml

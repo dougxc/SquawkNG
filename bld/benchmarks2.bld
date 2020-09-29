@@ -1,0 +1,13 @@
+
+#translate -cp translator/classes:j2me/classes:graphics/classes         -suite0  -comments -o temp/j2me.bin        -O -format bin @j2me
+#translate -cp translator/classes:j2me/classes:graphics/classes                  -comments -o temp/graphics.bin    -O -format bin @graphics
+translate -cp translator/classes:j2me/classes:graphics/classes:samples/classes  -comments -o temp/benchmarks.bin  -O -format bin @benchmarks
+
+romize -ram_sz 4096K -o:list -format bin -m temp/benchmarks.map -growrom -image temp/benchmarks.image temp/j2me.bin temp/graphics.bin temp/benchmarks.bin
+
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.cubes.Main
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.hanoi.Main 20
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.delta.Main
+#squawkc -Ximage:temp/benchmarks.image "-Xcp:vm\classes;j2me\classes;j2se\classes" bench.mpeg.Main
+
+#traceviewer -map temp/benchmarks.map -sp j2me/src:samples/src:vm/src:j2se/src trace

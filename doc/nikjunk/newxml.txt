@@ -1,0 +1,791 @@
+<squawk xmlns="http://www.sun.com/squawk/version/1.1">
+
+  <suite>suiteName</suite>
+  <statics>12</statics>
+  <interface_methods>4</interface_methods>
+
+
+** Example of a proxy class **
+
+
+  <class>
+    <name>Ljava/lang/Foobar;</name>
+
+    <static_variables>
+      <var>
+        <protected/>
+        <name>count-66</name>
+      </var>
+    </static_variables>
+
+    <instance_variables>
+      <var>
+        <package/>
+        <name>count-66</name>
+      </var>
+    </instance_variables>
+
+    <methods>
+      <method>
+        <public/>
+        <name>getField-12-45-67-89</name>
+      </method>
+    </methods>
+
+  </class>
+
+
+** Example of a proxy interface **
+
+
+  <interface>
+    <name>Ljava/lang/Fooable;</name>
+
+    <methods>
+      <method>
+        <public/>
+        <type>12</type>
+        <name>fooit-99</name>
+      </method>
+    </methods>
+
+  </interface>
+
+
+** Example of a regular class **
+
+  <class>
+    <interface/>                                        // If it is an interface
+    <abstract/>                                         // If it is abstract
+    <name>Ljava/lang/Foobar;</name>
+
+    <extends>
+      <type>34</type>
+    </extends>
+
+    <implements>
+      <type>167</type>
+      <type>122</type>
+    </implements>
+
+    <arrayof>
+      <type>35</type>
+    </arrayof>
+
+    <class_references>
+      <type>167</type>
+      <type>122</type>
+    </class_references>
+
+    <constants>
+      <string>Squawk!</string>                          // Constant "Squawk!"
+      <int_array>1 2 3</int_array>                      // Constant int[]{ 1, 2, 3 }
+      <float_array>4.3 5.2</float_array>                // Constant float[]{ 4.3, 5.2 }
+    </constants>
+
+    <static_variables>
+      <var>
+        <package_private/>
+        <type>12</type>
+        <name>count</name>
+      </var>
+    </static_variables>
+
+    <instance_variables>
+      <var>
+        <private/>
+        <type>12</type>
+        <name>count</name>
+      </var>
+    </instance_variables>
+
+    <methods>
+      <method>
+        <type>12</type>
+        <name>getField-12-45-67-89</name>
+      </method>
+    </methods>
+
+    <interface_map>
+      <from>6</from><to>4</to>          // Map interface 6 to method 4
+      <from>7</from><to>9</to>          // Map interface 7 to method 9
+      <from>8</from><to>22</to>         // Map interface 8 to method 22
+    </interface_map>
+  </class>
+
+
+</squawk>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1       pushi
+2       pushr
+3       addi
+4       addr
+5       ldi
+6
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+
+
+
+
+
+
+
+
+Imaginary Class section
+Proxy Class section
+Defined Interface section
+Defined Class section
+Methods
+
+
+
+
+
+
+
+// Suite file
+
+MAGIC   02031957
+
+UTF8    "SuiteName"
+UTF8    "Proxy Class Names"
+UTF8    "Defined Class Names"
+
+// ****************************** Classes ******************************
+
+
+SHORT   6               // Number of class data entries
+
+// Class 10
+
+SHORT   10              // Relative class number
+SHORT   att             // Attributes
+SHORT   n               // Superclass number
+
+SHORT   n               // Number of interfaces implemented
+SHORT   y               //
+SHORT   y               // Interface list
+SHORT   y               //
+
+UTF8    "fields"        // fields
+UTF8    "methods"       // methods
+
+SHORT   n               // Number of class references
+SHORT   y               //
+SHORT   y               // Class list
+SHORT   y               //
+
+UTF8    "strings"       // String references
+
+// ****************************** Methods ******************************
+
+SHORT   7               // Number of methods
+
+// Method 17 for class 10
+
+
+
+SHORT   n               // Method length
+SHORT   10              // Class
+SHORT   17              // Slot
+UTF8    "locals"        // Local variable definitions
+
+SHORT   n               // Activation record size
+SHORT   n               // Number of parameters
+
+SHORT   N               // Number of handler table entries
+
+SHORT   start           //
+SHORT   end             // N handler entries
+SHORT   handler         //
+SHORT   class           //
+
+BYTE    n               // Bytecode at offset 0
+BYTE    n               //
+BYTE    n               //
+BYTE    n               // Bytecodes
+BYTE    n               //
+BYTE    n               //
+BYTE    n               //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If the class is an interface it will have an <interface/> tag, if it is abstract it will have an <abstract/> tag.
+Array Classes
+Classes are also used to describe array types. Such array classes can be for primitive data types or arrays of other class types.
+
+The following is a one-dimensional array of the java.lang.Foobar class defined above.
+
+<squawk xmlns="http://www.sun.com/squawk/version/1.0">
+  <class>
+    <number>124</number>
+    <extends>1</extends>
+    <name>[Ljava.lang.Foobar;</name>
+    <arrayof>123</arrayof>
+  </class>
+</squawk>
+
+The following is a two dimensional array of java.lang.Foobar (based on class 124 above).
+
+<squawk xmlns="http://www.sun.com/squawk/version/1.0">
+  <class>
+    <number>128</number>
+    <extends>1</extends>
+    <name>[[Ljava.lang.Foobar;</name>
+    <arrayof>124</arrayof>
+  </class>
+</squawk>
+Methods
+There are two types of method invocation. Virtual method invocation, and interface method invocation. (Java ‘static’ methods so not exist as such. They are translated to be virtual methods that have a null receiver object.)  Each method is associated with an entry in a “vtable". Virtual methods are presented to the VM as being at a vtable offset of a class. Interface methods are presented as being at an offset to a global vtable for interface methods. Each class that implements an interface method contains a mapping that shows which virtual method should be called for each interface method defined.
+
+Certain slot offsets are reserved for methods that have special meanings.
+
+        Slot 0          <clinit>
+        Slot 1          <init>
+        Slot2           main(String[] args)
+        Slot3           finalize()
+Method definitions
+The following is the section of some class definition where a virtual method number 12 is defined. It has six local variables, and variables 1, 3, and 5 are initialized with parameters 2, 1, and 3 of the callers invoke instruction. There are four instructions in the method.
+
+<squawk xmlns="http://www.sun.com/squawk/version/1.0">
+  <class>
+    <number>123</number>
+    <method>
+      <slot>12</slot>
+      <local_variables>
+        <ref/>                          // Local variable number 0
+        <word/>                         // Local variable number 1
+        <word/>                         // Local variable number 2
+        <word/>                         // Local variable number 3
+        <dword/>                                // Local variable number 4
+        <dword/>                                // Local variable number 5
+      </local_variables>
+      <parameter_map>
+        <from>1</from><to>3</to>        // Copy parameter 1 to local 3
+        <from>2</from><to>1</to>        // Copy parameter 2 to local 1
+        <from>3</from><to>5</to>        // Copy parameter 3 to local 5
+      </parameter_map>
+      <instructions>
+        <i>addf  2 1 3</i>              // Instruction number 0
+        <i>f2d 4 2</i>                  // Instruction number 1
+        <i>cmpgd 2 4 5</i>              // Instruction number 2
+        <i>ifeq 2 #0 $5</i>             // Instruction number 3
+        <i>ret #1</i>                   // Instruction number 4
+        <i>ret #4</i>                   // Instruction number 5
+      </instructions>
+    </method>
+  </class>
+</squawk>
+
+Methods can be defined in terms of a different super class slot.
+
+<squawk xmlns="http://www.sun.com/squawk/version/1.0">
+  <class>
+    <number>123</number>
+    <extends>1</extends>
+    <name>Ljava.lang.Sausage;</name>
+    <method>
+      <slot>44</slot>
+      <super>23</super>
+    </method>
+  </class>
+</squawk>
+
+Abstract methods can be defined thus:
+
+<squawk xmlns="http://www.sun.com/squawk/version/1.0">
+  <class>
+    <number>456</number>
+    <extends>1</extends>
+    <name>Ljava.lang.BunchOfGerbils;</name>
+    <method>
+      <slot>88</slot>
+      <abstract/>
+    </method>
+  </class>
+</squawk>
+Interface Method map
+Interface methods are mapped from a system-wide indexing system to the methods in a class.  Every method of an interface is assigned a unique number. This number is used to invoke an interface in a class. The interface method map is used to map the interface number to a virtual method.
+
+
+
+
+
+
+
+
+Ljava/lang/Object;
+Ljava/lang/Class;
+Ljava/lang/Native;
+Ljava/lang/Math;
+Ljava/lang/String;
+Ljava/lang/Thread;
+Ljava/lang/Isolate;
+Ljava/lang/System;
+Ljava/lang/StringBuffer;
+Ljava/lang/Throwable;
+Ljava/lang/Error;
+Ljava/lang/Exception;
+Ljava/lang/_void_;
+Ljava/lang/_int_;
+Ljava/lang/_long_;
+Ljava/lang/_float_;
+Ljava/lang/_double_;
+Ljava/lang/_boolean_;
+Ljava/lang/_char_;
+Ljava/lang/_short_;
+Ljava/lang/_byte_;
+[Ljava/lang/Object;
+[Ljava/lang/String;
+[Ljava/lang/Class;
+[Ljava/lang/Thread;
+[Ljava/lang/_void_;
+[Ljava/lang/_int_;
+[Ljava/lang/_long_;
+[Ljava/lang/_float_;
+[Ljava/lang/_double_;
+[Ljava/lang/_boolean_
+[Ljava/lang/_char_;
+[Ljava/lang/_short_;
+[Ljava/lang/_byte_;
+[[Ljava/lang/_byte_;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+suite {
+
+    name        SuiteName
+    proxys      proxy class list
+    classes     normal class list
+
+    interface {
+        number      5
+        super       1
+        access      protected
+        implements  123 456
+        methods     toString-6 setString-6-6
+    }
+
+    class {
+        number      10
+        super       1
+        access      public
+        implements  5 6 7
+        fields      count-3:private offset-3:private value-12:private serializationUID-10:public:static:final
+        methods     toString-6 setString-6-6 getFoo-43-12-45-55:protected
+        classes     1 3 13 123
+        strings     str%20ing string string string
+    }
+
+    code {
+        class       10
+        slot        17
+        parms       3
+        locals      result-3 index-3 i-5
+        handlers    3-8-10-21 31-44-45-78
+        bytes       123 32 345 765 234 65
+    }
+}
+
+Notes:
+
+- There must be no forward references.
+- all tokens are space delimited and so embedded spaces must be encode (i.e.
+  %20)
+- Class names comply with format dictated by Class.forName and Class.getName
+
+Example suite:
+
+suite {
+
+    name        j2me
+    proxys      {}
+    classes {   java.lang.Object
+                java.lang.Class
+                java.lang.String
+                java.lang.Runnable
+                java.lang.Thread
+    }
+
+    // java.lang.Runnable
+    interface {
+        number      4
+        super       1
+        access      public
+        methods     toString-6 setString-6-6
+    }
+
+    // java.lang.Thread
+    class {
+        number      5
+        super       1
+        access      public
+        implements  4
+        fields      count-3:private offset-3:private value-12:private serializationUID-10:public:static:final
+        methods     toString-6 setString-6-6 getFoo-43-12-45-55:protected
+        classes     1 3 13 123
+        strings     str%20ing string string string
+    }
+
+    code {
+        class       10
+        slot        17
+        parms       3
+        locals      result-3 index-3 i-5
+        handlers    3-8-10-21 31-44-45-78
+        bytes       123 32 345 765 234 65
+    }
+}
+
+New file format restrictions:
+
+1. Stack must not have values on basic block boundaries.
+2. At a call site, the only values on the stack are the parameters to the call.
+3. Local variables are only ever used for one *exact* type.
+
+Things that cause the stack to be non-empty at basic block boundaries:
+
+1. Ternary operator expressions. E.g.
+
+    even = (a % 2 == 0 ? true : false);
+
+
+2. Boolean expressions. Javac usually transforms:
+
+    res = (this == obj);
+
+into:
+
+    res = (this == obj ? 1 : 0);
+
+3. Method invocation as a parameter to anothe method invocation. E.g.
+
+    foo(a, bar());
+
+This is usually compile into (assuming foo and bar are static):
+
+    load a
+    invokestatic bar
+    invokestatic foo
+
+
+
+
+
+
+<suite>
+
+// Name of suite
+
+  <name>foo</name>
+
+// Names of proxy classes
+
+  <proxys>
+    <name>java.lang.Object</name>
+    <name>java.lang.String</name>
+  </proxys>
+
+// Names of suite classes
+
+  <classes>
+    <name>com.sun.Foobar</name>
+  </classes>
+
+
+// For each of the proxys and classes above
+
+  <class>
+
+// Access flags
+
+    <access><public/><isInterface/></access>
+
+// Super class
+
+    <extends><type>1</type></extends>
+
+// Interfaces implemented
+
+    <implements><type>1</type><type>2</type><type>3</type></implements>
+
+// Static fields
+
+    <static_fields>
+      <field>
+        <name>foo<name>
+        <type>6</type>
+        <access>public</access>
+      </field>
+    </static_fields>
+
+// Virtual fields
+
+    <virtual_fields>
+      <field>
+        <name>bar<name>
+        <type>6</type>
+        <access>private</access>
+      </field>
+    </virtual_fields>
+
+// Static methods
+
+    <static_methods>
+      <method>
+        <name>toString<name>
+        <parameters><type>1</type><type>2</type><type>3</type></parameters>
+        <type>6</type>
+        <access><public/></access>
+      </method>
+    </static_methods>
+
+// Virtual methods
+
+    <virtual_methods>
+      <method>
+        <name>fromString<name>
+        <parameters><type>1</type><type>2</type><type>3</type></parameters>
+        <type>6</type>
+        <access><private/></access>
+      </method>
+    </virtual_methods>
+
+// Class references
+
+    <class_references>
+      <type>1</type><type>2</type><type>3</type>
+    </class_references>
+
+// Object references
+
+    <object_references>
+      <string>foobar</string>
+      <int_array><int>1</int><int>2</int><int>3</int></int_array>
+    </object_references>
+
+  </class>
+
+
+// Method definition
+
+  <method>
+
+    <class>10<class>
+
+    <slot>12<slot>
+
+    <locals>
+      <local>
+        <name>fromString<name>
+        <type>6</type>
+      </local>
+    </locals>
+
+    <handlers>
+      <handler>
+        <from>4<from>
+        <to>12<to>
+        <entry>22<entry>
+        <type>6</type>
+      </handler>
+    </handlers>
+
+    <code>
+       <xxx>
+    <code>
+
+  </method>
+
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<suite xmlns="http://www.sun.com/squawk/version/1.1">
+
+  <name>foo</name>
+
+  <proxys>
+    <name>java.lang.Object</name>
+    <name>java.lang.String</name>
+  </proxys>
+
+  <classes>
+    <name>com.sun.Foobar</name>
+  </classes>
+
+
+  <class>
+
+    <access><public/><isInterface/></access>
+
+    <extends><type>1</type></extends>
+
+    <implements><type>1</type><type>2</type><type>3</type></implements>
+
+    <static_fields>
+      <field>
+        <name>foo<name>
+        <type>6</type>
+        <access>public</access>
+      </field>
+    </static_fields>
+
+    <virtual_fields>
+      <field>
+        <name>bar<name>
+        <type>6</type>
+        <access>private</access>
+      </field>
+    </virtual_fields>
+
+    <static_methods>
+      <method>
+        <name>toString<name>
+        <parameters><type>1</type><type>2</type><type>3</type></parameters>
+        <type>6</type>
+        <access><public/></access>
+      </method>
+    </static_methods>
+
+    <virtual_methods>
+      <method>
+        <name>fromString<name>
+        <parameters><type>1</type><type>2</type><type>3</type></parameters>
+        <type>6</type>
+        <access><private/></access>
+      </method>
+    </virtual_methods>
+
+    <class_references>
+      <type>1</type><type>2</type><type>3</type>
+    </class_references>
+
+    <object_references>
+      <string>foobar</string>
+      <int_array><int>1</int><int>2</int><int>3</int></int_array>
+    </object_references>
+
+  </class>
+
+
+
+  <method>
+
+    <class>10<class>
+
+    <slot>12<slot>
+
+    <locals>
+      <local>
+        <name>fromString<name>
+        <type>6</type>
+      </local>
+    </locals>
+
+    <handlers>
+      <handler>
+        <from>4<from>
+        <to>12<to>
+        <entry>22<entry>
+        <type>6</type>
+      </handler>
+    </handlers>
+
+    <code>
+      <load/><byte>4</byte>
+      <iconst_3/>
+      <iadd/>
+      <return/>
+    <code>
+
+  </method>
+
+
+
+</suite>
+
+
+

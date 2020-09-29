@@ -1,0 +1,187 @@
+Notes on the Java classfile to Squawk suite file translator.
+------------------------------------------------------------
+
+The execution of the translator can be broken down into the following phases:
+
+1. Create bootstrap types. These are the core types in the Java language
+   such as java.lang.Object, java.lang.String as well as types representing
+   the primitive types (int, short etc).
+   
+2. Load the closure of proxy classes.
+
+3. Load the closure of suite classes.
+
+4. Prune proxy classes to contain only the information required for linking
+   the suite classes against them.
+   
+5. Emit suite file.
+
+
+* note: the terms 'class' and 'type' are interchange in the translator.
+
+As described in the "The Squawk System" specification, array types
+have the same form as any other type with one additional piece of
+information describing the type of the array's elements. As such,
+the Java array type 'Object[][][]' is represented by Squawk type
+whose element type is 'Object[][]' (whose element type is
+'Object[]' whose element type is 'Object').
+
+
+Class creation and loading
+--------------------------
+
+A type is explicitly created in the translator for one of the following reasons:
+
+a. It's one of the bootstrap types.
+b. It was specified as a proxy or suite class on the command line
+
+Creating a type adds it to a set of types maintained by the translator
+Once the initial types have been created, the translator set of types
+is repeatedly processed in an ordered manner to 'load' and 'convert' each
+type in the set. Loading and converting a type may cause extra types to
+be added to this set and this process continues until there are no types
+remaining that have not been loaded and converted.
+
+Loading a type means filling out it's definition from a Java class file
+and type conversion means converting the Java bytecode instructions
+(loaded from the class file) in each type to the equivalent Squawk
+bytecode instructions.
+
+Note: loading and converting an array type means loading and converting
+the element type of the array.
+
+
+Bytecode conversion
+-------------------
+
+The conversion from Java bytecode instructions to Squawk bytecode
+instructions comprises the meat of translator. It has the following
+phases:
+
+1. Parse bytecodes from class file, verify them and build a control
+   flow graph of intermediate representation (IR) instructions. Note
+   that verification means standard Java bytecode verification.
+   
+   
+2. Do liveness analysis and type inference on the IR to determine
+   all the distinct local variables and their types in the method.
+
+3. Perform transformations on the graph to apply the stack usage
+   restrictions in the Squawk specification. This involves adding
+   extra spill and fill instructions as well as generating extra
+   local variables to hold the spilled values.
+   
+4. Perform liveness analysis on the transformed graph to enable
+   a re-allocation of the local variables that minimises the total
+   number of local variables used by merging variables of the
+   same type that have exclusive liveness ranges,
+
+5. Perform other various optimizations that minimise the impact
+   of variable spilling/filling (e.g. moving loads of constants
+   up to their point of use).
+   
+
+Pruning
+-------
+
+Proxy types by their very definition should only embody enough detail
+to enable the non-proxy type in a suite to be linked against the set
+of types represented by the proxy types. To achieve this minimalality
+of detail, the translator prunes away as much detail as possible from
+the proxy classes. This process is analogous to a mark-sweep garbage
+collector. The non-proxy classes are considered to be the roots for
+the pruning and only the proxy types referenced by these roots are
+included in the suite and even then, only the referenced details
+are included for these types.
+
+
+
+
+Interesting features
+--------------------
+
+Some of the more noteworthy translator features (above any beyond
+the complex compiler-like transformations it performs) include:
+
+1. Clean code generation interface. The translator emits a suite
+   via an interface class. This makes it fairly easily to emit
+   various representations of a suite simply by implementing a
+   single interfcae class. The current translator implmentation
+   includes two such implementations: one for emitting a suite in
+   a textual XML format and one for emitting a suite in a binary
+   format compliant with that described in "The Squawk System"
+   specification.
+
+
+2. One goal of the translator and accompaning Squawk VM is that
+   it can execute and pass the CLDC TCK. Given the differences
+   between Java class files and Squawk suite files, this requires
+   some mechanism for 'emulating' the same behaviour as a TCK
+   compliant JVM for the tests which deal specificly with
+   file format correctness. This is achieved by having the
+   translator catch errors in Java class files (including
+   bytecode verification errors) and encode these
+   error-causing classes in a suite in such a manner that
+   the error is re-raised at exactly the same time and manner
+   in the execution of the Squawk VM as it would be in the
+   execution of a standard JVM. The basic mechanism is to
+   replace all methods in a error-causing class with a
+   sequence of bytecodes that simply throws an appropriate
+   exception when it invoked. This means that anyone observing
+   the execution of the TCK on the Squawk VM should not see
+   any behavioural difference from execution on a standard
+   JVM.
+   
+   Due to this mechanism, the translator/Squawk VM passes
+   about 99% of the TCK. The tests that do not passed fall into
+   one of the following categories:
+   
+   a. Tests that exceed the limits of a minimal Squawk VM. These
+      limits are discussed in appendix A of the "The Squawk System".
+      For example, it is impossible to express a class that
+      represents an array with more than 31 dimensions.
+   
+   b. There are a few class file constructions that cannot be translated
+      as they express legal but border-case semantics or would require
+      more extensive analysis. Almost all of these constructions would
+      never originate from javac generated code but only be hand
+      crafted class files. These constructions include:
+      
+      - <init> methods that overwrite the local variable storing the 'this' reference
+      - the 'arraylength' bytecode applied to a value whose inferred type is 'null'. **
+      - use of one of the stack manipulation bytecodes (e.g. swap, dup* etc) other
+        than 'dup' on an uninitialised instance (i.e. the value resulting from a
+        'new' instruction up until the corresponding <init> invocation)
+      - extraneous values on the stack at a 'throw' or 'return' bytecode that are
+        the result of one of the stack manipulation bytecodes.
+        
+   c. Tests for class files features ignored by the translator (e.g. InnerClass attributes)
+   
+
+
+Ideas for extension/improvement
+-------------------------------
+
+1. Provide an implementation of the suite emitter interface that
+   produces a set of Java class files corresponding to the set of
+   original class from which the suite was built. This could serve
+   two purposes:
+   
+   a. The resulting class files can be executed to prove the semantic
+      preserving properties of the translator.
+      
+   b. The cost of spilling/filling can be easily measured with existing
+      JVMs.
+      
+      
+
+2. Add support for the translator to be able to read suite files. This
+   is similiar to the ability javac has to read in class files as well
+   as source files. As with javac, this speed up the translator as it
+   would not have to do expensive Java class file load & converting on
+   classes it has already done this for. At the moment, the translator
+   is doing the kind of work that javac would do if it only knew how to
+   parse Java source files.
+   
+   
+3. A suite file disassembler (a.k.a. javap) would be useful.

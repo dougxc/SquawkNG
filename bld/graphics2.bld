@@ -1,0 +1,4 @@
+translate -cp j2me/classes:graphics/classes -comments -nominimalvm -o temp/graphics2.bin -O -format bin @graphics2
+
+romize -format bin  -image temp/graphics2.image -growrom temp/graphics2.bin
+

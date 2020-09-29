@@ -1,0 +1,5 @@
+translate -cp j2me/classes:graphics/classes -comments -o temp/j2me.xml  -O -format xml @j2me
+translate -cp j2me/classes:graphics/classes -comments         -o temp/gtest.xml -O -format xml @gtest
+
+romize -format xml  -image temp/gtest.image -growrom temp/j2me.xml temp/gtest.xml
+

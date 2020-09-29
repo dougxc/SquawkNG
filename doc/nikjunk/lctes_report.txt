@@ -1,0 +1,250 @@
+Notes from FCRC (Mainly LCTES and IVME)
+
+
+*** Languages, Compilers, and Tools for Embedded Systems (LCTES'03) ***
+
+(128 papers were submitted (75% more than last year) 29 accepted.)
+
+
+PREDICTING THE IMPACT OF OPTIMIZATIONS FOR EMBEDDED SYSTEMS
+Min Zhao, Bruce Childers, Mary Lou Soffa (University of Pittsburgh)
+
+        An analytical model for predicting a number of compiler optimization options. These
+        included loop-interchange, tiling, and reversal. The results of the predictions ranged
+        between 82-100% of the actual programs.
+
+        http://portal.acm.org/citation.cfm?id=780732.780734&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+FINDING EFFECTIVE OPTIMIZATION PHASE SEQUENCES
+Prasad Kulkarni, Wankang Zhao (Florida State Univ.), Hwashin Moon (Seoul National Univ.),
+Kyunghwan Cho (Korea Advanced Institute of Science and Engineering),
+David Whalley (Florida State Univ.), Jack Davidson (univ. of Virginia), Mark Bailey (Hamilton College),
+Yunheung Paek (Seoul National Univ.), Kyle Gallivan (Florida State Univ.),
+Douglas Jones (Univ. of Illinois, Urbana-Champaign)
+
+        An interesting talk that showed an interactive compiler that was driven from a GUI. Using this the
+        programmer could select sequence and types of optimizations and then run the program and see the results.
+        This seemed like a very practical way to get the best performance in an embedded space. They have also
+        developed a genetic algorithm for selecting the best optimizations. Using this they got between 2.5-6%
+        performance improvement.
+
+        http://portal.acm.org/citation.cfm?id=780732.780735&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+ADVANCED COPY PROPAGATION FOR ARRAYS
+Peter Vanbroekhoven, Gerda Janssens, Maurice Bruynooghe (Katholieke Universiteit),
+Henk Corporaal, Francky Catthoor (IMEC)
+
+        Quite an involve mechanism for doing automatic copy propagation of array accesses.
+
+        http://portal.acm.org/citation.cfm?id=780732.780736&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+A JAVA VIRTUAL MACHINE ARCHITECTURE FOR VERY SMALL DEVICES
+Nik Shaylor, Doug Simon, Bill Bush (Sun Microsystems)
+
+        Our Squawk presentation.
+
+        http://portal.acm.org/citation.cfm?id=780732.780738&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+COMPILING JAVA FOR LOW-END EMBEDDED SYSTEMS
+Kim Burgaard (Systematic Software Engineering A/S),
+Flemming Gram Christensen, Jørgen Lindskov Knudsen (Mjolner Informatics A/S),
+Ulrik Pagh Schultz (University of Aarhus)
+
+        An AOT compiler that is used to program a very small device with 512 bytes of RAM and 4KB ROM.
+        It does not have a garbage collector but instead used a system of allocating memory from the
+        program stack. It uses a static program analysis to detect dangling references.
+        It breaks quite a few Java rules, for instance an int is 16 bits.
+
+        http://portal.acm.org/citation.cfm?id=780732.780739&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+EFFICIENT MEMORY-REFERENCE CHECKS FOR REAL-TIME JAVA
+Angelo Corsaro and Ron K. Cytron (Washington University)
+
+        A simple technique to check in a constant time that the "Single parent rule" for entering
+        the "Scoped memory" of RTSJ is being correctly adhered to.
+
+        http://portal.acm.org/citation.cfm?id=780732.780740&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+DATA SIZE OPTIMIZATIONS FOR JAVA PROGRAMS
+C. Scott Ananian and Martin Rinard (M.I.T.)
+
+        A couple of techniques that demonstrate a reduction in the heap requirements of between 0 and 40% for
+        some of the SpecJVM98 benchmarks. This requires quite complex analysis and has only been implemented
+        by them in a static Java compiler. It was pointed out that the same algorithms could be use in a JIT.
+
+        http://portal.acm.org/citation.cfm?id=780732.780741&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+RECEPTION AND INDUSTRIAL PANEL
+Panel: Compilation Challenges for Network Processors
+Moderator: Roy Ju, Intel
+
+        Much talk about compilers for network processors. The memory systems in these computers are complex
+        and the real-time requirements are stringent. The basic story seemed to be that
+        the compiler should be able to do certain clever things but only when very closely
+        directed by the programmer. One compiler is at www.teji.com
+
+
+MEMORY SAFETY WITHOUT RUNTIME CHECKS OR GARBAGE COLLECTION
+Dinakar Dhurjati, Sumant Kowshik, Vikram Adve and Chris Lattner
+(University of Illinois, Urbana-Champaign)
+
+        A way of checking C programs for type safety statically. It requires that data structures are allocated from
+        pools, one for each structure type. It seemed to have the serious disadvantage that a dangling reference
+        to a memory area that was subsequently used to hold a structure of the same type would go undetected.
+        It one sense it is type safe, but it certainly not as safe as a regular GC solution.
+
+        http://portal.acm.org/citation.cfm?id=780732.780743&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+CONTROLLING FRAGMENTATION AND SPACE CONSUMPTION IN THE METRONOME, A REAL-TIME GARBAGE COLLECTOR FOR JAVA
+David F. Bacon Perry Cheng V.T. Rajan
+(IBM T. J. Watson)
+
+        A mostly non-copying real-time garbage collection system that used time based scheduling. It requires both
+        read and write barriers and a mechanism of cutting large arrays into smaller ones. It also requires a
+        certain amount of compiler cooperation. Programs must be annotated with their expected memory use.
+        If this is done correctly the claim is that the system will be hard read-time.
+
+        http://portal.acm.org/citation.cfm?id=780732.780744&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+TIME-TRIGGERED GARBAGE COLLECTION - ROBUST AND ADAPTIVE REAL-TIME GC SCHEDULING FOR EMBEDDED SYSTEMS
+Sven Gestegård Robertz and Roger Henriksson (Lund University)
+
+        Another paper that showed the advantages of time based allocation over a work based approach.
+
+        http://portal.acm.org/citation.cfm?id=780732.780745&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+PHASED SCHEDULING OF STREAM PROGRAMS
+Michal Karczmarek, William Thies, Saman Amarasinghe (M.I.T.)
+
+        A talk about the StreamIt language. A StreamIt program consists of autonomous filters that communicate
+        via a set of FIFO queues. Most of the presentation was devoted to the scheduling technology that seeks
+        to reduce the size of the FIFO queues.
+
+        http://portal.acm.org/citation.cfm?id=780732.780747&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+SCHEDULABILITY-DRIVEN FRAME PACKING FOR MULTI-CLUSTER DISTRIBUTED EMBEDDED SYSTEMS
+Paul Pop, Petru Eles, Zebo Peng (Linkoping University)
+
+        Not a subject I can comment much on. It looked like a sophisticated technique of
+        analyzing and optimizing the data flow in a heterogeneous network of computing devices.
+
+        http://portal.acm.org/citation.cfm?id=780732.780748&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+A DISE IMPLEMENTATION OF DYNAMIC CODE DECOMPRESSION
+Marc Corliss, E Christopher Lewis, Amir Roth (University of Pennsylvania)
+
+        A dictionary based compression mechanism that is decompressed with logic that sits between the
+        I-cache and the instruction pipeline. This decreases code size by 35% increase performance by 5-20%
+        reduce energy consumption by 10%. DISE is a generalized instruction editing mechanism which is
+        also used for such things as profiling, and dynamic optimization.
+
+        http://portal.acm.org/citation.cfm?id=780732.780765&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+ON THE SIDE-EFFECTS OF CODE ABSTRACTION
+Bjorn De Sutter, Hans Vandierendonck, Bruno De Bus, Koen De Bosschere (Ghent University)
+
+        Software code compression technique that automatically factors common code sequences
+        into subroutines. About 15% deduction in size.
+
+        http://portal.acm.org/citation.cfm?id=780732.780766&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+ENHANCING THE PERFORMANCE OF 16-BIT CODE USING AUGMENTING INSTRUCTIONS
+Arvind Krishnaswamy, Rajiv Gupta
+(University of Arizona)
+
+        An interesting variation to the ARM Thumb instruction set. Fairly modest performance increase with no obvious
+        disadvantages.
+
+        http://portal.acm.org/citation.cfm?id=780732.780767&coll=portal&dl=ACM&type=series&idx=SERIES117&part=series&WantType=Proceedings&title=LCTES&CFID=10891822&CFTOKEN=826822
+
+
+*** Interpreters, Virtual Machines and Emulators (IVME'03) ***
+
+(I cannot find the web links for these papers but I have them in my office.)
+
+Generation of Fast Interpreters for Huffman Compressed Bytecode
+Mario Latendresse (FNMOC/US Navy), Marc Feeley (Université de Montréal)
+
+        Huffman compression and super-instructions for an interpreter instruction set.
+        The program analyses an application and creates a custom interpreter and instruction set.
+        It gets about 60% compression of Java microbenchmarks. (About the same as Squawk.)
+
+
+Dynamic Native Optimization of Interpreters
+Gregory T. Sullivan, Derek L. Bruening, Iris Baron, Timothy Garnett, Saman Amarasinghe (MIT)
+
+        DynamoRIO (Dynamo from HP + RIO from MIT)
+        A novel idea where a dynamic binary code optimizer is used to speed up a simple
+        interpreter loop. The interpreter is annotated to inform the optomizer what the
+        interpreter's PC is and where logical control flow changes. This information
+        is used to build compiled instruction sequences that is faster then the
+        interpreter by between 50% to 100%.
+
+
+Joeq: A Virtual Machine and Compiler Infrastructure
+John Whaley (Stanford)
+
+        In interesting, thought not entirly, new paper of a generalized virtual computing environment that
+        will interpret or compile (statically or dymanically) a number of program representations. These
+        include Java classes, SUIF, x86 binary. It contains a number of program analysis functions,
+        and is all written in Java. The author was also involved in the Jalapeno JVM (now called the Jikes RVM).
+
+
+Engineering a Customizable Intermediate Representation
+K. Palacz, J. Baker, C. Flack, C. Grothoff, H. Yamauchi, J. Vitek (Purdue)
+
+        Most of the talk was about an internal representation called OvmIR. This is implemented as
+        Java classes that include a few fields with well known names that describe the
+        operation of the IR class. Instances of these classes can be examined using reflection.
+        The IR can be used to automatically generating an interpreter, JIT, or disassembler.
+        Some of RTSJ is implemented as well as Isolates. 200K lines of code. Quite a lot of the
+        project is made up from other projects. GCJ, SimpleJIT.
+
+        Apparently supported by DARPA under the "VMs for peace" program!
+
+
+*** PLENARY SESSION ***
+
+The Stanford WebBase Project - Hector Garcia-Molina
+
+        A Google-like project that uses an internal database of web pages taken from the Internet
+        to test new searching techniques. This is 1.5 TB of HTML (200 million pages).
+
+        Problems -
+           Hard to build indexes fast enough,
+           How to mine data behind hidden interfaces.
+
+        Techniques -
+           Parallel crawling engines that work on partitions of the total web space. These communicate with each
+           other when they find pages for another crawler but will also crawl another crawlers web space if they
+           have nothing else to do.
+
+           There are some idea on how to keep the index up to date. When to resample existing pages etc.
+
+           There was some talk about building a personalized page ranking system, but no details were given.
+
+           He talked about "Supernode" indexing which can greatly speed up the execution of complex search terms.
+
+           An interesting view of the future - Will search engines be able to keep up with the increasing amount
+           of data on the web. If they cannot then this problem will be solved by having specialist search engines.
+
+           Problem: How to avoid biasing the results, Google etc. are currently unbiased, but will this continue
+           with shareholder pressure to offer biasing for a price. Link and content spaming are techniques where
+           the search engine can be fooled into biasing a page.
+
+           Semantic web: Will tags be generated? By whom? He thinks it will only happen if Microsoft or Google get behind it.
+
+           Wen page: http://www-diglib.stanford.edu/~testbed/doc2/WebBase/

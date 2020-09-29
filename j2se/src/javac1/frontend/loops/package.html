@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for loop detection. The {@link javac1.frontend.loops.LoopFinder}
+traverses the basic blocks to determine innermost call-free loops in the control
+flow graph with regard to a better register allocation. Namely if some registers
+remain unused in the basic blocks of the detected loops, they are assigned to
+cache the most accessed local variables.
+
+@see  javac1.backend.LocalCaching#cacheLoopLocals()
+@see  javac1.ir.ScanBlocks#mostUsedLocals()
+</body>
+</html>

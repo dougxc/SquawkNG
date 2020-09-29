@@ -1,0 +1,13 @@
+translate -cp j2me/classes                        -comments -o temp/j2me.bin     -O -format bin @j2me
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hello.bin    -O -format bin @hello
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/hanoi.bin    -O -format bin @hanoi
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/delta.bin    -O -format bin @delta
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/cubes.bin    -O -format bin @cubes
+translate -cp samples/classes -libs temp/j2me.bin -comments -o temp/mpeg.bin     -O -format bin @mpeg
+
+#For suite stats:
+#romize -suitestats -ram_sz 4096K -eeprom_sz 1024K -format bin -m temp/loadbench.map -growrom -image temp/loadbench.image  temp/j2me.bin temp/hello.bin temp/hanoi.bin temp/delta.bin temp/cubes.bin temp/mpeg.bin
+
+romize -ram_sz 4096K -eeprom_sz 1024K -format bin -m temp/loadbench.map -growrom -image temp/loadbench.image temp/j2me.bin
+#squawk -Ximage:temp/loadbench.image java.lang.JAM -suite:temp/hello.bin -suite:temp/hello.bin -suite:temp/hello.bin -accountMemory NoClass
+

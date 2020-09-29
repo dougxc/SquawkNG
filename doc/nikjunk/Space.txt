@@ -1,0 +1,27 @@
+           /*
+            * Bump the high water mark if necessary
+            */
+            if (target > heapHWM) {
+                heapHWM = target;
+                if (getTraceGC()) {
+                    trace("heapHWM = ");
+                    traceInt(heapHWM);
+                    traceln("");
+                }
+
+if (
+    heapHWM - getCurrentObjectMemoryStart() == 8944 ||
+    heapHWM - getCurrentObjectMemoryStart() == 9960 ||
+    heapHWM - getCurrentObjectMemoryStart() == 10036 ||
+    heapHWM - getCurrentObjectMemoryStart() == 10224 ||
+    heapHWM - getCurrentObjectMemoryStart() == 9800 ||
+    heapHWM - getCurrentObjectMemoryStart() == 9076
+
+   ) {
+    traceln("heapHWM == ");
+    traceInt(heapHWM - getCurrentObjectMemoryStart());
+    traceln("");
+
+    traceHeapSummary(getCurrentSegment());
+}
+            }

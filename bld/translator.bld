@@ -1,0 +1,10 @@
+translate -cp j2me/classes -comments -o temp/j2me.bin        -O -format bin @j2me
+#translate -cp j2me/classes -comments -o temp/j2me.bin_d        -O -format bin_d @j2me
+translate -cp translator/classes -libs temp/j2me.bin -comments -o temp/translator.bin -O -format bin @translator
+translate -cp translator/classes -libs temp/j2me.bin:temp/translator.bin -comments -o temp/translator_impl.bin -O -format bin @translator_impl
+translate -cp translator/classes -libs temp/j2me.bin:temp/translator.bin -comments -o temp/translator_main.bin -O -format bin @translator_main
+romize -ram_sz 4M -format bin -m temp/translator.map -growrom -image temp/translator.image temp/j2me.bin temp/translator.bin temp/translator_impl.bin temp/translator_main.bin
+#squawk -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -help
+#squawkc -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -traceloading -cp translator/classes -libs temp/j2me.bin:temp/translator.bin -comments -o temp/squawk_translator_main.bin -O -format bin @translator_main 
+#squawkc -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -traceloading -cp translator/classes -libs temp/j2me.bin -comments -o temp/squawk_translator.bin -O -format bin @translator
+#squawkc -Xstats -Ximage:temp/translator.image com.sun.squawk.translator.main.Main -traceloading -cp j2me/classes -comments -o temp/squawk_j2me.bin -O -format bin @j2me

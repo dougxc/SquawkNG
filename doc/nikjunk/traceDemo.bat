@@ -1,0 +1,1 @@
+java -jar build.jar traceviewer -map demo/squawk.map -sourcepath j2me/src:loader/src:vm/src:samples/src demo/trace

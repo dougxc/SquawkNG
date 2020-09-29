@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+   @(#)package.html                     1.10 02/11/27
+
+   Copyright 1993-2002 Sun Microsystems, Inc.  All rights reserved.
+   SUN PROPRIETARY/CONFIDENTIAL.  Use is subject to license terms.
+-->
+</head>
+<body bgcolor="white">
+Provides classes for the back end of the compiler. The back end is responsible
+for register allocation and code generation. It iterates over the basic blocks
+twice in ascending order of their weights. For each basic block all root
+instructions are visited sequentially, and for each root instruction the
+corresponding instruction tree is traversed recursively. The first pass
+allocates registers and keeps track of all registers used. If some registers
+remain unused at the end, they are assigned to cache local variables. Then the
+process is repeated, using the same framework but this time with code emission
+enabled. Debug information is generated as a side effect of code generation.
+</body>
+</html>
